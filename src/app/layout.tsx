@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/globals.css'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
@@ -8,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: 'DB Freelancers',
-  description: 'Freelance Developers Portfolio',
+	description: 'Freelance Developers Portfolio',
 }
 
 export default function RootLayout({
@@ -20,8 +21,8 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<Navbar />
-                {children}
-                <Footer />
+				{children}
+				<Footer />
 			</body>
 		</html>
 	)
