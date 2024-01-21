@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model projects {
+model project {
   id      Int     @id @default(autoincrement())
   title   String  @db.VarChar(255)
   image   String  @db.VarChar(255)
