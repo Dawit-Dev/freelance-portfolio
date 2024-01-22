@@ -1,6 +1,7 @@
-import prisma from '../../lib/db.ts'
+import prisma from '../../lib/db'
 import styles from '../../styles/projects.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const getProjects = async () => {
 	const projects = await prisma.project.findMany()
@@ -12,7 +13,7 @@ export default async function Projects() {
 
 	return (
 		<main className={styles['projects-main']}>
-			<h1>Projects Page</h1>
+			<h1 className={styles['page-title']}>Projects Page</h1>
 			<div className={styles['projects-wrapper']}>
 				{projects.length &&
 					projects.map((project: object | any, index: number) => (
@@ -22,8 +23,25 @@ export default async function Projects() {
 								.split(' ')
 								.join('-')}/${project.id}`}
 							key={index}
+							className={styles['project-wrapper']}
 						>
 							<h4>{project.title}</h4>
+							<div className={styles['image-tooltip-container']}>
+								<Image
+									src={`/images/${project.image}`}
+									alt={project.title}
+									loading='eager'
+									className={styles['project-img']}
+									width={340}
+									height={240}
+									sizes='(min-width: 300px) 100vw'
+									placeholder='blur'
+									blurDataURL={`/images/${project.image}`}
+								/>
+								<span className={styles.tooltip}>
+									Click to view project details
+								</span>
+							</div>
 						</Link>
 					))}
 			</div>
