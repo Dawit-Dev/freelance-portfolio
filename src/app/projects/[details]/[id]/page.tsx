@@ -1,4 +1,4 @@
-import prisma from '../../../../lib/db.ts'
+import prisma from '../../../../lib/db'
 import styles from '../../../../styles/details.module.css'
 
 export async function generateStaticParams() {
@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 	])
 }
 
-async function getCurrentProject(params) {
+async function getCurrentProject(params: number) {
 	const project = await prisma.project.findUnique({
 		where: {
 			id: params,
@@ -27,12 +27,11 @@ export default async function ProjectDetails({
 }: {
 	params: { details: string; id: string }
 }) {
-	const { details, id } = params
-	const project = await getCurrentProject(Number(id))
+	const project = await getCurrentProject(Number(params.id))
 	return (
 		<div className={styles['details-main']}>
 			<h1>Project Details</h1>
-			<h4>{project.title}</h4>
+			<h4>{project ? project.title : null}</h4>
 		</div>
 	)
 }
