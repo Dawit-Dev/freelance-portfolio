@@ -1,5 +1,6 @@
 import prisma from '../../lib/db.ts'
 import styles from '../../styles/projects.module.css'
+import Link from 'next/link'
 
 export const getProjects = async () => {
 	const projects = await prisma.project.findMany()
@@ -15,9 +16,15 @@ export default async function Projects() {
 			<div className={styles['projects-wrapper']}>
 				{projects.length &&
 					projects.map((project: object | any, index: number) => (
-						<div key={index}>
+						<Link
+							href={`projects/${project.title
+								.toLowerCase()
+								.split(' ')
+								.join('-')}/${project.id}`}
+							key={index}
+						>
 							<h4>{project.title}</h4>
-						</div>
+						</Link>
 					))}
 			</div>
 		</main>
