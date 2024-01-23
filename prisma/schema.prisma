@@ -2,19 +2,51 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model profile {
+    id         Int      @id @default(autoincrement())
+    greetings  String?  @db.VarChar(255)
+    title      String   @db.VarChar(255)
+    intro      String?  @db.Text
+    sub_titles String[]
+    images     String[]
+}
+
+model service {
+    id          Int     @id @default(autoincrement())
+    name        String  @db.VarChar(255)
+    image       String? @db.VarChar(255)
+    description String? @db.VarChar()
 }
 
 model project {
-  id      Int     @id @default(autoincrement())
-  title   String  @db.VarChar(255)
-  image   String  @db.VarChar(255)
-  summary String?
-  demo    String  @db.VarChar(255)
-  code    String  @db.VarChar(255)
+    id      Int     @id @default(autoincrement())
+    title   String  @db.VarChar(255)
+    image   String  @db.VarChar(255)
+    summary String?
+    demo    String  @db.VarChar(255)
+    code    String  @db.VarChar(255)
+}
+
+model about {
+    id          Int      @id @default(autoincrement())
+    title       String   @db.VarChar(255)
+    bio         String?  @db.Text
+    tech_stacks String[]
+    images      String[]
+}
+
+model contact {
+    id           Int     @id @default(autoincrement())
+    post         String? @db.VarChar(255)
+    email        String? @db.VarChar(255)
+    phone        String? @db.VarChar(255)
+    social_media String? @db.VarChar()
 }
