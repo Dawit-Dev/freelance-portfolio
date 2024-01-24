@@ -1,21 +1,57 @@
 .main {
-	padding: 84px 0;
+  padding: 84px 0;
 }
 
 .hero {
-	background-color: blueviolet;
+  background-color: blueviolet;
 }
 
 .container {
-	width: 90%;
-	margin: auto;
+  width: 90%;
+  margin: auto;
+  padding-top: 1rem;
 }
 
 .title {
-	font-size: 2rem;
+  font-size: 2rem;
+}
+
+.sub-title {
+  margin: 3% 5%;
 }
 
 .tech-img {
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  margin: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  .development {
+    width: 90%;
+    margin: auto;
+  }
+  .description {
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1268px) {
+  .development {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: aquamarine;
+    justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	height: 100%;
+  }
+  .description {
+	height: 100%;
+	align-self: center;
+  }
 }
