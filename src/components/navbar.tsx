@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from '../styles/navbar.module.css'
+import 'bootswatch/dist/sandstone/bootstrap.min.css'
 
 const Navbar = () => {
 	const pathname = usePathname()

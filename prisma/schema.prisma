@@ -11,12 +11,13 @@ datasource db {
 }
 
 model profile {
-    id         Int      @id @default(autoincrement())
-    greetings  String?  @db.VarChar(255)
-    title      String   @db.VarChar(255)
-    intro      String?  @db.Text
-    sub_titles String[]
-    images     String[]
+    id          Int      @id @default(autoincrement())
+    greetings   String?  @db.VarChar(255)
+    title       String   @db.VarChar(255)
+    intro       String?  @db.Text
+    sub_titles  String[]
+    description String[]
+    images      String[]
 }
 
 model service {
