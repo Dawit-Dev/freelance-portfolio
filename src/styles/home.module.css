@@ -1,0 +1,21 @@
+.main {
+	padding: 84px 0;
+}
+
+.hero {
+	background-color: blueviolet;
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+}
+
+.title {
+	font-size: 2rem;
+}
+
+.tech-img {
+	width: 100%;
+	height: auto;
+}
