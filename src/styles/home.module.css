@@ -1,57 +1,125 @@
 .main {
-  padding: 84px 0;
+	padding: 84px 0 124px 0;
 }
 
 .hero {
-  background-color: blueviolet;
+	position: relative;
+	display: inline-block;
+	width: 100%;
 }
 
-.container {
-  width: 90%;
-  margin: auto;
-  padding-top: 1rem;
+.bg-img {
+	display: block;
+	width: 100%;
+	height: fit-content;
+	background-blend-mode: multiply;
+}
+
+.overlay-text {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, .5);
 }
 
 .title {
-  font-size: 2rem;
+	font-size: 1.5rem;
+	font-weight: 300;
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+}
+
+.intro {
+	margin: 1rem 5% 0 5%;
 }
 
 .sub-title {
-  margin: 3% 5%;
+	font-size: 1.5rem;
+	font-weight: 900;
+	margin: 2rem 5%;
 }
 
 .tech-img {
-  width: 100%;
-  height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .description {
-  margin: 5%;
+	margin: 5%;
 }
 
 @media only screen and (min-width: 768px) {
-  .development {
-    width: 90%;
-    margin: auto;
-  }
-  .description {
-    margin: auto;
-    margin-top: 1rem;
-  }
+	.overlay-text {
+		padding: 1rem;
+	}
+
+	.title {
+		width: 80%;
+	}
+
+	.development {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.description {
+		margin: auto;
+		margin-top: 1rem;
+	}
 }
 
 @media only screen and (min-width: 1268px) {
-  .development {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: aquamarine;
-    justify-content: center;
-	align-items: center;
-	gap: 2rem;
-	height: 100%;
-  }
-  .description {
-	height: 100%;
-	align-self: center;
-  }
+	.hero {
+		display: block;
+		background-color: blue;
+		background-image: url(/images/hero-bg-resized.jpg);
+		background-blend-mode: multiply;
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		background-attachment: fixed;
+		padding: 250px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.bg-img {
+		display: none;
+	}
+
+	.title {
+		width: 80%;
+		font-size: 4rem;
+		font-weight: 900;
+	}
+
+	.intro {
+		font-size: 1.25rem;
+	}
+
+	.development {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.description {
+		height: 100%;
+		display: flex;
+		/* align-self: center; */
+		align-items: center;
+		margin: 0;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		font-size: 1.25rem;
+		background-color: aquamarine;
+	}
 }
