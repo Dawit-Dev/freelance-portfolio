@@ -1,41 +1,41 @@
-import prisma from '../../lib/db'
-import styles from '../../styles/projects.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
+import prisma from "../../lib/db";
+import styles from "../../styles/projects.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 export const getProjects = async () => {
-	const projects = await prisma.project.findMany()
-	return projects
-}
+	const projects = await prisma.project.findMany();
+	return projects;
+};
 
 export default async function Projects() {
-	const projects = await getProjects()
+	const projects = await getProjects();
 
 	return (
-		<main className={styles['projects-main']}>
-			<h1 className={styles['page-title']}>Projects Page</h1>
-			<div className={styles['projects-wrapper']}>
+		<main className={styles["projects-main"]}>
+			<h1 className={styles["page-title"]}>Projects Page</h1>
+			<div className={styles["projects-wrapper"]}>
 				{projects.length &&
 					projects.map((project: object | any, index: number) => (
 						<Link
 							href={`projects/${project.title
 								.toLowerCase()
-								.split(' ')
-								.join('-')}/${project.id}`}
+								.split(" ")
+								.join("-")}/${project.id}`}
 							key={index}
-							className={styles['project-wrapper']}
+							className={styles["project-wrapper"]}
 						>
 							<h4>{project.title}</h4>
-							<div className={styles['image-tooltip-container']}>
+							<div className={styles["image-tooltip-container"]}>
 								<Image
 									src={`/images/${project.image}`}
 									alt={project.title}
-									loading='eager'
-									className={styles['project-img']}
+									loading="eager"
+									className={styles["project-img"]}
 									width={340}
 									height={240}
-									sizes='(min-width: 300px) 100vw'
-									placeholder='blur'
+									sizes="(min-width: 300px) 100vw"
+									placeholder="blur"
 									blurDataURL={`/images/${project.image}`}
 								/>
 								<span className={styles.tooltip}>
@@ -46,5 +46,5 @@ export default async function Projects() {
 					))}
 			</div>
 		</main>
-	)
+	);
 }

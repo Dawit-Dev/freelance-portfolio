@@ -1,13 +1,13 @@
-import prisma from '@/lib/db'
-import HomePage from '../components/home'
+import prisma from "@/lib/db";
+import HomePage from "../components/home";
 
 export const getProfile = async () => {
-	const profile = await prisma.profile.findMany()
-	return profile[0]
-}
+	const profile = await prisma.profile.findMany();
+	return profile[0];
+};
 
 export default async function Home() {
-	const content = await getProfile()
+	const content = await getProfile();
 
 	return (
 		<HomePage
@@ -17,5 +17,5 @@ export default async function Home() {
 			images={content.images}
 			description={content.description}
 		/>
-	)
+	);
 }
