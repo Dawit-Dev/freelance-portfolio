@@ -35,6 +35,7 @@ const Navbar = () => {
 	return (
 		<header
 			className={`${styles['custom-header']} navbar navbar-expand-md border-0 fixed-top`}
+			data-bs-theme='dark'
 		>
 			<div className='container-fluid'>
 				<Link className='navbar-brand border-0 mx-4' href='/'>
