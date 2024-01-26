@@ -10,11 +10,11 @@ type AnimatedTextProps = {
 }
 
 const defaultAnimations = {
-	hidden: { opacity: 0, scale: 3, y: 200 },
-	visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.3 } },
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
-const AnimatedText = ({
+const AnimatedWord = ({
 	text,
 	el: Wrapper = 'h1',
 	className,
@@ -22,7 +22,7 @@ const AnimatedText = ({
 }: AnimatedTextProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
 	const ref = useRef(null)
-	const isInView = useInView(ref, { amount: 0.5, once })
+	const isInView = useInView(ref, { amount: 0.2, once })
 
 	return (
 		<Wrapper className={className} key='animated-text'>
@@ -36,18 +36,14 @@ const AnimatedText = ({
 				{textArray.map((line, index) => (
 					<span className='d-block' key={index}>
 						{line.split(' ').map((word: string, index: number) => (
-							<span className='d-inline-block' key={index}>
-								{word.split('').map((char, index) => (
-									<motion.span
-										className='d-inline-block'
-										variants={defaultAnimations}
-										key={index}
-									>
-										{char}
-									</motion.span>
-								))}
+							<motion.span
+								variants={defaultAnimations}
+								className='d-inline-block'
+								key={index}
+							>
+								{word}
 								<span className='d-inline-block'>&nbsp;</span>
-							</span>
+							</motion.span>
 						))}
 					</span>
 				))}
@@ -56,4 +52,4 @@ const AnimatedText = ({
 	)
 }
 
-export default AnimatedText
+export default AnimatedWord
