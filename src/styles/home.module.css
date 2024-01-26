@@ -33,6 +33,27 @@
 	color: white;
 }
 
+.links-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin: 0.5rem auto;
+}
+
+.link {
+	padding: 0.5rem 1rem;
+	border: 1px solid white;
+	border-radius: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: white;
+}
+
+.link:hover {
+	background-color: black;
+}
+
 .intro {
 	margin: 1rem 5% 0 5%;
 }
@@ -100,6 +121,11 @@
 		width: 80%;
 		font-size: 4rem;
 		font-weight: 900;
+	}
+
+	.link {
+		font-size: 1.5rem;
+		font-weight: 700;
 	}
 
 	.intro {
