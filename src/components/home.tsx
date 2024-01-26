@@ -7,7 +7,7 @@ import AnimatedWord from './word-animation'
 import Link from 'next/link'
 import styles from '../styles/home.module.css'
 
-type HomePageProps = {
+type HomeProps = {
 	title: string
 	intro: string | null
 	sub_titles: string[]
@@ -15,13 +15,13 @@ type HomePageProps = {
 	description: string[]
 }
 
-export default function HomePage({
+export default function Home({
 	title,
 	intro,
 	sub_titles,
 	images,
 	description,
-}: HomePageProps) {
+}: HomeProps) {
     const ref = useRef(null)
     const text:string = intro!
 	const pageVariant = {

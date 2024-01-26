@@ -1,9 +1,5 @@
-import styles from '../../styles/contact.module.css'
+import Contact from "@/components/contact";
 
-export default function Contact() {
-	return (
-		<main className={styles['contact-main']}>
-			<h1>Contact Us</h1>
-		</main>
-	)
+export default function ContactPage() {
+	return <Contact />;
 }

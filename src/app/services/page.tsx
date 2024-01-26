@@ -1,9 +1,5 @@
-import styles from '../../styles/services.module.css'
+import Services from "@/components/services";
 
-export default function Services() {
-	return (
-		<main className={styles['services-main']}>
-			<h1>Services Page</h1>
-		</main>
-	)
+export default function ServicesPage() {
+	return <Services />;
 }
