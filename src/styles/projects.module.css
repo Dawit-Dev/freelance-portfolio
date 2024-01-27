@@ -35,7 +35,7 @@
 	width: 100%;
 	height: fit-content;
 	margin-top: 0;
-	background-color: blue;
+	background-color: lightgray;
 	cursor: pointer;
 	display: flex;
 	position: relative;
@@ -87,7 +87,69 @@
 	font-size: 0.85rem;
 }
 
-.project-img {
+.image-container {
+	position: relative;
 	width: 90%;
-	height: auto;
+	height: 260px;
+	margin: auto;
+}
+
+.project-img {
+	width: 100%;
+	height: 100%;
+}
+
+.project-links-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 4px;
+}
+
+.github-link,
+.live-demo-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	background-color: var(--secondary-bg);
+	color: var(--primary-text-color);
+	box-shadow: inset 0 0 0 0 var(--buttons-hover-bg);
+	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+	font-family: var(--buttons-font-family);
+	font-weight: var(--buttons-font-weight);
+	text-transform: capitalize;
+	padding: 0.5rem;
+	border-radius: 4px;
+	font-size: 0.75rem;
+	/* font-weight: var(--buttons-font-weight); */
+	text-rendering: optimizeLegibility;
+	width: 25%;
+}
+
+.github-link:hover .project-wrapper {
+	box-shadow: inset 1000px 0 0 0 var(--secondary-bg);
+	background-color: var(--secondary-bg);
+}
+
+.fa-github {
+	display: inline;
+	font-size: 0.85rem;
+	color: var(--primary-text-color);
+	box-shadow: inset 0 0 0 0 var(--buttons-hover-bg);
+	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+	.projects-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.projects-wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }

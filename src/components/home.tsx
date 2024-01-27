@@ -22,13 +22,16 @@ export default function Home({
 	images,
 	description,
 }: HomeProps) {
-    const ref = useRef(null)
-    const text:string = intro!
+	const ref = useRef(null)
+	const leftScrollRef = useRef(null)
+	const rightScrollRef = useRef(null)
+	const text: string = intro!
+
 	const pageVariant = {
 		visible: {
 			opacity: 1,
 			y: 0,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5 },
+			transition: { type: 'spring', stiffness: 30, duration: 4 },
 		},
 		hidden: { opacity: 0, y: -300 },
 	}
@@ -37,7 +40,7 @@ export default function Home({
 		visible: {
 			opacity: 1,
 			scale: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 1 },
+			transition: { type: 'spring', stiffness: 30, delay: 0.5 },
 		},
 		hidden: { opacity: 0, scale: 0 },
 	}
@@ -46,7 +49,7 @@ export default function Home({
 		visible: {
 			opacity: 1,
 			scale: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 11 },
+			transition: { type: 'spring', stiffness: 30, delay: 13 },
 		},
 		hidden: { opacity: 0, scale: 0 },
 	}
@@ -55,7 +58,7 @@ export default function Home({
 		visible: {
 			opacity: 1,
 			x: 0,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5 },
+			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
 		},
 		hidden: { opacity: 0, x: -300 },
 	}
@@ -64,7 +67,7 @@ export default function Home({
 		visible: {
 			opacity: 1,
 			x: 0,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5 },
+			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
 		},
 		hidden: { opacity: 0, x: 300 },
 	}
@@ -72,7 +75,6 @@ export default function Home({
 	return (
 		<motion.main
 			className={styles.main}
-			ref={ref}
 			variants={pageVariant}
 			initial='hidden'
 			whileInView='visible'
@@ -88,7 +90,18 @@ export default function Home({
 					src={'/images/hero-bg.jpg'}
 					alt={title}
 					loading='eager'
-					className={styles['bg-img']}
+					className={styles['sm-bg-img']}
+					width={340}
+					height={240}
+					sizes='(min-width: 300px) 100vw'
+					placeholder='blur'
+					blurDataURL={'hero-bg.jpg'}
+				/>
+				<Image
+					src={'/images/hero-bg-resized.jpg'}
+					alt={title}
+					loading='eager'
+					className={styles['lg-bg-img']}
 					width={340}
 					height={240}
 					sizes='(min-width: 300px) 100vw'
@@ -96,7 +109,7 @@ export default function Home({
 					blurDataURL={'hero-bg.jpg'}
 				/>
 				<div className={styles['overlay-text']}>
-					<AnimatedText text={title} className={styles.title} el={'h1'} once />
+					<AnimatedText text={title} className={styles.title} el={'h1'} once delay={2} />
 					<motion.div
 						className={styles['links-wrapper']}
 						variants={linksVariant}
@@ -122,6 +135,7 @@ export default function Home({
 								text={title}
 								el={'h3'}
 								once
+								delay={1}
 								className={styles['sub-title']}
 							/>
 							<div className={styles.development}>
@@ -129,6 +143,7 @@ export default function Home({
 									variants={leftVariant}
 									initial='hidden'
 									whileInView='visible'
+									viewport={{ root: leftScrollRef, amount: 0.5, once: true }}
 								>
 									<Image
 										src={`/images/${images[index]}`}
@@ -142,14 +157,19 @@ export default function Home({
 										blurDataURL={`/images/${images[index]}`}
 									/>
 								</motion.div>
-								<motion.p
+								<motion.div
 									variants={rightVariant}
 									initial='hidden'
 									whileInView='visible'
-									className={styles.description}
+									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
 								>
-									{description[index]}
-								</motion.p>
+									<AnimatedWord
+										text={description[index]}
+										el='p'
+										once
+										className={styles.description}
+									/>
+								</motion.div>
 							</div>
 						</div>
 					))}
