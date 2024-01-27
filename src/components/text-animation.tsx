@@ -1,12 +1,12 @@
 'use client'
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 type AnimatedTextProps = {
 	text?: string
 	el?: keyof JSX.IntrinsicElements
 	className?: string
 	once?: boolean
+	delay?: number
 }
 
 const defaultAnimations = {
@@ -19,19 +19,18 @@ const AnimatedText = ({
 	el: Wrapper = 'h1',
 	className,
 	once,
+	delay
 }: AnimatedTextProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
-	const ref = useRef(null)
-	const isInView = useInView(ref, { amount: 0.5, once })
 
 	return (
 		<Wrapper className={className} key='animated-text'>
 			<motion.span
 				aria-hidden
-				ref={ref}
 				initial='hidden'
-				animate={isInView ? 'visible' : 'hidden'}
-				transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
+				whileInView='visible'
+				viewport={{amount: 0.5, once}}
+				transition={{ staggerChildren: 0.15, delayChildren: delay }}
 			>
 				{textArray.map((line, index) => (
 					<span className='d-block' key={index}>

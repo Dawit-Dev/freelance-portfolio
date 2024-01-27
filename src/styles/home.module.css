@@ -3,16 +3,22 @@
 }
 
 .hero {
+	background-color: blue;
 	position: relative;
 	display: inline-block;
 	width: 100%;
 }
 
-.bg-img {
+.sm-bg-img,
+.lg-bg-img {
 	display: block;
 	width: 100%;
 	height: fit-content;
 	background-blend-mode: multiply;
+}
+
+.lg-bg-img {
+	display: none;
 }
 
 .overlay-text {
@@ -94,7 +100,7 @@
 }
 
 @media only screen and (min-width: 1268px) {
-	.hero {
+	/* .hero {
 		display: block;
 		background-color: blue;
 		background-image: url(/images/hero-bg-resized.jpg);
@@ -111,10 +117,15 @@
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
+	} */
+
+	.sm-bg-img {
+		display: none;
 	}
 
-	.bg-img {
-		display: none;
+	.lg-bg-img {
+		display: block;
+		height: 500px;
 	}
 
 	.title {

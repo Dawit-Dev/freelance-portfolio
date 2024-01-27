@@ -30,8 +30,10 @@ const AnimatedWord = ({
 				aria-hidden
 				ref={ref}
 				initial='hidden'
-				animate={isInView ? 'visible' : 'hidden'}
-				transition={{ staggerChildren: 0.15, delayChildren: 0.1 }}
+				// animate={isInView ? 'visible' : 'hidden'}
+				whileInView='visible'
+				viewport={{ amount: 0.5, once }}
+				transition={{ staggerChildren: 0.15, delayChildren: 1 }}
 			>
 				{textArray.map((line, index) => (
 					<span className='d-block' key={index}>
