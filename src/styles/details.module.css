@@ -1,5 +1,5 @@
 .details-main {
-	padding: 84px 0;
+	padding: 84px 0 320px 0;
 }
 
 .project-name {
@@ -20,7 +20,7 @@
 
 .link-container {
 	text-align: center;
-	margin: 2rem auto;
+	margin: 3.5rem auto 2rem auto;
 }
 
 .live-demo {
