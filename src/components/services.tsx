@@ -1,10 +1,9 @@
 "use client";
-import { useRef } from "react";
+
 import { motion } from "framer-motion";
 import styles from "../styles/services.module.css";
 
 export default function Services() {
-	const ref = useRef(null);
 
 	const pageVariant = {
 		visible: {
@@ -16,7 +15,6 @@ export default function Services() {
 
 	return (
 		<motion.main
-			ref={ref}
 			variants={pageVariant}
 			initial="hidden"
 			whileInView="visible"

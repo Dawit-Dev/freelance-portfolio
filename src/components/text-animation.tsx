@@ -1,4 +1,5 @@
 'use client'
+
 import { motion } from 'framer-motion'
 
 type AnimatedTextProps = {
@@ -19,7 +20,7 @@ const AnimatedText = ({
 	el: Wrapper = 'h1',
 	className,
 	once,
-	delay
+	delay,
 }: AnimatedTextProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
 
@@ -29,7 +30,7 @@ const AnimatedText = ({
 				aria-hidden
 				initial='hidden'
 				whileInView='visible'
-				viewport={{amount: 0.5, once}}
+				viewport={{ amount: 0.5, once }}
 				transition={{ staggerChildren: 0.15, delayChildren: delay }}
 			>
 				{textArray.map((line, index) => (

@@ -93,8 +93,8 @@
 }
 
 .project-img {
-	width: 100%;
-	height: 100%;
+	width: 100% !important;
+	height: auto;
 }
 
 .project-links-wrapper {
@@ -147,6 +147,9 @@
 }
 
 @media screen and (min-width: 1200px) {
+	.projects-wrapper {
+		width: 95%;
+	}
 	.projects-wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
