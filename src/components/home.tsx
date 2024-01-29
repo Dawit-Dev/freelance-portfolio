@@ -1,4 +1,5 @@
 'use client'
+
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -22,7 +23,6 @@ export default function Home({
 	images,
 	description,
 }: HomeProps) {
-	const ref = useRef(null)
 	const leftScrollRef = useRef(null)
 	const rightScrollRef = useRef(null)
 	const text: string = intro!

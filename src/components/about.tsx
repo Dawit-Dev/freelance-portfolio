@@ -1,11 +1,9 @@
 'use client'
-import { useRef } from 'react'
+
 import { motion } from 'framer-motion'
 import styles from '../styles/about.module.css'
 
 export default function About() {
-	const ref = useRef(null)
-
 	const pageVariant = {
 		visible: {
 			opacity: 1,
@@ -16,7 +14,6 @@ export default function About() {
 
 	return (
 		<motion.main
-			ref={ref}
 			variants={pageVariant}
 			initial='hidden'
 			whileInView='visible'
