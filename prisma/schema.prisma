@@ -21,10 +21,10 @@ model profile {
 }
 
 model service {
-    id          Int     @id @default(autoincrement())
-    name        String  @db.VarChar(255)
-    image       String? @db.VarChar(255)
-    description String? @db.VarChar()
+    id          Int    @id @default(autoincrement())
+    name        String @db.VarChar(255)
+    image       String @db.VarChar(255)
+    description String @db.VarChar()
 }
 
 model project {
@@ -39,15 +39,15 @@ model project {
 model about {
     id          Int      @id @default(autoincrement())
     title       String   @db.VarChar(255)
-    bio         String?  @db.Text
+    bio         String   @db.Text
     tech_stacks String[]
     images      String[]
 }
 
 model contact {
-    id           Int     @id @default(autoincrement())
-    post         String? @db.VarChar(255)
-    email        String? @db.VarChar(255)
-    phone        String? @db.VarChar(255)
-    social_media String? @db.VarChar()
+    id           Int      @id @default(autoincrement())
+    post         String   @db.VarChar(255)
+    email        String   @db.VarChar(255)
+    phone        String   @db.VarChar(255)
+    social_media String[]
 }

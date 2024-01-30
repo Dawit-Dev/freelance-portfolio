@@ -1,3 +1,51 @@
 .services-main {
-	padding-top: 84px;
+	padding: 84px 0 300px 0;
+}
+
+.services {
+	width: 90%;
+	margin: auto;
+}
+
+.headings {
+	background-color: var(--accent-color);
+	padding: 1rem 5%;
+	color: goldenrod;
+	margin-bottom: 1.5rem;
+}
+
+.service-img {
+	width: 100%;
+	height: auto;
+}
+
+.service-description {
+	margin-top: 1rem;
+}
+
+@media only screen and (min-width: 1268px) {
+	.grid-even {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.grid-odd {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.grid-odd>.service-description {
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+
+	.service-description {
+		padding-left: 2rem;
+		background-color: var(--accent-color);
+		color: var(--tertiary-text);
+		height: 100%;
+		margin-top: 0;
+		display: flex;
+		align-items: center;
+	}
 }

@@ -60,7 +60,7 @@ export default function Home({
 			x: 0,
 			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
 		},
-		hidden: { opacity: 0, x: -300 },
+		hidden: { opacity: 0, x: -100 },
 	}
 
 	const rightVariant = {
@@ -69,7 +69,7 @@ export default function Home({
 			x: 0,
 			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
 		},
-		hidden: { opacity: 0, x: 300 },
+		hidden: { opacity: 0, x: 100 },
 	}
 
 	return (

@@ -37,6 +37,7 @@ body {
 	--accent-color: #54081c;
 	--primary-text: #000000;
 	--secondary-text: #ffffff;
+	--tertiary-text: rgb(218, 165, 32);
 	--helper-text: #333333;
 	--footer-bg: #0b010b;
 }
