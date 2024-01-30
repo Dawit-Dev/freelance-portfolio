@@ -25,6 +25,7 @@ model service {
     name        String @db.VarChar(255)
     image       String @db.VarChar(255)
     description String @db.VarChar()
+    icons       String[]
 }
 
 model project {
