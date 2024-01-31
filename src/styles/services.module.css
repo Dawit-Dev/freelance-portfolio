@@ -9,9 +9,14 @@
 
 .headings {
 	background-color: var(--accent-color);
+	background-color: var(--helper-text);
 	padding: 1rem 5%;
 	color: goldenrod;
 	margin-bottom: 1.5rem;
+}
+
+.service-name {
+	font-weight: 900;
 }
 
 .service-img {
@@ -38,7 +43,54 @@
 	color: red;
 }
 
+.take-action {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	width: 90%;
+	margin: auto;
+}
+
+.invite {
+	font-weight: 600;
+	text-align: center;
+}
+
+.contact-btn {
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	background-color: blue;
+	color: white;
+	font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+	.primary-heading,
+	.secondary-heading {
+		text-align: center;
+	}
+
+	.services {
+		width: 80%;
+	}
+}
+
 @media only screen and (min-width: 1268px) {
+	.services {
+		width: 90%;
+	}
+
+	.reveal {
+		background-color: var(--helper-text);
+	}
+
+	.service-container {
+		margin-bottom: 2rem;
+	}
+
 	.grid-even {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -54,13 +106,20 @@
 		grid-row-start: 1;
 	}
 
-	.service-description {
-		padding-left: 2rem;
-		background-color: var(--accent-color);
-		color: var(--tertiary-text);
+	.service-img {
 		height: 100%;
+	}
+
+	.service-description {
+		padding: 1rem 2rem;
+		background-color: var(--accent-color);
+		background-color: var(--light-bg);
+		color: var(--tertiary-text);
+		color: var(--primary-text);
 		margin-top: 0;
 		display: flex;
+		font-size: 1.1rem;
 		align-items: center;
+		height: 100%;
 	}
 }
