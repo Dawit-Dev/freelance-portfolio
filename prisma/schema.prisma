@@ -21,11 +21,11 @@ model profile {
 }
 
 model service {
-    id          Int    @id @default(autoincrement())
-    name        String @db.VarChar(255)
-    image       String @db.VarChar(255)
-    description String @db.VarChar()
-    icons       String[]
+    id           Int      @id @default(autoincrement())
+    name         String   @db.VarChar(255)
+    image        String   @db.VarChar(255)
+    description  String   @db.VarChar()
+    technologies String[]
 }
 
 model project {
