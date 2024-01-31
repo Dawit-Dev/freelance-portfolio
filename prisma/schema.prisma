@@ -38,11 +38,16 @@ model project {
 }
 
 model about {
-    id          Int      @id @default(autoincrement())
-    title       String   @db.VarChar(255)
-    bio         String   @db.Text
-    tech_stacks String[]
-    images      String[]
+    id    Int    @id @default(autoincrement())
+    title String @db.VarChar(255)
+    bio   String @db.Text
+    image String @db.VarChar(255)
+}
+
+model technology {
+    id         Int      @id @default(autoincrement())
+    tech_stack String   @db.VarChar(255)
+    images     String[]
 }
 
 model contact {
