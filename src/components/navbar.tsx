@@ -40,7 +40,7 @@ const Navbar = () => {
 		>
 			<div className='container-fluid'>
 				<Link className='navbar-brand border-0 mx-4' href='/'>
-					DB Freelancers
+					DB Freelance Developer
 				</Link>
 				<input
 					id='menu__toggle'

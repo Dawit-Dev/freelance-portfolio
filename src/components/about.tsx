@@ -106,7 +106,6 @@ export default function About({
 									</figure>
 								</Reveal>
 							))}
-							A
 						</div>
 					</div>
 				))}
