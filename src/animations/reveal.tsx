@@ -8,6 +8,7 @@ interface Props {
 	className?: string
 	x?: number
 	y?: number
+	delay?: number
 	once?: boolean
 }
 
@@ -18,6 +19,7 @@ export const Reveal = ({
 	x,
 	y,
 	once,
+	delay,
 }: Props) => {
 	return (
 		<Wrapper className={className}>
@@ -28,8 +30,15 @@ export const Reveal = ({
 				}}
 				initial='hidden'
 				whileInView='visible'
-				viewport={{amount: 0.5, once}}
-				transition={{ duration: 2, delay: 0.5, type: 'spring', stiffness: 20 }}
+				viewport={{ amount: 0.5, once }}
+				transition={{
+					duration: 2,
+					type: 'spring',
+					stiffness: 20,
+					delay: delay,
+					repeatDelay: 1,
+					delayChildren: delay,
+				}}
 			>
 				{children}
 			</motion.div>
