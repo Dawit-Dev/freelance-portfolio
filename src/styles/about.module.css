@@ -1,5 +1,5 @@
 .about-main {
-	padding: 84px 0 240px 0;
+	padding: 84px 0 300px 0;
 }
 
 .about-hero {
@@ -21,7 +21,7 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 	padding: 1rem 0;
 }
 
@@ -52,10 +52,12 @@
 	padding: 1rem;
 }
 
-.question {
+.question,
+.answer {
 	height: 10rem;
 	width: 100%;
-	background-color: aquamarine;
+	background-color: var(--complementary-bg);
+	color: var(--header-bg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -64,7 +66,13 @@
 	cursor: pointer;
 }
 
-.tech-stacks>h1 {
+.answer {
+	background-color: var(--active-nav-bg);
+	cursor: default;
+	color: var(--secondary-text);
+}
+
+.tech-stacks > h1 {
 	padding: 0 1rem;
 }
 
@@ -75,7 +83,6 @@
 	align-items: center;
 	gap: 1rem;
 }
-
 
 .frontend-technologies,
 .backend-technologies,
@@ -99,6 +106,30 @@
 	background-color: var(--helper-text);
 	background-color: var(--secondary-bg);
 	color: var(--secondary-text);
+}
+
+.enquiry {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1rem;
+	margin-top: 3rem;
+}
+.enquiry h4 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.contact {
+	text-decoration: none;
+	text-transform: uppercase;
+	width: fit-content;
+	padding: 1.25rem 2rem;
+	background-color: blue;
+	color: white;
+	font-size: 1.25rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -126,7 +157,8 @@
 		gap: 2rem;
 	}
 
-	.question {
+	.question,
+	.answer {
 		margin-bottom: auto;
 	}
 }
@@ -168,7 +200,7 @@
 		padding: 0;
 	}
 
-	.tech-stacks>h1 {
+	.tech-stacks > h1 {
 		width: 80%;
 		margin: auto;
 		text-align: center;
@@ -183,5 +215,12 @@
 		/* width: 80%; */
 		padding: 2rem 10%;
 		margin: auto;
+	}
+	.enquiry h4 {
+		font-size: 2.5rem;
+		font-weight: 700;
+	}
+	.contact {
+		font-size: 1.5rem;
 	}
 }

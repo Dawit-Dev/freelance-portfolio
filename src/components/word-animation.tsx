@@ -7,6 +7,7 @@ type AnimatedTextProps = {
 	el?: keyof JSX.IntrinsicElements
 	className?: string
 	once?: boolean
+	delay?: number
 }
 
 const defaultAnimations = {
@@ -19,6 +20,7 @@ const AnimatedWord = ({
 	el: Wrapper = 'h1',
 	className,
 	once,
+	delay,
 }: AnimatedTextProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
 
@@ -29,7 +31,7 @@ const AnimatedWord = ({
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ amount: 0.5, once }}
-				transition={{ staggerChildren: 0.15, delayChildren: 0.01 }}
+				transition={{ staggerChildren: 0.15, delayChildren: delay }}
 			>
 				{textArray.map((line, index) => (
 					<span className='d-block' key={index}>
