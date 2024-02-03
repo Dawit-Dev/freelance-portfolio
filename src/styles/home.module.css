@@ -1,5 +1,5 @@
 .main {
-	padding: 84px 0 320px 0;
+	padding: 84px 0 300px 0;
 }
 
 .hero {
@@ -76,6 +76,19 @@
 
 .description {
 	margin: 5%;
+}
+
+.action-btn-wrapper {
+	text-align: center;
+	margin-top: 3rem;
+}
+
+.action-btn {
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	background-color: #990f02;
+	color: var(--secondary-text);
 }
 
 @media only screen and (min-width: 768px) {
@@ -156,6 +169,8 @@
 		padding-right: 2rem;
 		padding-left: 2rem;
 		font-size: 1.25rem;
-		background-color: aquamarine;
+		background-color: var(--secondary-bg);
+		/* color: var(--secondary-text); */
+		color: var(--primary-bg);
 	}
 }

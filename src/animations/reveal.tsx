@@ -10,6 +10,7 @@ interface Props {
 	y?: number
 	delay?: number
 	once?: boolean
+	onClick?: () => void
 }
 
 export const Reveal = ({
@@ -20,6 +21,7 @@ export const Reveal = ({
 	y,
 	once,
 	delay,
+	onClick,
 }: Props) => {
 	return (
 		<Wrapper className={className}>
@@ -39,6 +41,7 @@ export const Reveal = ({
 					repeatDelay: 1,
 					delayChildren: delay,
 				}}
+				onClick={onClick}
 			>
 				{children}
 			</motion.div>

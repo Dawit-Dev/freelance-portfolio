@@ -37,10 +37,12 @@ model project {
 }
 
 model about {
-    id    Int    @id @default(autoincrement())
-    title String @db.VarChar(255)
-    bio   String @db.Text
-    image String @db.VarChar(255)
+    id        Int      @id @default(autoincrement())
+    title     String   @db.VarChar(255)
+    bio       String   @db.Text
+    image     String   @db.VarChar(255)
+    questions String[]
+    answers   String[]
 }
 
 model technology {
