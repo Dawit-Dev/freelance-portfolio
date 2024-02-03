@@ -109,7 +109,13 @@ export default function Home({
 					blurDataURL={'hero-bg.jpg'}
 				/>
 				<div className={styles['overlay-text']}>
-					<AnimatedText text={title} className={styles.title} el={'h1'} once delay={2} />
+					<AnimatedText
+						text={title}
+						className={styles.title}
+						el={'h1'}
+						once
+						delay={2}
+					/>
 					<motion.div
 						className={styles['links-wrapper']}
 						variants={linksVariant}
@@ -174,6 +180,11 @@ export default function Home({
 						</div>
 					))}
 				</section>
+			</div>
+			<div className={styles['action-btn-wrapper']}>
+				<Link href={'/services'} className={styles['action-btn']}>
+					Check out My Services
+				</Link>
 			</div>
 		</motion.main>
 	)

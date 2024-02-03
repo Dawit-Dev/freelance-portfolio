@@ -6,12 +6,15 @@ import AnimatedText from './text-animation'
 import AnimatedWord from './word-animation'
 import { Reveal } from '@/animations/reveal'
 import styles from '../styles/about.module.css'
+import { useState } from 'react'
 
 type AboutProps = {
 	id: number
 	title: string
 	bio: string
 	image: string
+	questions: string[]
+	answers: string[]
 }
 
 type TechnologyProps = {
@@ -28,6 +31,8 @@ export default function About({
 	about: AboutProps
 	technologies: TechnologyProps[]
 }) {
+	const [questionNumber, setQuestionNumber] = useState(0)
+
 	const pageVariant = {
 		visible: {
 			opacity: 1,
@@ -70,9 +75,38 @@ export default function About({
 					/>
 				</div>
 			</div>
-			<AnimatedWord el='p' text={about.bio} className={styles.bio} />
+			{/* <AnimatedWord el='p' text={about.bio} className={styles.bio} /> */}
+			<Reveal el='p' y={100} className={styles.bio}>
+				{about.bio}
+			</Reveal>
+			<AnimatedWord
+				el='h3'
+				text='Click the Questions you may have'
+				className={styles.click}
+			/>
+			<section className={styles['questions-container']}>
+				{about.questions.map((question, index) => (
+					<Reveal
+						key={about.id}
+						el='div'
+						className={styles.question}
+						onClick={() => {
+							setQuestionNumber(index + 1)
+						}}
+						y={100}
+					>
+						<h4>
+							{questionNumber !== index + 1 ? question : about.answers[index]}
+						</h4>
+					</Reveal>
+				))}
+			</section>
 			<section className={styles['tech-stacks']}>
-				<h1>Some of the Technology Stacks I Love and Use Proficiently</h1>
+				<h1></h1>
+				<AnimatedWord
+					el='h1'
+					text='Some of the Technology Stacks I Love and Use Proficiently'
+				/>
 				{technologies.map((technology, index) => (
 					<div
 						key={technology.id}
@@ -86,6 +120,7 @@ export default function About({
 							el='h1'
 							text={technology.tech_stack}
 							delay={index + 1}
+							once
 						/>
 						<div className={styles['tech-stack-images']}>
 							{technology.images.map((img, idx) => (

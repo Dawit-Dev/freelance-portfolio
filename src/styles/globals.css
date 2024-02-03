@@ -34,7 +34,13 @@ body {
 	--body-bg: #DBDEA7;
 	--light-bg: #EAECCC;
 	--primary-bg: #1e2037;
-	--secondary-bg: #383d59;
+	--active-nav-bg: #383d59;
+	--active-nav-bg: #61101c;
+	--active-nav-bg: #990f02;
+	--secondary-bg: #7395ae;
+	--secondary-bg: #e98074;
+	--secondary-bg: #B39BC8;
+	--complementary-bg: #379683;
 	--tertiary-bg: #7e2a39;
 	--btn-bg: #1c4075;
 	--accent-color: #54081c;
