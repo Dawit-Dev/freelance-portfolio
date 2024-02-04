@@ -46,7 +46,7 @@
 	text-transform: uppercase;
 	padding: 1rem 2rem;
 	background-color: var(--accent-color);
-	color: white;
+	color: var(--secondary-text);
 	font-size: 1.25rem;
 }
 
@@ -63,6 +63,10 @@
 
 	.services {
 		width: 80%;
+	}
+	.contact-btn {
+		font-size: 1.5rem;
+		padding: 1.25rem 2.5rem;
 	}
 }
 
@@ -101,9 +105,7 @@
 
 	.service-description {
 		padding: 1rem 2rem;
-		background-color: var(--accent-color);
 		background-color: var(--light-bg);
-		color: var(--tertiary-text);
 		color: var(--primary-text);
 		margin-top: 0;
 		display: flex;

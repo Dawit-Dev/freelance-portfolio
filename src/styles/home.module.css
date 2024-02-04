@@ -87,7 +87,8 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 1rem 2rem;
-	background-color: #990f02;
+	font-size: 1.25rem;
+	background-color: var(--btn-bg);
 	color: var(--secondary-text);
 }
 
@@ -108,6 +109,10 @@
 	.description {
 		margin: auto;
 		margin-top: 1rem;
+	}
+	.action-btn {
+		font-size: 1.5rem;
+		padding: 1.25rem 2.5rem;
 	}
 }
 

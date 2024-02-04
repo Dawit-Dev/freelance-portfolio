@@ -9,14 +9,13 @@
 
 .page-title {
 	margin: 1.25rem auto;
- 	color: var(--primary-text);
+	color: var(--active-nav-bg);
 	font-weight: 900;
 	text-align: center;
- }
+}
 
 .projects-wrapper {
 	width: 90%;
-	/* padding: 2rem 0; */
 	margin: auto;
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
@@ -25,16 +24,13 @@
 	grid-auto-rows: auto;
 	grid-auto-columns: auto;
 	gap: 2rem;
-	/* transform: skewY(-4deg);
-    background-color: #3F373B; */
-	/* background-image: linear-gradient(45deg, var(--header-bg), var(--radio-btn)); */
 }
 
 .project-wrapper {
 	width: 100%;
 	height: fit-content;
 	margin-top: 0;
-	background-color: var(--secondary-bg);
+	background-color: var(--primary-bg);
 	cursor: pointer;
 	display: flex;
 	position: relative;
@@ -45,18 +41,13 @@
 	box-shadow: inset 0 0 0 0 black;
 	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
 	border-radius: 8px;
-	/* transform: skewY(7deg);
-    margin: 0 auto; */
 }
-
-/* .project-wrapper:hover {
-    transform: scale(0.9);
-} */
 
 .tooltip {
 	visibility: hidden;
 	width: max-content;
-	background-color: goldenrod;
+	background-color: var(--primary-bg);
+	color: var(--secondary-text);
 	text-align: center;
 	border-radius: 4px;
 	padding: 6px 12px;
@@ -77,12 +68,11 @@
 
 .project-title {
 	width: 100%;
- 	margin: 0 auto;
+	margin: 0 auto;
 	text-align: center;
 	padding: 0.5rem 0;
 	border-radius: 4px;
 	color: var(--secondary-text);
-	font-size: 0.85rem;
 }
 
 .image-container {
@@ -105,38 +95,25 @@
 	border-radius: 4px;
 }
 
-.github-link,
 .live-demo-link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	background-color: var(--primary-bg);
+	background-color: var(--active-nav-bg);
 	color: var(--secondary-text);
 	box-shadow: inset 0 0 0 0 var(--buttons-hover-bg);
 	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
-	font-family: var(--buttons-font-family);
-	font-weight: var(--buttons-font-weight);
 	text-transform: capitalize;
 	padding: 0.5rem;
 	border-radius: 4px;
-	font-size: 0.75rem;
-	/* font-weight: var(--buttons-font-weight); */
 	text-rendering: optimizeLegibility;
 	width: 100%;
+	border: 4px solid var(--primary-bg);
 }
 
-.github-link:hover .project-wrapper {
-	box-shadow: inset 1000px 0 0 0 var(--secondary-bg);
-	background-color: var(--secondary-bg);
-}
-
-.fa-github {
-	display: inline;
-	font-size: 0.85rem;
-	color: var(--primary-text-color);
-	box-shadow: inset 0 0 0 0 var(--buttons-hover-bg);
-	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;
+.live-demo-link:hover {
+	color: var(--secondary-text);
 }
 
 @media screen and (min-width: 768px) {
@@ -144,12 +121,18 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	.project-title,
+	.live-demo-link {
+		font-size: 1.25rem;
+	}
 }
 
 @media screen and (min-width: 1200px) {
 	.projects-wrapper {
 		width: 95%;
 	}
+
 	.projects-wrapper {
 		grid-template-columns: repeat(3, 1fr);
 	}
