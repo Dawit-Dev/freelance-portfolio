@@ -68,11 +68,10 @@
 
 .answer {
 	background-color: var(--active-nav-bg);
-	cursor: default;
 	color: var(--secondary-text);
 }
 
-.tech-stacks > h1 {
+.tech-stacks>h1 {
 	padding: 0 1rem;
 }
 
@@ -117,6 +116,7 @@
 	gap: 1rem;
 	margin-top: 3rem;
 }
+
 .enquiry h4 {
 	font-size: 2rem;
 	font-weight: 600;
@@ -200,7 +200,7 @@
 		padding: 0;
 	}
 
-	.tech-stacks > h1 {
+	.tech-stacks>h1 {
 		width: 80%;
 		margin: auto;
 		text-align: center;
@@ -216,10 +216,12 @@
 		padding: 2rem 10%;
 		margin: auto;
 	}
+
 	.enquiry h4 {
 		font-size: 2.5rem;
 		font-weight: 700;
 	}
+
 	.contact {
 		font-size: 1.5rem;
 	}
