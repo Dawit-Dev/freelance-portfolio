@@ -77,9 +77,11 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 					el='h3'
 					className={styles.invite}
 				/>
-				<Link href={'/contact'} className={styles['contact-btn']}>
-					Get in Touch
-				</Link>
+				<motion.div whileHover={{ scale: 1.1, color: 'var(--secondary-text)' }}>
+					<Link href={'/contact'} className={styles['contact-btn']}>
+						Get in Touch
+					</Link>
+				</motion.div>
 			</div>
 		</motion.main>
 	)

@@ -11,6 +11,7 @@ interface Props {
 	delay?: number
 	once?: boolean
 	onClick?: () => void
+	rotateY?: number
 }
 
 export const Reveal = ({
@@ -22,13 +23,14 @@ export const Reveal = ({
 	once,
 	delay,
 	onClick,
+	rotateY,
 }: Props) => {
 	return (
 		<Wrapper className={className}>
 			<motion.div
 				variants={{
 					hidden: { opacity: 0, y: y },
-					visible: { opacity: 1, y: 0 },
+					visible: { opacity: 1, y: 0, rotateY: rotateY },
 				}}
 				initial='hidden'
 				whileInView='visible'

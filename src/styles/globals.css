@@ -9,7 +9,7 @@ body {
 :root {
 	--font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
 		"Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-		"Fira Mono", "Droid Sans Mono", "Courier New", monospace; 
+		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
 	--primary-glow: conic-gradient(from 180deg at 50% 50%,
 			#16abff33 0deg,
@@ -18,7 +18,7 @@ body {
 			#0071ff33 160deg,
 			transparent 360deg);
 	--secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
-			rgba(255, 255, 255, 0)); 
+			rgba(255, 255, 255, 0));
 
 	--tile-border: conic-gradient(#00000080,
 			#00000040,
@@ -28,6 +28,7 @@ body {
 			#00000010,
 			#00000080);
 
+	--header-bg: #493F5E;
 	--header-bg: #0b010b;
 	--body-bg: #7d715d;
 	--body-bg: #988B75;
@@ -37,16 +38,18 @@ body {
 	--active-nav-bg: #383d59;
 	--active-nav-bg: #61101c;
 	--active-nav-bg: #990f02;
-	--secondary-bg: #7395ae;
-	--secondary-bg: #e98074;
 	--secondary-bg: #B39BC8;
+	--secondary-bg: #B284BE;
+	--secondary-bg: #F2C1D1;
+	--secondary-bg: #BE93E4;
 	--complementary-bg: #379683;
 	--tertiary-bg: #7e2a39;
 	--btn-bg: #1c4075;
 	--accent-color: #54081c;
 	--primary-text: #000000;
 	--secondary-text: #ffffff;
-	--tertiary-text: rgb(218, 165, 32);
+	--tertiary-text: #E3B778;
 	--helper-text: #333333;
+	--footer-bg: #2C041C;
 	--footer-bg: #0b010b;
 }
