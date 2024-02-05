@@ -7,7 +7,6 @@
 	z-index: 3;
 	background-color: var(--header-bg);
 	align-items: center;
-
 }
 
 .logo {
@@ -21,21 +20,21 @@
 	opacity: 0;
 }
 
-.menu__toggle:checked+.menu__btn>span {
+.menu__toggle:checked + .menu__btn > span {
 	transform: rotate(45deg);
 }
 
-.menu__toggle:checked+.menu__btn>span::before {
+.menu__toggle:checked + .menu__btn > span::before {
 	top: 0;
 	transform: rotate(0deg);
 }
 
-.menu__toggle:checked+.menu__btn>span::after {
+.menu__toggle:checked + .menu__btn > span::after {
 	top: 0;
 	transform: rotate(90deg);
 }
 
-.menu__toggle:checked~.menu__box {
+.menu__toggle:checked ~ .menu__box {
 	right: 0 !important;
 }
 
@@ -52,9 +51,9 @@
 	z-index: 1;
 }
 
-.menu__btn>span,
-.menu__btn>span::before,
-.menu__btn>span::after {
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -63,13 +62,13 @@
 	transition-duration: 0.25s;
 }
 
-.menu__btn>span::before {
-	content: '';
+.menu__btn > span::before {
+	content: "";
 	top: -8px;
 }
 
-.menu__btn>span::after {
-	content: '';
+.menu__btn > span::after {
+	content: "";
 	top: 8px;
 }
 
@@ -93,17 +92,11 @@
 
 .menu__item,
 .active {
-	font-family: var(--primary-font-family);
-	font-family: 'Lato',
-		sans-serif;
-	font-family: 'Montserrat',
-		sans-serif;
 	transition-duration: 0.25s;
 }
 
 .menu__item:hover {
 	background-color: var(--active-nav-bg);
-	/* color: var(--primary-text-color) !important; */
 }
 
 .custom-nav-item .active {
@@ -112,9 +105,9 @@
 	cursor: default;
 }
 
-.active:hover {
+/* .active:hover {
 	background-color: red;
-}
+} */
 
 @media screen and (min-width: 768px) {
 	.menu__box {
@@ -133,7 +126,6 @@
 	.menu__btn {
 		display: none;
 	}
-
 }
 
 @media screen and (max-width: 767px) {
@@ -143,9 +135,8 @@
 
 	.custom-nav-item .active,
 	.menu__item:hover {
-		background-color: var(--primary-bg) !important;
+		background-color: var(--accent-color) !important;
 	}
-
 
 	.menu__btn {
 		margin-left: 2rem;
@@ -158,7 +149,7 @@
 		z-index: 100 !important;
 	}
 
-	.menu__box {
-		width: 100%;
+	.menu__item {
+		color: var(--secondary-text) !important;
 	}
 }

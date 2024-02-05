@@ -3,7 +3,7 @@
 import styles from "../styles/projects.module.css";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AnimatedText from "./text-animation";
+import AnimatedText from "../animations/text-animation";
 import { useRouter, usePathname } from "next/navigation";
 
 type ProjectProps = {

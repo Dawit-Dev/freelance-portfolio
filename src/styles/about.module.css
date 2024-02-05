@@ -75,7 +75,7 @@
 	width: 100%;
 }
 
-.tech-stacks>h3 {
+.tech-stacks > h3 {
 	padding: 0 1rem;
 	text-align: center;
 }
@@ -203,11 +203,6 @@
 		font-size: 1.25rem;
 	}
 
-	/* .tech-stacks {
-		background-color: var(--secondary-bg);
-		color: var(--secondary-text);
-	} */
-
 	.click {
 		text-align: center;
 		font-weight: 600;
@@ -219,27 +214,20 @@
 		padding: 0;
 	}
 
-	.tech-stacks>h3 {
+	.tech-stacks > h3 {
 		width: 80%;
 		margin: auto;
 		text-align: center;
 		padding: 2rem 0;
-		/* font-size: 4rem; */
 		font-weight: 900;
 	}
 
 	.frontend-technologies,
 	.backend-technologies,
 	.databases-and-orms {
-		/* width: 80%; */
 		padding: 2rem 10%;
 		margin: auto;
 	}
-
-	/* .enquiry h3 {
-		font-size: 2.5rem;
-		font-weight: 700;
-	} */
 
 	.contact {
 		font-size: 1.5rem;
