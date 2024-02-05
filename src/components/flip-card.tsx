@@ -14,7 +14,7 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 	const [flip, setFlip] = useState(false)
 
 	const onClickOutsideListener = () => {
-		setFlip(false)
+		if (flip) setFlip(false)
 		document.removeEventListener('click', onClickOutsideListener)
 	}
 
@@ -23,8 +23,8 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 			<ReactCardFlip
 				isFlipped={flip}
 				flipDirection='vertical'
-				flipSpeedFrontToBack={1}
-				flipSpeedBackToFront={1}
+				flipSpeedFrontToBack={1.5}
+				flipSpeedBackToFront={1.5}
 				infinite={true}
 			>
 				<div

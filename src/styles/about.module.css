@@ -71,8 +71,18 @@
 	color: var(--secondary-text);
 }
 
-.tech-stacks>h1 {
+.tech-stacks {
+	width: 100%;
+}
+
+.tech-stacks>h3 {
 	padding: 0 1rem;
+	text-align: center;
+}
+
+.tech-stack {
+	text-align: center;
+	margin-bottom: 1rem;
 }
 
 .tech-stack-images {
@@ -90,20 +100,22 @@
 }
 
 .frontend-technologies {
-	background-color: var(--tertiary-bg);
 	background-color: var(--secondary-bg);
+	background-color: var(--tertiary-bg);
 	color: var(--secondary-text);
 }
 
 .backend-technologies {
-	background-color: var(--primary-bg);
-	background-color: var(--secondary-bg);
+	background-color: var(--tertiary-bg);
+	background-color: var(--helper-text);
 	color: var(--secondary-text);
 }
 
 .databases-and-orms {
-	background-color: var(--helper-text);
 	background-color: var(--secondary-bg);
+	background-color: var(--tertiary-bg);
+	background-color: var(--accent-color);
+	background-color: var(--primary-bg);
 	color: var(--secondary-text);
 }
 
@@ -117,8 +129,7 @@
 	margin-top: 3rem;
 }
 
-.enquiry h4 {
-	font-size: 2rem;
+.enquiry h3 {
 	font-weight: 600;
 }
 
@@ -126,10 +137,15 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	width: fit-content;
-	padding: 1.25rem 2rem;
-	background-color: blue;
-	color: white;
+	padding: 1rem 2rem;
+	background-color: var(--active-nav-bg);
+	color: var(--secondary-text);
 	font-size: 1.25rem;
+	border-radius: 50px;
+}
+
+.contact:hover {
+	color: var(--secondary-text);
 }
 
 @media only screen and (min-width: 768px) {
@@ -161,6 +177,10 @@
 	.answer {
 		margin-bottom: auto;
 	}
+
+	.tech-stack-images {
+		gap: 3rem;
+	}
 }
 
 @media only screen and (min-width: 1268px) {
@@ -179,7 +199,7 @@
 	}
 
 	.bio {
-		padding: 1rem 10%;
+		padding: 0 10%;
 		font-size: 1.25rem;
 	}
 
@@ -190,8 +210,7 @@
 
 	.click {
 		text-align: center;
-		font-size: 4rem;
-		font-weight: 900;
+		font-weight: 600;
 	}
 
 	.questions-container {
@@ -200,12 +219,12 @@
 		padding: 0;
 	}
 
-	.tech-stacks>h1 {
+	.tech-stacks>h3 {
 		width: 80%;
 		margin: auto;
 		text-align: center;
-		padding: 1rem 0;
-		font-size: 4rem;
+		padding: 2rem 0;
+		/* font-size: 4rem; */
 		font-weight: 900;
 	}
 
@@ -217,12 +236,13 @@
 		margin: auto;
 	}
 
-	.enquiry h4 {
+	/* .enquiry h3 {
 		font-size: 2.5rem;
 		font-weight: 700;
-	}
+	} */
 
 	.contact {
 		font-size: 1.5rem;
+		padding: 1.25rem 2.5rem;
 	}
 }

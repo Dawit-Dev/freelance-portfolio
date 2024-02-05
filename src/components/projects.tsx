@@ -36,6 +36,8 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 			<AnimatedText
 				text="Check out our Projects"
 				el="h1"
+				x={200}
+				scale={2}
 				delay={3}
 				once
 				className={styles["page-title"]}

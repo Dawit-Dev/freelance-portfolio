@@ -48,6 +48,7 @@
 	background-color: var(--accent-color);
 	color: var(--secondary-text);
 	font-size: 1.25rem;
+	border-radius: 50px;
 }
 
 .contact-btn:hover {

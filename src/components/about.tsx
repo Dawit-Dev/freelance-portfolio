@@ -64,8 +64,9 @@ export default function About({
 						text='About Me'
 						className={styles.title}
 						el={'h1'}
+						y={-200}
 						once
-						delay={2}
+						delay={1}
 					/>
 					<AnimatedWord
 						el='h4'
@@ -84,14 +85,18 @@ export default function About({
 			/>
 			<section className={styles['questions-container']}>
 				{about.questions.map((question, index) => (
-					<Reveal el='div' y={200} delay={0.5} once key={about.id}>
-						<FlipCard question={question} answer={about.answers[index]} id={about.id} />
+					<Reveal el='div' scale={0} delay={index / 2} once key={about.id}>
+						<FlipCard
+							question={question}
+							answer={about.answers[index]}
+							id={about.id}
+						/>
 					</Reveal>
 				))}
 			</section>
 			<section className={styles['tech-stacks']}>
 				<AnimatedWord
-					el='h1'
+					el='h3'
 					text='Some of the Technology Stacks I Love and Use Proficiently'
 				/>
 				{technologies.map((technology, index) => (
@@ -104,22 +109,24 @@ export default function About({
 						}
 					>
 						<AnimatedText
+							className={styles['tech-stack']}
 							el='h1'
 							text={technology.tech_stack}
 							delay={index + 1}
+							x={200}
 							once
 						/>
 						<div className={styles['tech-stack-images']}>
 							{technology.images.map((img, idx) => (
-								<Reveal key={idx} el='div' y={100} delay={idx + 1}>
+								<Reveal key={idx} el='div' x={200} delay={idx / 2 + 0.5}>
 									<figure key={idx} className={styles.figure}>
 										<Image
 											src={`/images/technologies/${img}`}
 											alt={technology.tech_stack}
 											loading='eager'
 											className={styles['tech-img']}
-											width={140}
-											height={100}
+											width={120}
+											height={90}
 											sizes='(min-width: 300px) 100vw'
 											placeholder='blur'
 											blurDataURL={`/images/technologies/${img}`}
@@ -134,13 +141,15 @@ export default function About({
 			</section>
 			<div className={styles.enquiry}>
 				<AnimatedWord
-					text='Any enquiries? Please get in touch'
-					el='h4'
+					text='Get to know me better? Please do not hesitate to contact me'
+					el='h3'
 					delay={1}
 				/>
-				<Link href={'/contact'} className={styles.contact}>
-					Contact me
-				</Link>
+				<motion.div whileHover={{scale: 1.1}}>
+					<Link href={'/contact'} className={styles.contact}>
+						{"Let's work together"}
+					</Link>
+				</motion.div>
 			</div>
 		</motion.main>
 	)
