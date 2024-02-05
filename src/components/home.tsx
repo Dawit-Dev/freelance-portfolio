@@ -76,57 +76,59 @@ export default function Home({
 		<motion.main
 			className={styles.main}
 			variants={pageVariant}
-			initial="hidden"
-			whileInView="visible"
+			initial='hidden'
+			whileInView='visible'
 		>
 			<motion.section
 				className={styles.hero}
 				variants={heroVariant}
-				initial="hidden"
-				whileInView="visible"
+				initial='hidden'
+				whileInView='visible'
 				viewport={{ amount: 0.1, once: true }}
 			>
 				<Image
-					src={"/images/hero-bg.jpg"}
+					src={'/images/hero-bg.jpg'}
 					alt={title}
-					loading="eager"
-					className={styles["sm-bg-img"]}
+					loading='eager'
+					className={styles['sm-bg-img']}
 					width={340}
 					height={240}
-					sizes="(min-width: 300px) 100vw"
-					placeholder="blur"
-					blurDataURL={"hero-bg.jpg"}
+					sizes='(min-width: 300px) 100vw'
+					placeholder='blur'
+					blurDataURL={'hero-bg.jpg'}
 				/>
 				<Image
-					src={"/images/hero-bg-resized.jpg"}
+					src={'/images/hero-bg-resized.jpg'}
 					alt={title}
-					loading="eager"
-					className={styles["lg-bg-img"]}
+					loading='eager'
+					className={styles['lg-bg-img']}
 					width={340}
 					height={240}
-					sizes="(min-width: 300px) 100vw"
-					placeholder="blur"
-					blurDataURL={"hero-bg.jpg"}
+					sizes='(min-width: 300px) 100vw'
+					placeholder='blur'
+					blurDataURL={'hero-bg.jpg'}
 				/>
-				<div className={styles["overlay-text"]}>
+				<div className={styles['overlay-text']}>
 					<AnimatedText
 						text={title}
 						className={styles.title}
-						el={"h1"}
+						el={'h1'}
+						scale={3}
+						y={200}
 						once
 						delay={2}
 					/>
 					<motion.div
-						className={styles["links-wrapper"]}
+						className={styles['links-wrapper']}
 						variants={linksVariant}
-						initial="hidden"
-						whileInView="visible"
+						initial='hidden'
+						whileInView='visible'
 						viewport={{ amount: 0.1, once: true }}
 					>
-						<Link href={"/services"} className={styles.link}>
+						<Link href={'/services'} className={styles.link}>
 							Services
 						</Link>
-						<Link href={"/projects"} className={styles.link}>
+						<Link href={'/projects'} className={styles.link}>
 							Projects
 						</Link>
 					</motion.div>
@@ -135,7 +137,7 @@ export default function Home({
 			<div className={styles.wrapper}>
 				<AnimatedWord
 					text={text}
-					el="p"
+					el='p'
 					delay={0.5}
 					once
 					className={styles.intro}
@@ -145,39 +147,40 @@ export default function Home({
 						<div key={index}>
 							<AnimatedText
 								text={title}
-								el={"h3"}
+								el={'h3'}
+								y={20}
 								once
-								delay={1}
-								className={styles["sub-title"]}
+								delay={index + 1}
+								className={styles['sub-title']}
 							/>
 							<div className={styles.development}>
 								<motion.div
 									variants={leftVariant}
-									initial="hidden"
-									whileInView="visible"
+									initial='hidden'
+									whileInView='visible'
 									viewport={{ root: leftScrollRef, amount: 0.5, once: true }}
 								>
 									<Image
 										src={`/images/${images[index]}`}
 										alt={title}
-										loading="eager"
-										className={styles["tech-img"]}
+										loading='eager'
+										className={styles['tech-img']}
 										width={340}
 										height={240}
-										sizes="(min-width: 300px) 100vw"
-										placeholder="blur"
+										sizes='(min-width: 300px) 100vw'
+										placeholder='blur'
 										blurDataURL={`/images/${images[index]}`}
 									/>
 								</motion.div>
 								<motion.div
 									variants={rightVariant}
-									initial="hidden"
-									whileInView="visible"
+									initial='hidden'
+									whileInView='visible'
 									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
 								>
 									<AnimatedWord
 										text={description[index]}
-										el="p"
+										el='p'
 										delay={0.5}
 										once
 										className={styles.description}
@@ -188,11 +191,14 @@ export default function Home({
 					))}
 				</section>
 			</div>
-			<div className={styles["action-btn-wrapper"]}>
-				<Link href={"/services"} className={styles["action-btn"]}>
+			<motion.div
+				className={styles['action-btn-wrapper']}
+				whileHover={{ scale: 1.1 }}
+			>
+				<Link href={'/services'} className={styles['action-btn']}>
 					Check out My Services
 				</Link>
-			</div>
+			</motion.div>
 		</motion.main>
-	);
+	)
 }

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Reveal } from '@/animations/reveal'
 import AnimatedWord from './word-animation'
+import AnimatedText from './text-animation'
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 // import { config } from "@fortawesome/fontawesome-svg-core";
@@ -47,7 +48,12 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 			<div className={styles.services}>
 				{services.map((service, index) => (
 					<div key={service.id} className={styles['service-container']}>
-						<h3 className={styles['service-name']}>{service.name}</h3>
+						<AnimatedText
+							text={service.name}
+							el='h3'
+							y={-20}
+							className={styles['service-name']}
+						/>
 						<Reveal el='div' y={200} once className={styles.reveal}>
 							<div
 								className={index % 2 ? styles['grid-odd'] : styles['grid-even']}

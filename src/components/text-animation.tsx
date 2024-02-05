@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion'
 
 type AnimatedTextProps = {
-	text?: string
+	text: string
 	el?: keyof JSX.IntrinsicElements
 	className?: string
+	scale?: number
+	x?: number
+	y?: number
 	once?: boolean
 	delay?: number
 }
@@ -19,6 +22,9 @@ const AnimatedText = ({
 	text,
 	el: Wrapper = 'h1',
 	className,
+	scale,
+	x,
+	y,
 	once,
 	delay,
 }: AnimatedTextProps) => {
@@ -33,14 +39,23 @@ const AnimatedText = ({
 				viewport={{ amount: 0.5, once }}
 				transition={{ staggerChildren: 0.15, delayChildren: delay }}
 			>
-				{textArray.map((line, index) => (
+				{textArray.map((line: string, index: number) => (
 					<span className='d-block' key={index}>
 						{line.split(' ').map((word: string, index: number) => (
 							<span className='d-inline-block' key={index}>
-								{word.split('').map((char, index) => (
+								{word.split('').map((char: string, index: number) => (
 									<motion.span
 										className='d-inline-block'
-										variants={defaultAnimations}
+										variants={{
+											hidden: { opacity: 0, scale: scale, x: x, y: y },
+											visible: {
+												opacity: 1,
+												scale: 1,
+												x: 0,
+												y: 0,
+												transition: { duration: 0.3 },
+											},
+										}}
 										key={index}
 									>
 										{char}
