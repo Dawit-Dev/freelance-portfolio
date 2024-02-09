@@ -8,6 +8,15 @@
 
 .btn-container {
 	display: flex;
-	justify-self: center;
+	justify-content: center;
 	text-align: center;
+}
+
+.send {
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	background-color: var(--active-nav-bg);
+	color: var(--secondary-text);
+	border-radius: 50px;
 }
