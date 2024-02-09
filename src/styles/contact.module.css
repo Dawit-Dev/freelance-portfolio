@@ -1,3 +1,13 @@
 .contact-main {
-	padding-top: 84px;
+	padding: 84px 0 300px 0;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn-container {
+	display: flex;
+	justify-self: center;
+	text-align: center;
 }
