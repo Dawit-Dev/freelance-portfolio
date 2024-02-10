@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 .btn-container {
@@ -19,4 +20,39 @@
 	background-color: var(--active-nav-bg);
 	color: var(--secondary-text);
 	border-radius: 50px;
+}
+
+.overlay-alert {
+	position: absolute;
+	display: flex;
+	width: 30%;
+	margin: auto;
+	flex-direction: column;
+	align-items: center;
+	top: calc(50% - 164px);
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	border-radius: 10px;
+	padding: 1rem;
+	background-color: var(--secondary-text);
+}
+
+.fa-square-check {
+	width: 100%;
+	height: 200px;
+	color: var(--secondary-text);
+	background-color: var(--green-accent);
+}
+
+.success {
+	width: 100%;
+	background-color: var(--secondary-text);
+	border-radius: 0%;
+}
+
+.name {
+	color: red;
+	font-weight: 900;
+	font-style: italic;
 }
