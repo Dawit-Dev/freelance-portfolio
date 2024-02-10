@@ -25,11 +25,16 @@
 
 .live-demo {
 	text-decoration: none;
-	padding: 0.5rem 1rem;
 	background-color: var(--tertiary-bg);
-	border-radius: 4px;
-	font-size: 1.25rem;
 	text-transform: uppercase;
+	padding: 1rem 2rem;
+	font-size: 1.25rem;
+	color: var(--secondary-text);
+	border-radius: 50px;
+}
+
+.live-demo:hover {
+	color: var(--secondary-text);
 }
 
 @media screen and (min-width: 768px) {

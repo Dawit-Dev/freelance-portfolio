@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import AnimatedText from "../animations/text-animation";
 import AnimatedWord from "../animations/word-animation";
+import { motion } from "framer-motion";
 import styles from "../styles/details.module.css";
 
 type ProjectProps = {
@@ -46,7 +47,10 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 					/>
 				</div>
 			)}
-			<div className={styles["link-container"]}>
+			<motion.div
+				className={styles["link-container"]}
+				whileHover={{ scale: 1.1 }}
+			>
 				<a
 					href={project.demo}
 					target="_blank"
@@ -55,7 +59,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 				>
 					Visit {project.title}
 				</a>
-			</div>
+			</motion.div>
 		</div>
 	);
 }
