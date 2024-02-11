@@ -1,7 +1,7 @@
-import prisma from '@/lib/db'
-import Services from '@/components/services'
+import prisma from "@/lib/db"
+import Services from "@/components/services"
 
-export const getServices = async () => {
+const getServices = async () => {
 	const services = await prisma.service.findMany()
 	return services
 }
