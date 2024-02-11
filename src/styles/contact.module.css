@@ -32,6 +32,7 @@
 	background-color: var(--active-nav-bg);
 	color: var(--secondary-text);
 	border-radius: 50px;
+	border: none;
 }
 
 .overlay-alert {
