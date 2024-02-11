@@ -1,12 +1,12 @@
 import prisma from "@/lib/db"
 import About from "@/components/about"
 
-export async function getAboutData() {
+async function getAboutData() {
 	const about = await prisma.about.findMany()
 	return about[0]
 }
 
-export async function getTechData() {
+async function getTechData() {
 	const technologies = await prisma.technology.findMany()
 	return technologies
 }
