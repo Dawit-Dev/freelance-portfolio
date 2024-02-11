@@ -69,28 +69,31 @@
 	font-style: italic;
 }
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 768px) {
 	.box {
 		width: 80%;
 	}
+
 	.overlay-alert {
 		width: 60%;
 	}
 }
 
-@media only screen and (min-width: 1148px){
+@media only screen and (min-width: 1148px) {
 	.box {
 		width: 70%;
 	}
+
 	.overlay-alert {
 		width: 40%;
 	}
 }
 
-@media only screen and (min-width: 1348px){
+@media only screen and (min-width: 1348px) {
 	.box {
 		width: 50%;
 	}
+
 	.overlay-alert {
 		width: 40%;
 	}
