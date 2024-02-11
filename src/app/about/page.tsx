@@ -1,12 +1,12 @@
-import prisma from '@/lib/db'
-import About from '@/components/about'
+import prisma from "@/lib/db"
+import About from "@/components/about"
 
-export const getAboutData = async () => {
+export async function getAboutData() {
 	const about = await prisma.about.findMany()
 	return about[0]
 }
 
-export const getTechData = async () => {
+export async function getTechData() {
 	const technologies = await prisma.technology.findMany()
 	return technologies
 }
