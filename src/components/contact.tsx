@@ -168,7 +168,7 @@ export default function Contact() {
 			whileInView="visible"
 			className={styles["contact-main"]}
 		>
-			<AnimatedText text="Contact me" el="h3" y={-20} delay={1} scale={3} />
+			<AnimatedText text="Contact me" el="h2" y={-20} delay={1} scale={3} />
 			<ThemeProvider theme={theme}>
 				<Box
 					className={styles.box}
