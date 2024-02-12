@@ -13,6 +13,7 @@ interface Props {
 	once?: boolean
 	onClick?: () => void
 	rotateY?: number
+	amount?: number
 }
 
 export default function Reveal({
@@ -26,6 +27,7 @@ export default function Reveal({
 	delay,
 	onClick,
 	rotateY,
+	amount = 0.5,
 }: Props) {
 	return (
 		<Wrapper className={className}>
@@ -36,7 +38,7 @@ export default function Reveal({
 				}}
 				initial='hidden'
 				whileInView='visible'
-				viewport={{ amount: 0.5, once }}
+				viewport={{ amount, once }}
 				exit={{ opacity: 0, x: 0, y: 0 }}
 				transition={{
 					duration: 2,

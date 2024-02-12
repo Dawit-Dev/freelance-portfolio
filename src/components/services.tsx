@@ -54,7 +54,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 							y={-20}
 							className={styles['service-name']}
 						/>
-						<Reveal el='div' y={50} delay={2} once className={styles.reveal}>
+						<Reveal el='div' y={50} delay={2} amount={0.1} once className={styles.reveal}>
 							<div
 								className={index % 2 ? styles['grid-odd'] : styles['grid-even']}
 							>
