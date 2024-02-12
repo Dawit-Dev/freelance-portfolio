@@ -1,10 +1,18 @@
 'use client'
 
-import styles from '../styles/projects.module.css'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import AnimatedText from '../animations/text-animation'
 import { useRouter, usePathname } from 'next/navigation'
+// Importing static images
+import tvShow from '../../public/images/tv-show.png'
+import structuralEngineering from '../../public/images/bereket.png'
+import eCommerce from '../../public/images/ecommerce.png'
+import videos from '../../public/images/videos.png'
+import jobListings from '../../public/images/job-listings.png'
+import countries from '../../public/images/countries.png'
+import portfolio from '../../public/images/dawit-portfolio.png'
+import styles from '../styles/projects.module.css'
 
 type ProjectProps = {
 	id: number
@@ -67,15 +75,31 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 							<h4 className={styles['project-title']}>{project.title}</h4>
 							<div className={styles['image-tooltip-container']}>
 								<Image
-									src={`/images/${project.image}`}
+									src={
+										project.image === 'tv-show.png'
+											? tvShow
+											: project.image === 'bereket.png'
+											? structuralEngineering
+											: project.image === 'ecommerce.png'
+											? eCommerce
+											: project.image === 'videos.png'
+											? videos
+											: project.image === 'job-listings.png'
+											? jobListings
+											: project.image === 'countries.png'
+											? countries
+											: project.image === 'dawit-portfolio.png'
+											? portfolio
+											: ''
+									}
 									alt={project.title}
 									loading='eager'
 									className={styles['project-img']}
-									width={340}
-									height={240}
-									sizes='(min-width: 300px) 100vw'
-									placeholder='blur'
-									blurDataURL={`/images/${project.image}`}
+									// width={340}
+									// height={240}
+									// sizes='(min-width: 300px) 100vw'
+									// placeholder='blur'
+									// blurDataURL={`/images/${project.image}`}
 								/>
 								<span className={styles.tooltip}>
 									Click to view project details

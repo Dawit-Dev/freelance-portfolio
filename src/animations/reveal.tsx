@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 
 interface Props {
-	children: JSX.Element | JSX.Element[] | string
+	children: JSX.Element | JSX.Element[]
 	el?: keyof JSX.IntrinsicElements
 	className?: string
 	x?: number
@@ -15,7 +15,7 @@ interface Props {
 	rotateY?: number
 }
 
-export const Reveal = ({
+export default function Reveal({
 	children,
 	className,
 	el: Wrapper = 'div',
@@ -26,7 +26,7 @@ export const Reveal = ({
 	delay,
 	onClick,
 	rotateY,
-}: Props) => {
+}: Props) {
 	return (
 		<Wrapper className={className}>
 			<motion.div
