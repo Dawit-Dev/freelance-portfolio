@@ -75,7 +75,7 @@ export default function About({
 					/>
 				</div>
 			</div>
-			<Reveal el='div' y={100} once className={styles.bio}>
+			<Reveal el='div' y={100} amount={0.2} once className={styles.bio}>
 				<p>{about.bio}</p>
 			</Reveal>
 			<AnimatedWord
