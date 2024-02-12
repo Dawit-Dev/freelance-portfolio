@@ -173,7 +173,8 @@ export default function Contact() {
 					formInputs.name ||
 					formInputs.email ||
 					formInputs.subject ||
-					formInputs.message
+					formInputs.message ||
+					showSuccessMessage
 						? 'Thank you for getting in touch!'
 						: 'Contact me'
 				}
@@ -185,7 +186,8 @@ export default function Contact() {
 					formInputs.name ||
 					formInputs.email ||
 					formInputs.subject ||
-					formInputs.message
+					formInputs.message ||
+					showSuccessMessage
 						? 8000
 						: 4000
 				}
