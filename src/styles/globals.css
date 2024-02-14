@@ -23,8 +23,18 @@ body {
 	--active-nav-bg: #990f02;
 	--secondary-bg: #B39BC8;
 	--secondary-bg: #B284BE;
-	--secondary-bg: #F2C1D1;
 	--secondary-bg: #BE93E4;
+
+	--secondary-bg: #F2C1D1;
+	--secondary-bg: #E78895;
+
+	--secondary-bg: #E6A4B4;
+
+	--secondary-bg: #D0A2F7;
+
+	--secondary-bg: #C3ACD0;
+
+	--secondary-bg: #DFCCFB;
 	--tertiary-bg: #7e2a39;
 	--tertiary-bg: #0047AB;
 	--complementary-bg: #379683;
@@ -40,4 +50,13 @@ body {
 	--helper-text: #272727;
 	--footer-bg: #2C041C;
 	--footer-bg: #06010B;
+	--footer-nav-links: #E78895;
+	--footer-nav-links: #f14960;
+
+	--footer-nav-links: #E6A4B4;
+	--footer-nav-links: #379683;
+	--footer-nav-links-hover: #f14960;
+	--footer-nav-links-hover: #E78895;
+
+	--footer-nav-links-hover: #E78895;
 }

@@ -7,6 +7,8 @@ import videos from '../../public/images/videos.png'
 import jobListings from '../../public/images/job-listings.png'
 import countries from '../../public/images/countries.png'
 import portfolio from '../../public/images/dawit-portfolio.png'
+import allTimeMovies from '../../public/images/all-time-movies.png'
+import cyfHotel from '../../public/images/cyf-hotel-react.png'
 import styles from '../styles/projects.module.css'
 
 export default function ProjectImage({
@@ -33,6 +35,10 @@ export default function ProjectImage({
 					? countries
 					: src === 'dawit-portfolio.png'
 					? portfolio
+					: src === 'all-time-movies.png'
+					? allTimeMovies
+					: src === 'cyf-hotel-react.png'
+					? cyfHotel
 					: ''
 			}
 			alt={alt}

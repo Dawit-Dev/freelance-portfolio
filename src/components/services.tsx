@@ -6,11 +6,6 @@ import Link from 'next/link'
 import Reveal from '@/animations/reveal'
 import AnimatedWord from '../animations/word-animation'
 import AnimatedText from '../animations/text-animation'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
-// import { config } from "@fortawesome/fontawesome-svg-core";
-// import "@fortawesome/fontawesome-svg-core/styles.css";
-// config.autoAddCss = false;
 import styles from '../styles/services.module.css'
 
 type ServiceProps = {
@@ -40,9 +35,9 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 			className={styles['services-main']}
 		>
 			<div className={styles.headings}>
-				<h1 className={styles['primary-heading']}>Areas of Our Services</h1>
+				<h1 className={styles['primary-heading']}>Areas of My Services</h1>
 				<h4 className={styles['secondary-heading']}>
-					We are Passionate to Changing Your Dreams into Reality
+					I Look Forward to Changing Your Dreams into Reality
 				</h4>
 			</div>
 			<div className={styles.services}>
@@ -54,7 +49,14 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 							y={-20}
 							className={styles['service-name']}
 						/>
-						<Reveal el='div' y={50} delay={2} amount={0.1} once className={styles.reveal}>
+						<Reveal
+							el='div'
+							y={50}
+							delay={2}
+							amount={0.1}
+							once
+							className={styles.reveal}
+						>
 							<div
 								className={index % 2 ? styles['grid-odd'] : styles['grid-even']}
 							>
@@ -79,7 +81,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 			</div>
 			<div className={styles['take-action']}>
 				<AnimatedWord
-					text='Interested in one of our services?'
+					text='Interested in one of my services?'
 					el='h3'
 					className={styles.invite}
 				/>

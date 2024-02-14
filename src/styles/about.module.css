@@ -55,27 +55,41 @@
 .question,
 .answer {
 	height: 10rem;
-	width: 100%;
+	width: 90%;
+	margin: auto;
 	background-color: var(--complementary-bg);
+	background-image: linear-gradient(to right, var(--complementary-bg),
+			var(--secondary-bg));
 	color: var(--header-bg);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 0 1rem;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	cursor: pointer;
+	border-radius: 10px;
+	box-shadow: 3px 3px black, -1em 0 .4em var(--active-nav-bg);
+	box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+	box-shadow: #3b012a 0px 0px 0px 3px, #421034 0px 0px 0px 6px, #0f162e 0px 0px 0px 9px, #1d355d 0px 0px 0px 12px, #091849 0px 0px 0px 15px;
 }
 
 .answer {
 	background-color: var(--active-nav-bg);
+	background-image: linear-gradient(to right, var(--helper-text), var(--active-nav-bg));
 	color: var(--secondary-text);
+	box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 70%);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+	box-shadow: #3b012a 0px 0px 0px 3px, #421034 0px 0px 0px 6px, #0f162e 0px 0px 0px 9px, #1d355d 0px 0px 0px 12px, #091849 0px 0px 0px 15px;
 }
 
 .tech-stacks {
 	width: 100%;
 }
 
-.tech-stacks > h3 {
+.tech-stacks>h3 {
 	padding: 0 1rem;
 	text-align: center;
 }
@@ -116,6 +130,7 @@
 	background-color: var(--tertiary-bg);
 	background-color: var(--accent-color);
 	background-color: var(--primary-bg);
+	background-color: var(--helper-text);
 	color: var(--secondary-text);
 }
 
@@ -175,7 +190,8 @@
 
 	.question,
 	.answer {
-		margin-bottom: auto;
+		width: 100%;
+		margin-bottom: 2rem;
 	}
 
 	.tech-stack-images {
@@ -212,9 +228,16 @@
 		width: 80%;
 		margin: auto;
 		padding: 0;
+		gap: 2rem;
 	}
 
-	.tech-stacks > h3 {
+	.question,
+	.answer {
+		width: 100%;
+		margin-bottom: auto;
+	}
+
+	.tech-stacks>h3 {
 		width: 80%;
 		margin: auto;
 		text-align: center;

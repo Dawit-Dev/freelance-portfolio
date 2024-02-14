@@ -80,7 +80,7 @@ export default function About({
 			</Reveal>
 			<AnimatedWord
 				el='h3'
-				text='Click the Questions you may have'
+				text='Click the Questions to Reveal their Answers'
 				className={styles.click}
 			/>
 			<section className={styles['questions-container']}>
@@ -97,7 +97,7 @@ export default function About({
 			<section className={styles['tech-stacks']}>
 				<AnimatedWord
 					el='h3'
-					text='Some of the Technology Stacks I Love and Use Proficiently'
+					text='Technology Stacks I Love and Use Proficiently'
 				/>
 				{technologies.map((technology, index) => (
 					<div
@@ -108,6 +108,7 @@ export default function About({
 							]
 						}
 					>
+						
 						<AnimatedText
 							className={styles['tech-stack']}
 							el='h1'

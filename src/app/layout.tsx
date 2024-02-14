@@ -4,7 +4,10 @@ import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootswatch/dist/sandstone/bootstrap.min.css'
+// import { getContactInfo } from '@/utils/get-contact-info'
 import '../styles/globals.css'
+
+import prisma from '@/lib/db'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,11 +16,17 @@ export const metadata: Metadata = {
 	description: 'Freelance Developers Portfolio',
 }
 
-export default function RootLayout({
+export const getContactInfo = async () => {
+	const contact = await prisma.contact.findMany()
+	return contact[0]
+}
+
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	const contact = await getContactInfo()
 	return (
 		<html lang='en'>
 			<head>
@@ -35,7 +44,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Navbar />
 				{children}
-				<Footer />
+				<Footer contact={contact} />
 			</body>
 		</html>
 	)
