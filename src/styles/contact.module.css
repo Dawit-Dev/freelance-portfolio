@@ -1,5 +1,5 @@
 .contact-main {
-	padding: 84px 0 300px 0;
+	padding: 84px 0 520px 0;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -70,6 +70,12 @@
 	font-style: italic;
 }
 
+@media only screen and (min-width: 450px) {
+	.contact-main {
+		padding: 84px 0 500px 0;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 	.box {
 		width: 80%;
@@ -87,6 +93,11 @@
 
 	.overlay-alert {
 		width: 40%;
+	}
+}
+@media only screen and (min-width: 1268px) {
+	.contact-main {
+		padding: 84px 0 400px 0;
 	}
 }
 

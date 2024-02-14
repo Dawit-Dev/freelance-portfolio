@@ -1,5 +1,5 @@
 .services-main {
-	padding: 84px 0 300px 0;
+	padding: 84px 0 520px 0;
 }
 
 .services {
@@ -55,6 +55,12 @@
 	color: var(--secondary-text);
 }
 
+@media only screen and (min-width: 450px) {
+	.services-main {
+		padding: 84px 0 480px 0;
+	}
+}
+
 @media only screen and (min-width: 768px) {
 
 	.primary-heading,
@@ -72,6 +78,9 @@
 }
 
 @media only screen and (min-width: 1268px) {
+	.services-main {
+		padding: 84px 0 400px 0;
+	}
 	.services {
 		width: 90%;
 	}

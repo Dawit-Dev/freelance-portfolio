@@ -1,5 +1,5 @@
 .details-main {
-	padding: 84px 0 320px 0;
+	padding: 84px 0 520px 0;
 }
 
 .project-name {
@@ -27,7 +27,7 @@
 	text-decoration: none;
 	background-color: var(--tertiary-bg);
 	text-transform: uppercase;
-	padding: 1rem 2rem;
+	padding: 1rem;
 	font-size: 1.25rem;
 	color: var(--secondary-text);
 	border-radius: 50px;
@@ -35,6 +35,12 @@
 
 .live-demo:hover {
 	color: var(--secondary-text);
+}
+
+@media only screen and (min-width: 450px) {
+	.details-main {
+		padding: 84px 0 500px 0;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -53,6 +59,12 @@
 	}
 	.live-demo {
 		font-size: 1.75rem;
-		padding: 1rem 1.5rem;
+		padding: 1rem 2rem;
+	}
+}
+
+@media only screen and (min-width: 1268px) {
+	.details-main {
+		padding: 84px 0 400px 0;
 	}
 }
