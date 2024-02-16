@@ -1,23 +1,46 @@
 .footer-main {
-	width: 100%;
-	background-color: var(--footer-bg);
-	background-color: var(--helper-text);
 	position: absolute;
 	bottom: 0;
+	width: 100%;
+	height: 29rem;
+	background-color: var(--helper-text);
 	color: var(--secondary-text);
-	padding: 1rem;
+	background-color: var(--footer-bg);
+	background-color: var(--footer-bg-complementary);
+	background-color: var(--mobile-footer-bg);
+	/* padding: 1rem; */
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(2, 1fr);
+	/* gap: 0 4px; */
+	/* column-gap: 0.25rem; */
 }
 
-.nav-and-connect {
+.nav-and-connect,
+.connect,
+.contact-info {
+	grid-column: span 1;
+}
+
+.contact-info {
+	margin: -1.5rem auto;
+	color: aquamarine;
+}
+
+.nav-and-connect,
+.connect {
+	/* padding: 1rem 0 0 0; */
+	height: 100%;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-	background-color: var(--accent-color);
-	padding: 1rem;
+	justify-content: center;
 }
 
 .footer-sub-title {
-	color: var(--secondary-bg);
+	color: var(--footer-nav-links);
+	color: var(--footer-primary-text);
 	font-style: italic;
 	text-align: center;
 }
@@ -26,14 +49,15 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-right: 4px solid var(--helper-text);
-	padding-right: 2rem;
 }
 
 .connect {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	border-left: 4px solid var(--secondary-text);
+	height: 100%;
 }
 
 .nav-links {
@@ -44,6 +68,7 @@
 .nav-link {
 	text-decoration: none;
 	color: var(--footer-nav-links);
+	color: var(--footer-nav-links);
 	float: left;
 }
 
@@ -52,11 +77,17 @@
 }
 
 .github {
+	background-color: var(--footer-bg-complementary);
+	background-color: var(--header-bg);
+	background-color: var(--btn-bg);
 	background-color: #0077B5;
-	background-color: #bd2c00;
-	background-color: var(--footer-bg);
+	background-color: #6e5494;
+	background-color: var(--btn-bg);
+	background-color: var(--github-bg);
 	color: var(--footer-bg);
 	color: #bd2c00;
+	color: var(--secondary-text);
+	/* color: #333333; */
 	margin-right: 1rem;
 	padding: 6px;
 	border-radius: 4px;
@@ -72,13 +103,46 @@
 }
 
 .contact-info {
-	padding: 1rem;
-	background-color: var(--helper-text);
-	color: var(--secondary-bg);
+	padding: 1rem 2rem 0 2rem;
+	color: var(--footer-nav-links);
+	color: var(--tertiary-text);
+	color: var(--footer-primary-text);
+	/* background-color: #bd2c00; */
+	border-top: 4px solid var(--secondary-text);
+	grid-column: span 2;
+	/* grid-row: span 2; */
+	/* grid-column: 1 / span 1; */
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
+}
+
+.connect-title {
+	color: var(--footer-primary-text);
+}
+
+.contact-options {
+	color: var(--footer-nav-links-hover);
+	color: var(--github-bg);
+	color: var(--footer-nav-links);
+	color: var(--footer-nav-links-hover);
+	color: var(--footer-primary-text);
 }
 
 .copyright {
 	text-align: center;
+	grid-column: span 2;
+	color: var(--footer-nav-links);
+}
+
+@media only screen and (min-width: 477px) {
+	.footer-main {
+		height: 26rem;
+	}
+
+	.contact-info {
+		margin: -1rem auto;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -87,20 +151,64 @@
 		align-self: center;
 	}
 
-	.nav-and-connect,
 	.contact-info {
-		padding: 1rem 10%;
+		padding: 1rem 17%;
 	}
+
 }
 
 @media only screen and (min-width: 1268px) {
+	.footer-main {
+		height: 20rem;
+		/* align-items: flex-start; */
+		align-items: normal;
+		background-color: var(--footer-bg);
+	}
+
 	.nav-and-connect,
+	.connect {
+		padding: 1.5rem 0;
+		border-bottom: 4px solid var(--secondary-text);
+	}
+
+	.nav-and-connect {
+		background-color: var(--footer-bg-complementary);
+	}
+
 	.contact-info {
-		padding: 1rem 20%;
+		padding: 1rem 0 0 0;
+		border-top: none;
+		grid-column: span 1;
+		margin: auto;
+	}
+
+	/* .copyright {
+		grid-column: span 1;
+	} */
+
+	.contact-options {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* gap: 1rem; */
+
 	}
 
 	.nav-links {
 		flex-direction: row;
 		gap: 1rem;
 	}
+
+	.copyright {
+		grid-column: span 1;
+		border-left: 4px solid var(--secondary-text);
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
+		background-color: var(--footer-bg-complementary);
+	}
+
 }

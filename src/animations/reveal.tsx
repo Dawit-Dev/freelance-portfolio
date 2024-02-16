@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-interface Props {
+interface RevealProps {
 	children: JSX.Element | JSX.Element[]
 	el?: keyof JSX.IntrinsicElements
 	className?: string
@@ -14,6 +14,7 @@ interface Props {
 	onClick?: () => void
 	rotateY?: number
 	amount?: number
+	duration?: number
 }
 
 export default function Reveal({
@@ -28,22 +29,23 @@ export default function Reveal({
 	onClick,
 	rotateY,
 	amount = 0.5,
-}: Props) {
+	duration,
+}: RevealProps) {
 	return (
 		<Wrapper className={className}>
 			<motion.div
 				variants={{
-					hidden: { opacity: 0, x: x, y: y, scale: scale },
-					visible: { opacity: 1, x: 0, y: 0, scale: 1, rotateY: rotateY },
+					hidden: { opacity: 0, x, y, scale },
+					visible: { opacity: 1, x: 0, y: 0, scale: 1, rotateY },
 				}}
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ amount, once }}
 				exit={{ opacity: 0, x: 0, y: 0 }}
 				transition={{
-					duration: 2,
+					duration,
 					type: 'spring',
-					stiffness: 20,
+					stiffness: 30,
 					delay: delay,
 					repeatDelay: 1,
 					delayChildren: delay,

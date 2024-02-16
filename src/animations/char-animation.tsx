@@ -3,7 +3,7 @@
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 
-type AnimatedTextProps = {
+type AnimatedCharacterProps = {
 	text: string
 	el?: keyof JSX.IntrinsicElements
 	className?: string
@@ -16,7 +16,7 @@ type AnimatedTextProps = {
 	repeatInterval?: number
 }
 
-const AnimatedText = ({
+const AnimatedCharacter = ({
 	text,
 	el: Wrapper = 'h1',
 	className,
@@ -27,7 +27,7 @@ const AnimatedText = ({
 	delay,
 	duration,
 	repeatInterval,
-}: AnimatedTextProps) => {
+}: AnimatedCharacterProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
 	const controls = useAnimation()
 	const ref = useRef(null)
@@ -73,7 +73,7 @@ const AnimatedText = ({
 									<motion.span
 										className='d-inline-block'
 										variants={{
-											hidden: { opacity: 0, scale: scale, x: x, y: y },
+											hidden: { opacity: 0, scale, x, y },
 											visible: {
 												opacity: 1,
 												scale: 1,
@@ -97,4 +97,4 @@ const AnimatedText = ({
 	)
 }
 
-export default AnimatedText
+export default AnimatedCharacter

@@ -20,7 +20,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Alert from '@mui/material/Alert'
 import AlertTitle from '@mui/material/AlertTitle'
 import { useRouter } from 'next/navigation'
-import AnimatedText from '@/animations/text-animation'
+import AnimatedCharacter from '@/animations/char-animation'
 export const theme = createTheme({
 	components: {
 		MuiFormLabel: {
@@ -168,7 +168,7 @@ export default function Contact() {
 			whileInView='visible'
 			className={styles['contact-main']}
 		>
-			<AnimatedText
+			<AnimatedCharacter
 				text={
 					formInputs.name ||
 					formInputs.email ||

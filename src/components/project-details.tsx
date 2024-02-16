@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
-import AnimatedText from '../animations/text-animation'
+import AnimatedCharacter from '../animations/char-animation'
 import { motion } from 'framer-motion'
 import styles from '../styles/details.module.css'
 
@@ -19,7 +19,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 
 	return (
 		<div className={styles['details-main']}>
-			<AnimatedText
+			<AnimatedCharacter
 				text={project.title}
 				el='h1'
 				delay={0.5}
