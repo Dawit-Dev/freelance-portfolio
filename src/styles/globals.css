@@ -12,51 +12,76 @@ body {
 		"Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
 	--header-bg: #493F5E;
+	--header-bg: #3A053A;
 	--header-bg: #0b010b;
 	--body-bg: #7d715d;
-	--body-bg: #988B75;
 	--body-bg: #DBDEA7;
+	--body-bg: #988B75;
 	--light-bg: #EAECCC;
 	--primary-bg: #1e2037;
-	--active-nav-bg: #383d59;
-	--active-nav-bg: #61101c;
 	--active-nav-bg: #990f02;
-	--secondary-bg: #B39BC8;
-	--secondary-bg: #B284BE;
-	--secondary-bg: #BE93E4;
+	--secondary-bg: #a881af;
+	--secondary-bg: #9a87b4;
 
-	--secondary-bg: #F2C1D1;
-	--secondary-bg: #E78895;
+	--secondary-bg: #895061;
+	--secondary-bg: #F172A1;
+	--secondary-bg: #F76C6C;
+	--secondary-bg: #2E9CCA;
+	--secondary-bg: #E98074;
 
-	--secondary-bg: #E6A4B4;
-
-	--secondary-bg: #D0A2F7;
-
-	--secondary-bg: #C3ACD0;
-
-	--secondary-bg: #DFCCFB;
+	--secondary-bg: #E7717D;
+	--secondary-bg: #83677B;
+	--secondary-bg: #8f7688;
 	--tertiary-bg: #7e2a39;
 	--tertiary-bg: #0047AB;
 	--complementary-bg: #379683;
 	--complementary-bg: #B0C4DE;
 	--complementary-bg: #7CB9E8;
 	--green-accent: #379683;
-	--btn-bg: #1c4075;
-	--btn-bg: #4E2A84;
+	--btn-bg: #501537;
 	--accent-color: #54081c;
 	--primary-text: #000000;
 	--secondary-text: #ffffff;
 	--tertiary-text: #E3B778;
 	--helper-text: #272727;
-	--footer-bg: #2C041C;
+	--bluish-text: #273049;
+	--bluish-text: #38335c;
+	--brownish-text: #531a2d;
 	--footer-bg: #06010B;
-	--footer-nav-links: #E78895;
-	--footer-nav-links: #f14960;
+	--footer-bg: #2C041C;
+	--footer-bg: #251a33;
 
-	--footer-nav-links: #E6A4B4;
-	--footer-nav-links: #379683;
-	--footer-nav-links-hover: #f14960;
-	--footer-nav-links-hover: #E78895;
+	--footer-bg: #312244;
+	--footer-bg: #4d194d;
 
-	--footer-nav-links-hover: #E78895;
+	--footer-bg: #372450;
+	--footer-bg: #49314e;
+	--footer-bg: #3A053A;
+	--footer-bg: #3a273e;
+
+	--footer-bg: #232323;
+	--footer-bg: #2a1b3d;
+
+	--footer-bg: #42343e;
+	--footer-bg: #342931;
+	--mobile-footer-bg: #3A053A;
+	--mobile-footer-bg: #1e2037;
+	--mobile-footer-bg: #251a33;
+
+	--footer-bg-complementary: #1a152b;
+	--footer-bg-complementary: #13152a;
+	--footer-bg-complementary: #28331A;
+
+	--footer-bg-complementary: #2d2d2d;
+	--footer-bg-complementary: #2a1b3d;
+	--footer-bg-complementary: #282828;
+	--footer-bg-complementary: #272727;
+	--footer-bg-complementary: #232323;
+	--github-bg: #bd2c00;
+	--github-bg: #6cc644;
+	--github-bg: #6e5494;
+	--footer-primary-text: burlywood;
+	--footer-primary-text: #E3B778;
+	--footer-nav-links: #a881af;
+	--footer-nav-links-hover: #379683;
 }

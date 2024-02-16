@@ -17,6 +17,7 @@ import {
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
+import Reveal from '@/animations/reveal'
 import styles from '../styles/footer.module.css'
 
 type ContactProps = {
@@ -28,29 +29,31 @@ type ContactProps = {
 }
 
 const Footer = ({ contact }: { contact: ContactProps }) => {
-	if (!contact) return <p>Loading</p>
-
 	return (
-		<main className={styles['footer-main']}>
-			<div className={styles['nav-and-connect']}>
-				<div className={styles['navigation-links']}>
-					<h6 className={styles['footer-sub-title']}>Site Navigation:</h6>
-					<div className={styles['nav-links']}>
-						<Link href={'/'} className={styles['nav-link']}>
-							Home
-						</Link>
-						<Link href={'/services'} className={styles['nav-link']}>
-							Services
-						</Link>
-						<Link href={'/projects'} className={styles['nav-link']}>
-							Projects
-						</Link>
-						<Link href={'/about'} className={styles['nav-link']}>
-							About
-						</Link>
-						<Link href={'/contact'} className={styles['nav-link']}>
-							Contact
-						</Link>
+		<Reveal el='footer' scale={0} once duration={4} amount={0.2}>
+			<main className={styles['footer-main']}>
+				<div className={styles['nav-and-connect']}>
+					<div className={styles['navigation-links']}>
+						<h6 className={styles['footer-sub-title']}>
+							Site Navigation Links:
+						</h6>
+						<div className={styles['nav-links']}>
+							<Link href={'/'} className={styles['nav-link']}>
+								Home
+							</Link>
+							<Link href={'/services'} className={styles['nav-link']}>
+								Services
+							</Link>
+							<Link href={'/projects'} className={styles['nav-link']}>
+								Projects
+							</Link>
+							<Link href={'/about'} className={styles['nav-link']}>
+								About
+							</Link>
+							<Link href={'/contact'} className={styles['nav-link']}>
+								Contact
+							</Link>
+						</div>
 					</div>
 				</div>
 				<div className={styles.connect}>
@@ -77,31 +80,40 @@ const Footer = ({ contact }: { contact: ContactProps }) => {
 						</a>
 					</div>
 				</div>
-			</div>
-			<div className={styles['contact-info']}>
-				<h6 className={styles['footer-sub-title']}>More contact options:</h6>
-				<div>
-					<p>
-						<FontAwesomeIcon icon={faEnvelope} className={styles.email} />{' '}
-						&nbsp; {contact.email}
-					</p>
-					<p>
-						<FontAwesomeIcon
-							icon={faMapLocationDot}
-							className={styles.location}
-						/>{' '}
-						&nbsp; {contact.post}
-					</p>
-					<p>
-						<FontAwesomeIcon icon={faPhoneVolume} className={styles.phone} />{' '}
-						&nbsp; {contact.phone}
-					</p>
-					<p className={styles.copyright}>
-						Copyright <FontAwesomeIcon icon={faCopyright} /> 2024, DB Freelance Developer Ltd.
-					</p>
+
+				<div className={styles['contact-info']}>
+					<div className={styles['contact-options']}>
+						<h6 className={styles['footer-sub-title']}>
+							More contact options:
+						</h6>
+						<div>
+							<p>
+								<FontAwesomeIcon icon={faEnvelope} className={styles.email} />{' '}
+								&nbsp; {contact.email}
+							</p>
+							<p>
+								<FontAwesomeIcon
+									icon={faMapLocationDot}
+									className={styles.location}
+								/>{' '}
+								&nbsp; {contact.post}
+							</p>
+							<p>
+								<FontAwesomeIcon
+									icon={faPhoneVolume}
+									className={styles.phone}
+								/>{' '}
+								&nbsp; {contact.phone}
+							</p>
+						</div>
+					</div>
 				</div>
-			</div>
-		</main>
+				<p className={styles.copyright}>
+					Copyright <FontAwesomeIcon icon={faCopyright} /> 2024, DB Freelance
+					Developer Ltd.
+				</p>
+			</main>
+		</Reveal>
 	)
 }
 

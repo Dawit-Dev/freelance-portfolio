@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
-import Reveal from '@/animations/reveal'
 import styles from '../styles/about.module.css'
 
 type FlipCardProps = {

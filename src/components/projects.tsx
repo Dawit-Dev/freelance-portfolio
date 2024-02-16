@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import AnimatedText from '../animations/text-animation'
+import AnimatedCharacter from '../animations/char-animation'
 import { useRouter, usePathname } from 'next/navigation'
 // Importing static images
 
@@ -36,7 +36,7 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 
 	return (
 		<main className={styles['projects-main']}>
-			<AnimatedText
+			<AnimatedCharacter
 				text='Check out my Projects'
 				el='h1'
 				x={200}
@@ -54,7 +54,7 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 							whileInView='visible'
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
-							viewport={{ amount: 0.1 }}
+							viewport={{ amount: 0.1, once: true }}
 							custom={index}
 							key={index}
 							className={styles['project-wrapper']}

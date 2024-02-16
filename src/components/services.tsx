@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/animations/reveal'
 import AnimatedWord from '../animations/word-animation'
-import AnimatedText from '../animations/text-animation'
+import AnimatedCharacter from '../animations/char-animation'
 import styles from '../styles/services.module.css'
 
 type ServiceProps = {
@@ -34,24 +34,27 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 			whileInView='visible'
 			className={styles['services-main']}
 		>
-			<div className={styles.headings}>
-				<h1 className={styles['primary-heading']}>Areas of My Services</h1>
-				<h4 className={styles['secondary-heading']}>
-					I Look Forward to Changing Your Dreams into Reality
-				</h4>
-			</div>
+			<Reveal el='div' scale={0} delay={0.5} once>
+				<div className={styles.headings}>
+					<h1 className={styles['primary-heading']}>Areas of My Services</h1>
+					<h4 className={styles['secondary-heading']}>
+						I Look Forward to Changing Your Dreams into Reality
+					</h4>
+				</div>
+			</Reveal>
 			<div className={styles.services}>
 				{services.map((service, index) => (
 					<div key={service.id} className={styles['service-container']}>
-						<AnimatedText
+						<AnimatedCharacter
 							text={service.name}
 							el='h3'
 							y={-20}
+							once
 							className={styles['service-name']}
 						/>
 						<Reveal
 							el='div'
-							y={50}
+							y={100}
 							delay={2}
 							amount={0.1}
 							once
@@ -83,6 +86,8 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 				<AnimatedWord
 					text='Interested in one of my services?'
 					el='h3'
+					once
+					y={-20}
 					className={styles.invite}
 				/>
 				<motion.div whileHover={{ scale: 1.1, color: 'var(--secondary-text)' }}>

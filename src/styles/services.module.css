@@ -1,5 +1,6 @@
 .services-main {
-	padding: 84px 0 520px 0;
+	padding-top: 84px;
+	padding-bottom: 31rem;
 }
 
 .services {
@@ -8,14 +9,23 @@
 }
 
 .headings {
-	background-color: var(--accent-color);
-	padding: 1rem 5%;
-	color: var(--tertiary-text);
-	margin-bottom: 1.5rem;
+	padding: 0 5%;
+	margin: 0.5rem auto;
+}
+
+.primary-heading {
+	text-align: center;
+	font-weight: 600;
+	color: var(--bluish-text);
+}
+
+.secondary-heading {
+	color: var(--brownish-text);
 }
 
 .service-name {
 	font-weight: 900;
+	color: var(--bluish-text);
 }
 
 .service-img {
@@ -25,6 +35,7 @@
 
 .service-description {
 	margin-top: 1rem;
+	color: var(--brownish-text);
 }
 
 .take-action {
@@ -39,6 +50,7 @@
 .invite {
 	font-weight: 600;
 	text-align: center;
+	color: var(--bluish-text);
 }
 
 .contact-btn {
@@ -46,6 +58,7 @@
 	text-transform: uppercase;
 	padding: 1rem 2rem;
 	background-color: var(--accent-color);
+	background-color: var(--btn-bg);
 	color: var(--secondary-text);
 	font-size: 1.25rem;
 	border-radius: 50px;
@@ -55,9 +68,9 @@
 	color: var(--secondary-text);
 }
 
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 477px) {
 	.services-main {
-		padding: 84px 0 480px 0;
+		padding-bottom: 28rem;
 	}
 }
 
@@ -71,6 +84,7 @@
 	.services {
 		width: 80%;
 	}
+
 	.contact-btn {
 		font-size: 1.5rem;
 		padding: 1.25rem 2.5rem;
@@ -79,16 +93,17 @@
 
 @media only screen and (min-width: 1268px) {
 	.services-main {
-		padding: 84px 0 400px 0;
+		padding-bottom: 24rem;
 	}
+
 	.services {
 		width: 90%;
 	}
 
-	.reveal {
+	/* .reveal {
 		background-color: var(--helper-text);
-		background-color: var(--complementary-bg);
-	}
+		background-color: var(--body-bg);
+	} */
 
 	.service-container {
 		margin-bottom: 2rem;
@@ -117,6 +132,7 @@
 		padding: 1rem 2rem;
 		background-color: var(--light-bg);
 		color: var(--primary-text);
+		color: var(--brownish-text);
 		margin-top: 0;
 		display: flex;
 		font-size: 1.1rem;

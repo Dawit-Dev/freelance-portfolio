@@ -1,7 +1,7 @@
 .projects-main {
 	width: 100%;
 	padding-top: 84px;
-	padding-bottom: 520px;
+	padding-bottom: 31rem;
 	margin-bottom: 0;
 	position: relative;
 	top: 0;
@@ -9,7 +9,7 @@
 
 .page-title {
 	margin: 1.25rem auto;
-	color: var(--active-nav-bg);
+	color: var(--bluish-text);
 	font-weight: 900;
 	text-align: center;
 }
@@ -116,14 +116,19 @@
 	color: var(--secondary-text);
 }
 
-@media only screen and (min-width: 450px) {
-	.project-main {
-		padding-bottom: 500px;
+@media only screen and (min-width: 477px) {
+	.projects-main {
+		padding-bottom: 28.5rem;
+	}
+
+	.projects-wrapper {
+		width: 85%;
 	}
 }
 
 @media screen and (min-width: 768px) {
 	.projects-wrapper {
+		width: 90%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 	}
@@ -136,16 +141,14 @@
 
 @media screen and (min-width: 1200px) {
 	.projects-wrapper {
-		width: 95%;
-	}
-
-	.projects-wrapper {
+		width: 92%;
 		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
 	}
 }
 
 @media only screen and (min-width: 1268px) {
 	.projects-main {
-		padding-bottom: 400px;
+		padding-bottom: 25rem;
 	}
 }
