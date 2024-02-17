@@ -7,8 +7,10 @@ import AnimatedCharacter from '../animations/char-animation'
 import AnimatedWord from '../animations/word-animation'
 import Link from 'next/link'
 import styles from '../styles/home.module.css'
+import Testimonials from './testimonials'
 
-type HomeProps = {
+type ProfileProps = {
+	id: number
 	title: string
 	intro: string | null
 	sub_titles: string[]
@@ -16,16 +18,26 @@ type HomeProps = {
 	description: string[]
 }
 
+type TestimonialsProps = {
+	id: number
+	name: string
+	company: string
+	address: string
+	position: string
+	testimony: string
+	image: string
+}
+
 export default function Home({
-	title,
-	intro,
-	sub_titles,
-	images,
-	description,
-}: HomeProps) {
+	profile,
+	testimonials,
+}: {
+	profile: ProfileProps
+	testimonials: TestimonialsProps[]
+}) {
 	const leftScrollRef = useRef(null)
 	const rightScrollRef = useRef(null)
-	const text: string = intro!
+	const text: string = profile.intro!
 
 	const pageVariant = {
 		visible: {
@@ -89,7 +101,7 @@ export default function Home({
 			>
 				<Image
 					src={'/images/hero-bg.jpg'}
-					alt={title}
+					alt={profile.title}
 					loading='eager'
 					className={styles['sm-bg-img']}
 					width={340}
@@ -100,7 +112,7 @@ export default function Home({
 				/>
 				<Image
 					src={'/images/hero-bg-resized.jpg'}
-					alt={title}
+					alt={profile.title}
 					loading='eager'
 					className={styles['lg-bg-img']}
 					width={340}
@@ -111,7 +123,7 @@ export default function Home({
 				/>
 				<div className={styles['overlay-text']}>
 					<AnimatedCharacter
-						text={title}
+						text={profile.title}
 						className={styles.title}
 						el={'h1'}
 						scale={3}
@@ -144,7 +156,7 @@ export default function Home({
 					className={styles.intro}
 				/>
 				<section>
-					{sub_titles.map((title: string, index: number) => (
+					{profile.sub_titles.map((title: string, index: number) => (
 						<div key={index}>
 							<AnimatedCharacter
 								text={title}
@@ -162,7 +174,7 @@ export default function Home({
 									viewport={{ root: leftScrollRef, amount: 0.5, once: true }}
 								>
 									<Image
-										src={`/images/${images[index]}`}
+										src={`/images/${profile.images[index]}`}
 										alt={title}
 										loading='eager'
 										className={styles['tech-img']}
@@ -170,7 +182,7 @@ export default function Home({
 										height={240}
 										sizes='(min-width: 300px) 100vw'
 										placeholder='blur'
-										blurDataURL={`/images/${images[index]}`}
+										blurDataURL={`/images/${profile.images[index]}`}
 									/>
 								</motion.div>
 								<motion.div
@@ -180,7 +192,7 @@ export default function Home({
 									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
 								>
 									<AnimatedWord
-										text={description[index]}
+										text={profile.description[index]}
 										el='p'
 										delay={0.5}
 										y={-20}
@@ -193,6 +205,7 @@ export default function Home({
 					))}
 				</section>
 			</div>
+			<Testimonials testimonials={testimonials} />
 			<motion.div
 				className={styles['action-btn-wrapper']}
 				whileHover={{ scale: 1.1 }}

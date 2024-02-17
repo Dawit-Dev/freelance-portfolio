@@ -1,21 +1,14 @@
-import prisma from "@/lib/db"
-import Home from "../components/home"
+import prisma from '@/lib/db'
+import Home from '../components/home'
 
 const getProfile = async () => {
 	const profile = await prisma.profile.findMany()
-	return profile[0]
+	const testimonials = await prisma.testimonial.findMany()
+	return { profile: profile[0], testimonials }
 }
 
 export default async function HomePage() {
-	const content = await getProfile()
+	const { profile, testimonials } = await getProfile()
 
-	return (
-		<Home
-			title={content.title}
-			intro={content.intro}
-			sub_titles={content.sub_titles}
-			images={content.images}
-			description={content.description}
-		/>
-	)
+	return <Home profile={profile} testimonials={testimonials} />
 }

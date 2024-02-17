@@ -46,8 +46,7 @@ export default function Reveal({
 					duration,
 					type: 'spring',
 					stiffness: 30,
-					delay: delay,
-					repeatDelay: 1,
+					delay,
 					delayChildren: delay,
 				}}
 				onClick={onClick}

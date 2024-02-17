@@ -19,6 +19,16 @@ model profile {
     images      String[]
 }
 
+model testimonial {
+    id        Int    @id @default(autoincrement())
+    name      String @db.VarChar(255)
+    company   String
+    address   String @db.VarChar(255)
+    position  String @db.VarChar(255)
+    testimony String @db.Text
+    image     String @db.VarChar(255)
+}
+
 model service {
     id           Int      @id @default(autoincrement())
     name         String   @db.VarChar(255)

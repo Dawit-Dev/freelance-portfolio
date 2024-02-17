@@ -32,6 +32,9 @@ body {
 	--secondary-bg: #E7717D;
 	--secondary-bg: #83677B;
 	--secondary-bg: #8f7688;
+
+	--secondary-bg: #EC6C5B;
+	--secondary-bg: #9BC4E2;
 	--tertiary-bg: #7e2a39;
 	--tertiary-bg: #0047AB;
 	--complementary-bg: #379683;
@@ -39,6 +42,7 @@ body {
 	--complementary-bg: #7CB9E8;
 	--green-accent: #379683;
 	--btn-bg: #501537;
+	--btn-bg: #2a52be;
 	--accent-color: #54081c;
 	--primary-text: #000000;
 	--secondary-text: #ffffff;
@@ -47,36 +51,52 @@ body {
 	--bluish-text: #273049;
 	--bluish-text: #38335c;
 	--brownish-text: #531a2d;
+	--testimonial-bg: #DF9876;
+	--testimonial-bg: #E9CFCF;
+	--testimonial-bg: #9DC3D4;
+	--testimonial-bg: #D3E5EB;
+	--testimonial-bg: #D3E5EB;
+	--testimonial-bg: #8BA8B7;
+	--testimonial-bg: #9BC4E2;
+
+	--testimonial-bg: #C7A07A;
+	--testimonial-bg: #EBDCB8;
 	--footer-bg: #06010B;
 	--footer-bg: #2C041C;
 	--footer-bg: #251a33;
 
 	--footer-bg: #312244;
-	--footer-bg: #4d194d;
-
-	--footer-bg: #372450;
+	
 	--footer-bg: #49314e;
 	--footer-bg: #3A053A;
 	--footer-bg: #3a273e;
-
+	
 	--footer-bg: #232323;
 	--footer-bg: #2a1b3d;
-
+	
 	--footer-bg: #42343e;
+	/* Dark Mahogany */
+	--footer-bg: #482029;
+	/* AUBURN */
+	--footer-bg: #A52A2A;
 	--footer-bg: #342931;
+	--footer-bg: #22333B;
+	--footer-bg: #3D4287;
+	--footer-bg: #3D4287;
+	--footer-bg: #2c3968;
 	--mobile-footer-bg: #3A053A;
 	--mobile-footer-bg: #1e2037;
 	--mobile-footer-bg: #251a33;
 
-	--footer-bg-complementary: #1a152b;
 	--footer-bg-complementary: #13152a;
 	--footer-bg-complementary: #28331A;
-
-	--footer-bg-complementary: #2d2d2d;
+	
 	--footer-bg-complementary: #2a1b3d;
 	--footer-bg-complementary: #282828;
 	--footer-bg-complementary: #272727;
 	--footer-bg-complementary: #232323;
+	--footer-bg-complementary: #2d2d2d;
+	--footer-bg-complementary: #343434;
 	--github-bg: #bd2c00;
 	--github-bg: #6cc644;
 	--github-bg: #6e5494;
