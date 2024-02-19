@@ -11,6 +11,10 @@
 	width: 100%;
 }
 
+.d-none {
+	display: none;
+}
+
 .sm-bg-img,
 .lg-bg-img {
 	display: block;
@@ -55,6 +59,7 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	color: var(--secondary-text);
+	background-color: var(--banner-btn);
 }
 
 .link:hover {
@@ -169,6 +174,7 @@
 	.development {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		
 	}
 
 	.description {
@@ -181,5 +187,17 @@
 		font-size: 1.25rem;
 		background-color: var(--secondary-bg);
 		color: var(--primary-bg);
+	}
+
+	.frontend {
+		background-color: var(--frontend-bg);
+	}
+
+	.backend {
+		background-color: var(--backend-bg);
+	}
+
+	.full-stack {
+		background-color: var(--full-stack-bg);
 	}
 }

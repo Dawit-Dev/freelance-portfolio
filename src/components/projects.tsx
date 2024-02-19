@@ -1,11 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import AnimatedCharacter from '../animations/char-animation'
 import { useRouter, usePathname } from 'next/navigation'
-// Importing static images
-
 import styles from '../styles/projects.module.css'
 import ProjectImage from './project-image'
 
@@ -41,7 +38,9 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 				el='h1'
 				x={200}
 				scale={2}
-				delay={3}
+				delay={2}
+				duration={1.5}
+				rotateY={360}
 				once
 				className={styles['page-title']}
 			/>
