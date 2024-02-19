@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Reveal from '@/animations/reveal'
 import AnimatedCharacter from '../animations/char-animation'
 import AnimatedWord from '../animations/word-animation'
 import Link from 'next/link'
@@ -35,45 +36,8 @@ export default function Home({
 	profile: ProfileProps
 	testimonials: TestimonialsProps[]
 }) {
-	const leftScrollRef = useRef(null)
 	const rightScrollRef = useRef(null)
 	const text: string = profile.intro!
-
-	const pageVariant = {
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: { type: 'spring', stiffness: 30, duration: 4 },
-		},
-		hidden: { opacity: 0, y: -300 },
-	}
-
-	const heroVariant = {
-		visible: {
-			opacity: 1,
-			scale: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5 },
-		},
-		hidden: { opacity: 0, scale: 0 },
-	}
-
-	const linksVariant = {
-		visible: {
-			opacity: 1,
-			scale: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 13 },
-		},
-		hidden: { opacity: 0, scale: 0 },
-	}
-
-	const leftVariant = {
-		visible: {
-			opacity: 1,
-			x: 0,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
-		},
-		hidden: { opacity: 0, x: -100 },
-	}
 
 	const rightVariant = {
 		visible: {
@@ -85,19 +49,15 @@ export default function Home({
 	}
 
 	return (
-		<motion.main
-			className={styles.main}
-			variants={pageVariant}
-			initial='hidden'
-			whileInView='visible'
-			viewport={{ amount: 0.1, once: true }}
-		>
-			<motion.section
+		<main className={styles.main}>
+			<Reveal
+				el='section'
 				className={styles.hero}
-				variants={heroVariant}
-				initial='hidden'
-				whileInView='visible'
-				viewport={{ amount: 0.1, once: true }}
+				scale={0}
+				type='spring'
+				stiffness={30}
+				delay={0.5}
+				once
 			>
 				<Image
 					src={'/images/hero-bg.jpg'}
@@ -126,33 +86,52 @@ export default function Home({
 						text={profile.title}
 						className={styles.title}
 						el={'h1'}
-						scale={3}
-						y={200}
+						scale={1.1}
 						once
 						delay={2}
+						// x={20}
+						// y={20}
+						rotateX={180}
+						rotateY={-540}
+						opacity={1}
+						duration={1}
 					/>
-					<motion.div
-						className={styles['links-wrapper']}
-						variants={linksVariant}
-						initial='hidden'
-						whileInView='visible'
-						viewport={{ amount: 0.1, once: true }}
+					<Reveal
+						el='div'
+						rotateX={180}
+						delay={12}
+						// opacity={1}
+						duration={2}
+						scale={1}
+						type='spring'
+						stiffness={30}
+						y={50}
+						once
 					>
-						<Link href={'/services'} className={styles.link}>
-							Services
-						</Link>
-						<Link href={'/projects'} className={styles.link}>
-							Projects
-						</Link>
-					</motion.div>
+						<div className={styles['links-wrapper']}>
+							<Link href={'/services'} className={styles.link}>
+								Services
+							</Link>
+							<Link href={'/projects'} className={styles.link}>
+								Projects
+							</Link>
+						</div>
+					</Reveal>
 				</div>
-			</motion.section>
+			</Reveal>
 			<div className={styles.wrapper}>
 				<AnimatedWord
 					text={text}
 					el='p'
 					delay={1}
 					once
+					// y={100}
+					// x={200}
+					// rotateY={360}
+					rotateX={180}
+					amount={0.1}
+					scale={1}
+					y={20}
 					className={styles.intro}
 				/>
 				<section>
@@ -163,15 +142,19 @@ export default function Home({
 								el={'h3'}
 								y={20}
 								once
-								delay={index + 1}
+								delay={index / 2 + 0.5}
+								amount={1}
 								className={styles['sub-title']}
 							/>
 							<div className={styles.development}>
-								<motion.div
-									variants={leftVariant}
-									initial='hidden'
-									whileInView='visible'
-									viewport={{ root: leftScrollRef, amount: 0.5, once: true }}
+								<Reveal
+									el='div'
+									x={-100}
+									type='spring'
+									stiffness={30}
+									delay={0.5}
+									duration={3}
+									once
 								>
 									<Image
 										src={`/images/${profile.images[index]}`}
@@ -184,7 +167,7 @@ export default function Home({
 										placeholder='blur'
 										blurDataURL={`/images/${profile.images[index]}`}
 									/>
-								</motion.div>
+								</Reveal>
 								<motion.div
 									variants={rightVariant}
 									initial='hidden'
@@ -193,11 +176,13 @@ export default function Home({
 								>
 									<AnimatedWord
 										text={profile.description[index]}
-										el='p'
+										el='h3'
 										delay={0.5}
-										y={-20}
+										y={150}
+										x={100}
+										rotateY={360}
 										once
-										className={styles.description}
+										className={`${styles.description} ${title === 'Frontend' ? styles.frontend : title === 'Backend' ? styles.backend : styles['full-stack']}`}
 									/>
 								</motion.div>
 							</div>
@@ -206,14 +191,19 @@ export default function Home({
 				</section>
 			</div>
 			<Testimonials testimonials={testimonials} />
-			<motion.div
+			<Reveal
+				el='div'
+				delay={0.5}
+				duration={1}
+				scale={0}
 				className={styles['action-btn-wrapper']}
-				whileHover={{ scale: 1.1 }}
 			>
-				<Link href={'/services'} className={styles['action-btn']}>
-					Check out My Services
-				</Link>
-			</motion.div>
-		</motion.main>
+				<motion.div whileHover={{ scale: 1.1 }}>
+					<Link href={'/services'} className={styles['action-btn']}>
+						Check out My Services
+					</Link>
+				</motion.div>
+			</Reveal>
+		</main>
 	)
 }

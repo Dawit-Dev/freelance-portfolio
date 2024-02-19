@@ -10,7 +10,7 @@
 
 .headings {
 	padding: 0 5%;
-	margin: 0.5rem auto;
+	margin: 1rem auto;
 }
 
 .primary-heading {
@@ -42,7 +42,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 2rem;
 	width: 90%;
 	margin: auto;
 }
@@ -98,6 +98,12 @@
 
 	.services {
 		width: 90%;
+	}
+
+	.headings {
+		width: 80%;
+		padding: 0;
+		/* margin: auto; */
 	}
 
 	/* .reveal {

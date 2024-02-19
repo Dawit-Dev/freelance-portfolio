@@ -153,19 +153,8 @@ export default function Contact() {
 		}, 7000)
 	}
 
-	const pageVariant = {
-		visible: {
-			opacity: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 2 },
-		},
-		hidden: { opacity: 0 },
-	}
-
 	return (
-		<motion.main
-			variants={pageVariant}
-			initial='hidden'
-			whileInView='visible'
+		<main
 			className={styles['contact-main']}
 		>
 			<AnimatedCharacter
@@ -340,6 +329,6 @@ export default function Contact() {
 					/>
 				</div>
 			)}
-		</motion.main>
+		</main>
 	)
 }

@@ -32,19 +32,10 @@ export default function About({
 	about: AboutProps
 	technologies: TechnologyProps[]
 }) {
-	const pageVariant = {
-		visible: {
-			opacity: 1,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 2 },
-		},
-		hidden: { opacity: 0 },
-	}
+	const sortedTech: any = technologies.sort((a, b) => a.id - b.id)
 
 	return (
-		<motion.main
-			variants={pageVariant}
-			initial='hidden'
-			whileInView='visible'
+		<main
 			className={styles['about-main']}
 		>
 			<div className={styles['about-hero']}>
@@ -74,8 +65,13 @@ export default function About({
 								el={index === 0 ? 'h4' : 'p'}
 								text={index === 0 ? title + '.' : title}
 								once
-								x={200}
-								delay={2 + index * 2}
+								y={50}
+								rotateY={360}
+								rotateX={540}
+								// x={50}
+								delay={2 + index}
+								// opacity={1}
+								duration={2.5}
 								className={index === 0 ? styles['sub-title'] : styles.remark}
 							/>
 						</div>
@@ -125,7 +121,7 @@ export default function About({
 					y={-20}
 					once
 				/>
-				{technologies.map((technology, index) => (
+				{sortedTech.map((technology: any, index: number) => (
 					<div
 						key={technology.id}
 						className={
@@ -143,14 +139,14 @@ export default function About({
 							once
 						/>
 						<div className={styles['tech-stack-images']}>
-							{technology.images.map((img, idx) => (
+							{technology.images.map((img: string, idx: number) => (
 								<Reveal
 									key={idx}
 									el='div'
 									x={100}
 									once
 									delay={idx / 2 + 0.1}
-									duration={3}
+									duration={0.7}
 								>
 									<figure key={idx} className={styles.figure}>
 										<Image
@@ -186,6 +182,6 @@ export default function About({
 					</Link>
 				</motion.div>
 			</div>
-		</motion.main>
+		</main>
 	)
 }
