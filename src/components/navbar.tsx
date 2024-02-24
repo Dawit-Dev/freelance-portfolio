@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { roboto, raleway } from '@/styles/fonts'
 import { usePathname } from 'next/navigation'
-import styles from '../styles/navbar.module.css'
+import styles from '@/styles/navbar.module.css'
 import 'bootswatch/dist/sandstone/bootstrap.min.css'
 
 const Navbar = () => {
@@ -39,7 +40,10 @@ const Navbar = () => {
 			data-bs-theme='dark'
 		>
 			<div className='container-fluid'>
-				<Link className='navbar-brand border-0 mx-4' href='/'>
+				<Link
+					className={`navbar-brand border-0 mx-4 ${styles.brand} ${roboto.className}`}
+					href='/'
+				>
 					DB Freelance Developer
 				</Link>
 				<input
@@ -55,12 +59,12 @@ const Navbar = () => {
 				{(toggleMenu || screenWidth > 767) && (
 					<nav className={`text-center me-auto me-md-5 ${styles['menu__box']}`}>
 						<ul
-							className={`navbar-nav ms-auto border-0  ${styles['menu__box__ul']}`}
+							className={`navbar-nav ms-auto border-0 ${styles['menu__box__ul']} ${raleway.className}`}
 						>
 							<li className={`nav-item ${styles['custom-nav-item']}`}>
 								<Link
 									href='/'
-									className={`nav-link p-3 border-end-0 ${
+									className={`nav-link p-3 border-end-0 text-light ${
 										pathname === '/' ? styles.active : styles['menu__item']
 									}`}
 									onClick={screenTest}
@@ -71,7 +75,7 @@ const Navbar = () => {
 							<li className={`nav-item ${styles['custom-nav-item']}`}>
 								<Link
 									href='/services'
-									className={`nav-link p-3 border-end-0 ${
+									className={`nav-link p-3 border-end-0 text-light ${
 										pathname === '/services'
 											? styles.active
 											: styles['menu__item']
@@ -84,7 +88,7 @@ const Navbar = () => {
 							<li className={`nav-item ${styles['custom-nav-item']}`}>
 								<Link
 									href='/projects'
-									className={`nav-link p-3 border-end-0 ${
+									className={`nav-link p-3 border-end-0 text-light ${
 										pathname === '/projects'
 											? styles.active
 											: styles['menu__item']
@@ -97,7 +101,7 @@ const Navbar = () => {
 							<li className={`nav-item ${styles['custom-nav-item']}`}>
 								<Link
 									href='/about'
-									className={`nav-link p-3 border-end-0 ${
+									className={`nav-link p-3 border-end-0 text-light ${
 										pathname === '/about' ? styles.active : styles['menu__item']
 									}`}
 									onClick={screenTest}
@@ -108,7 +112,7 @@ const Navbar = () => {
 							<li className={`nav-item ${styles['custom-nav-item']}`}>
 								<Link
 									href='/contact'
-									className={`nav-link p-3 ${
+									className={`nav-link p-3 text-light ${
 										pathname === '/contact'
 											? styles.active
 											: styles['menu__item']

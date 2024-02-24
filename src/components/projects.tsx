@@ -3,8 +3,9 @@
 import { motion } from 'framer-motion'
 import AnimatedCharacter from '../animations/char-animation'
 import { useRouter, usePathname } from 'next/navigation'
-import styles from '../styles/projects.module.css'
 import ProjectImage from './project-image'
+import { oswald, playfairDisplay, raleway } from '@/styles/fonts'
+import styles from '../styles/projects.module.css'
 
 type ProjectProps = {
 	id: number
@@ -42,7 +43,7 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 				duration={1.5}
 				rotateY={360}
 				once
-				className={styles['page-title']}
+				className={`${styles['page-title']} ${oswald.className}`}
 			/>
 			<div className={styles['projects-wrapper']}>
 				{projects &&
@@ -66,7 +67,11 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 								router.push(newPath)
 							}}
 						>
-							<h4 className={styles['project-title']}>{project.title}</h4>
+							<h4
+								className={`${styles['project-title']} ${playfairDisplay.className}`}
+							>
+								{project.title}
+							</h4>
 							<div className={styles['image-tooltip-container']}>
 								<ProjectImage src={project.image} alt={project.title} />
 								<span className={styles.tooltip}>
@@ -78,7 +83,7 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 								href={project.demo}
 								target='_blank'
 								rel='noreferrer'
-								className={styles['live-demo-link']}
+								className={`${styles['live-demo-link']} ${raleway.className}`}
 							>
 								Live Demo
 							</a>

@@ -1,12 +1,13 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import Reveal from '@/animations/reveal'
 import AnimatedWord from '../animations/word-animation'
 import AnimatedCharacter from '../animations/char-animation'
-import { useState, useEffect } from 'react'
+import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/services.module.css'
 
 type ServiceProps = {
@@ -39,9 +40,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 	}, [switchText])
 
 	return (
-		<main
-			className={styles['services-main']}
-		>
+		<main className={styles['services-main']}>
 			<Reveal
 				el='div'
 				scale={2}
@@ -51,15 +50,18 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 				once
 				className={styles.headings}
 			>
-					<h1 className={styles['primary-heading']}>Areas of My Services</h1>
-					<AnimatedCharacter
-						el='h4'
-						text={'Turning Your Dreams into Reality'}
-						repeatInterval={7000}
+				<h1 className={`${styles['primary-heading']} ${oswald.className}`}>
+					Areas of My Services
+				</h1>
+				<AnimatedCharacter
+					el='h4'
+					text={'Turning Your Dreams into Reality'}
+					// repeatInterval={7000}
 					y={20}
 					delay={2}
-						className={styles['secondary-heading']}
-					/>
+					once
+					className={`${styles['secondary-heading']} ${raleway.className}`}
+				/>
 			</Reveal>
 			<div className={styles.services}>
 				{services.map((service, index) => (
@@ -69,7 +71,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 							el='h3'
 							y={-20}
 							once
-							className={styles['service-name']}
+							className={`${styles['service-name']} ${playfairDisplay.className}`}
 						/>
 						<Reveal
 							el='div'
@@ -94,7 +96,9 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 									placeholder='blur'
 									blurDataURL={`/images/${service.image}`}
 								/>
-								<p className={styles['service-description']}>
+								<p
+									className={`${styles['service-description']} ${montserrat.className}`}
+								>
 									{service.description}
 								</p>
 							</div>
@@ -109,12 +113,15 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 						el='h3'
 						once
 						y={-20}
-						className={styles.invite}
+						className={`${styles.invite} ${montserrat.className}`}
 					/>
 					<motion.div
 						whileHover={{ scale: 1.1, color: 'var(--secondary-text)' }}
 					>
-						<Link href={'/contact'} className={styles['contact-btn']}>
+						<Link
+							href={'/contact'}
+							className={`${styles['contact-btn']} ${raleway.className}`}
+						>
 							Get in Touch
 						</Link>
 					</motion.div>

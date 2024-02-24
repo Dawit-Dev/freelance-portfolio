@@ -8,8 +8,9 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import AnimatedWord from '@/animations/word-animation'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
-import styles from '@/styles/testimonials.module.css'
 import Reveal from '@/animations/reveal'
+import { playfairDisplay, montserrat } from '@/styles/fonts'
+import styles from '@/styles/testimonials.module.css'
 
 type TestimonialsProps = {
 	id: number
@@ -39,7 +40,7 @@ export default function Testimonials({
 			>
 				<div>
 					<AnimatedWord
-						className={styles.title}
+						className={`${styles.title} ${playfairDisplay.className}`}
 						el='h3'
 						text="Here's a testimonial about my service and software product"
 						// y={20}
@@ -70,7 +71,9 @@ export default function Testimonials({
 										className={styles['fa-quote-right']}
 									/>
 								</h4>
-								<section className={styles['personal-info']}>
+								<section
+									className={`${styles['personal-info']} ${montserrat.className}`}
+								>
 									<h5 className={styles.info}>{testimonial.name}</h5>
 									<h5 className={styles.info}>{testimonial.company}</h5>
 									<h5 className={styles.info}>{testimonial.position}</h5>

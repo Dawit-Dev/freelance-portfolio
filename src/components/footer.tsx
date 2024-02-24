@@ -17,6 +17,7 @@ import {
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
+import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/footer.module.css'
 
 type ContactProps = {
@@ -29,9 +30,9 @@ type ContactProps = {
 
 const Footer = ({ contact }: { contact: ContactProps }) => {
 	return (
-		<main className={styles['footer-main']}>
+		<main className={`${styles['footer-main']} ${montserrat.className}`}>
 			<div className={styles['nav-and-connect']}>
-				<div className={styles['navigation-links']}>
+				<div className={`${styles['navigation-links']} ${raleway.className}`}>
 					<h6 className={styles['footer-sub-title']}>Site Navigation Links:</h6>
 					<div className={styles['nav-links']}>
 						<Link href={'/'} className={styles['nav-link']}>
@@ -53,7 +54,9 @@ const Footer = ({ contact }: { contact: ContactProps }) => {
 				</div>
 			</div>
 			<div className={styles.connect}>
-				<h6 className={styles['footer-sub-title']}>Connect with me on:</h6>
+				<h6 className={`${styles['footer-sub-title']} ${raleway.className}`}>
+					Connect with me on:
+				</h6>
 				<div className={styles.brands}>
 					<a
 						href={contact.social_media[0]}
@@ -79,7 +82,9 @@ const Footer = ({ contact }: { contact: ContactProps }) => {
 
 			<div className={styles['contact-info']}>
 				<div className={styles['contact-options']}>
-					<h6 className={styles['footer-sub-title']}>More contact options:</h6>
+					<h6 className={`${styles['footer-sub-title']} ${raleway.className}`}>
+						More contact options:
+					</h6>
 					<div>
 						<p>
 							<FontAwesomeIcon icon={faEnvelope} className={styles.email} />{' '}

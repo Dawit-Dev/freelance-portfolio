@@ -7,8 +7,9 @@ import Reveal from '@/animations/reveal'
 import AnimatedCharacter from '../animations/char-animation'
 import AnimatedWord from '../animations/word-animation'
 import Link from 'next/link'
-import styles from '../styles/home.module.css'
 import Testimonials from './testimonials'
+import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import styles from '../styles/home.module.css'
 
 type ProfileProps = {
 	id: number
@@ -81,10 +82,10 @@ export default function Home({
 					placeholder='blur'
 					blurDataURL={'hero-bg.jpg'}
 				/>
-				<div className={styles['overlay-text']}>
+				<div className={`${styles['overlay-text']} ${oswald.className}`}>
 					<AnimatedCharacter
 						text={profile.title}
-						className={styles.title}
+						className={`${styles.title}`}
 						el={'h1'}
 						scale={1.1}
 						once
@@ -92,27 +93,25 @@ export default function Home({
 						// x={20}
 						// y={20}
 						rotateX={180}
-						rotateY={-540}
+						// rotateY={-540}
 						opacity={1}
 						duration={1}
 					/>
 					<Reveal
 						el='div'
 						rotateX={180}
-						delay={12}
-						// opacity={1}
+						delay={5}
 						duration={2}
-						scale={1}
 						type='spring'
 						stiffness={30}
-						y={50}
+						// y={50}
 						once
 					>
-						<div className={styles['links-wrapper']}>
-							<Link href={'/services'} className={styles.link}>
+						<div className={`${styles['links-wrapper']} ${raleway.className}`}>
+							<Link href={'/services'} className={`${styles.link}`}>
 								Services
 							</Link>
-							<Link href={'/projects'} className={styles.link}>
+							<Link href={'/projects'} className={`${styles.link}`}>
 								Projects
 							</Link>
 						</div>
@@ -132,7 +131,7 @@ export default function Home({
 					amount={0.1}
 					scale={1}
 					y={20}
-					className={styles.intro}
+					className={`${styles.intro} ${montserrat.className}`}
 				/>
 				<section>
 					{profile.sub_titles.map((title: string, index: number) => (
@@ -144,7 +143,7 @@ export default function Home({
 								once
 								delay={index / 2 + 0.5}
 								amount={1}
-								className={styles['sub-title']}
+								className={`${styles['sub-title']} ${playfairDisplay.className}`}
 							/>
 							<div className={styles.development}>
 								<Reveal
@@ -182,7 +181,13 @@ export default function Home({
 										x={100}
 										rotateY={360}
 										once
-										className={`${styles.description} ${title === 'Frontend' ? styles.frontend : title === 'Backend' ? styles.backend : styles['full-stack']}`}
+										className={`${styles.description} ${montserrat.className} ${
+											title === 'Frontend'
+												? styles.frontend
+												: title === 'Backend'
+												? styles.backend
+												: styles['full-stack']
+										}`}
 									/>
 								</motion.div>
 							</div>
@@ -197,9 +202,13 @@ export default function Home({
 				duration={1}
 				scale={0}
 				className={styles['action-btn-wrapper']}
+				once
 			>
 				<motion.div whileHover={{ scale: 1.1 }}>
-					<Link href={'/services'} className={styles['action-btn']}>
+					<Link
+						href={'/services'}
+						className={`${styles['action-btn']} ${raleway.className}`}
+					>
 						Check out My Services
 					</Link>
 				</motion.div>
