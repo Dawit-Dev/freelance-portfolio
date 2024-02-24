@@ -88,7 +88,7 @@ const AnimatedCharacter = ({
 				variants={{
 					hidden: {},
 					visible: {
-						transition: { staggerChildren: 0.14, delayChildren: delay },
+						transition: { staggerChildren: 0.035, delayChildren: delay },
 					},
 				}}
 			>

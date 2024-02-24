@@ -7,6 +7,7 @@ import AnimatedCharacter from '../animations/char-animation'
 import AnimatedWord from '../animations/word-animation'
 import Reveal from '@/animations/reveal'
 import FlipCard from './flip-card'
+import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/about.module.css'
 
 type AboutProps = {
@@ -35,9 +36,7 @@ export default function About({
 	const sortedTech: any = technologies.sort((a, b) => a.id - b.id)
 
 	return (
-		<main
-			className={styles['about-main']}
-		>
+		<main className={styles['about-main']}>
 			<div className={styles['about-hero']}>
 				<Image
 					src={`/images/${about.image}`}
@@ -52,7 +51,7 @@ export default function About({
 				/>
 				<AnimatedCharacter
 					text='About Me'
-					className={styles.title}
+					className={`${styles.title} ${raleway.className}`}
 					el={'h1'}
 					y={-20}
 					once
@@ -72,7 +71,11 @@ export default function About({
 								delay={2 + index}
 								// opacity={1}
 								duration={2.5}
-								className={index === 0 ? styles['sub-title'] : styles.remark}
+								className={
+									index === 0
+										? `${styles['sub-title']} ${oswald.className}`
+										: `${styles.remark} ${raleway.className}`
+								}
 							/>
 						</div>
 					))}
@@ -84,7 +87,7 @@ export default function About({
 				amount={0.2}
 				duration={3}
 				once
-				className={styles.bio}
+				className={`${styles.bio} ${montserrat.className}`}
 			>
 				<p>{about.bio}</p>
 			</Reveal>
@@ -93,9 +96,11 @@ export default function About({
 				text='Click the Questions to Reveal their Answers'
 				once
 				y={-20}
-				className={styles.click}
+				className={`${styles.click} ${playfairDisplay.className}`}
 			/>
-			<section className={styles['questions-container']}>
+			<section
+				className={`${styles['questions-container']} ${montserrat.className}`}
+			>
 				{about.questions.map((question, index) => (
 					<Reveal
 						el='div'
@@ -117,6 +122,7 @@ export default function About({
 			<section className={styles['tech-stacks']}>
 				<AnimatedWord
 					el='h3'
+					className={playfairDisplay.className}
 					text='Technology Stacks I Love and Use Proficiently'
 					y={-20}
 					once
@@ -131,7 +137,7 @@ export default function About({
 						}
 					>
 						<AnimatedCharacter
-							className={styles['tech-stack']}
+							className={`${styles['tech-stack']} ${raleway.className}`}
 							el='h3'
 							text={technology.tech_stack}
 							delay={index + 1}
@@ -160,7 +166,9 @@ export default function About({
 											placeholder='blur'
 											blurDataURL={`/images/technologies/${img}`}
 										/>
-										<figcaption>{technology.labels[idx]}</figcaption>
+										<figcaption className={montserrat.className}>
+											{technology.labels[idx]}
+										</figcaption>
 									</figure>
 								</Reveal>
 							))}
@@ -172,12 +180,16 @@ export default function About({
 				<AnimatedWord
 					text='Get to know me better? Please do not hesitate to contact me'
 					el='h3'
+					className={montserrat.className}
 					delay={1}
 					y={-20}
 					once
 				/>
 				<motion.div whileHover={{ scale: 1.1 }}>
-					<Link href={'/contact'} className={styles.contact}>
+					<Link
+						href={'/contact'}
+						className={`${styles.contact} ${raleway.className}`}
+					>
 						{"Let's work together"}
 					</Link>
 				</motion.div>

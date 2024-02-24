@@ -5,14 +5,7 @@ import { motion } from 'framer-motion'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-	faPaperPlane,
-	faSquareCheck,
-	faPhoneVolume,
-	faEnvelope,
-	faMapLocationDot,
-} from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faPaperPlane, faSquareCheck } from '@fortawesome/free-solid-svg-icons'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
@@ -36,6 +29,7 @@ export const theme = createTheme({
 	},
 })
 
+import { oswald, raleway } from '@/styles/fonts'
 import styles from '../styles/contact.module.css'
 
 type InputProps = {
@@ -154,9 +148,7 @@ export default function Contact() {
 	}
 
 	return (
-		<main
-			className={styles['contact-main']}
-		>
+		<main className={styles['contact-main']}>
 			<AnimatedCharacter
 				text={
 					formInputs.name ||
@@ -168,6 +160,7 @@ export default function Contact() {
 						: 'Contact me'
 				}
 				el='h3'
+				className={`${oswald.className}`}
 				y={20}
 				delay={1}
 				scale={0}
@@ -298,7 +291,7 @@ export default function Contact() {
 					<div className={styles['btn-container']}>
 						<motion.button
 							onClick={handleSubmit}
-							className={styles.send}
+							className={`${styles.send} ${raleway.className}`}
 							whileHover={{ scale: 1.1 }}
 						>
 							{buttonText} &nbsp;

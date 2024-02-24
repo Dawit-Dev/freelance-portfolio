@@ -9,6 +9,10 @@
 	align-items: center;
 }
 
+.brand {
+	color: antiquewhite;
+}
+
 .logo {
 	height: 64px;
 	width: auto;

@@ -6,6 +6,10 @@ body {
 	box-sizing: border-box;
 }
 
+h1 {
+	font-family: var(--font-roboto-mono);
+}
+
 
 :root {
 	--font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -128,16 +132,17 @@ body {
 	--testimonial-main-bg: #D2DAFF;
 
 	--testimonial-main-bg: #A58FAA;
-	--testimonial-main-bg: #CFC5A5;
 	--testimonial-main-bg: #A6A9B6;
-	--testimonial-main-bg: #BBBBBB;
-
+	
 	--testimonial-main-bg: #9d8d8f;
+	--testimonial-main-bg: #BBBBBB;
+	--testimonial-main-bg: #CFC5A5;
 	--testimonial-container: #A52A2A;
 	--testimonial-container: #6f2232;
 	--testimonial-container: #CCCCCC;
 	--testimonial-container: #baafb1;
-	--testimonial-text: #d0e1f9;
+	--testimonial-container: #e9e0c3;
+	--testimonial-text: #dbe8fa;
 	--testimonial-text: #DBDEA7;
 	--testimonial-text: #000000;
 	
@@ -200,5 +205,4 @@ body {
 	--footer-border-line: #C9B397;
 	--footer-border-line: #9d8d8f;
 	--footer-border-line: #BBBBBB;
-	--testimonial-main-bg: #9d8d8f;
 }
