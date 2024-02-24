@@ -11,6 +11,7 @@ config.autoAddCss = false
 import Reveal from '@/animations/reveal'
 import { playfairDisplay, montserrat } from '@/styles/fonts'
 import styles from '@/styles/testimonials.module.css'
+import Carousel from './carousel'
 
 type TestimonialsProps = {
 	id: number
@@ -49,7 +50,7 @@ export default function Testimonials({
 						delay={2}
 						once
 					/>
-					{testimonials.map(testimonial => (
+					{/* {testimonials.map(testimonial => (
 						<div key={testimonial.id} className={styles.wrapper}>
 							<div className={styles['image-container']}>
 								<Image
@@ -81,7 +82,8 @@ export default function Testimonials({
 								</section>
 							</div>
 						</div>
-					))}
+					))} */}
+					<Carousel testimonials={testimonials} />
 				</div>
 			</Reveal>
 		</Reveal>

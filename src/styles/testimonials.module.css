@@ -90,3 +90,225 @@
         margin-top: auto;
     }
 }
+
+/* Carousel */
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    color: var(--body-bg);
+    padding: 1rem 0.5rem;
+}
+
+.overlay h1 {
+    width: 90%;
+    margin: auto;
+    font-size: 1rem;
+    margin-bottom: -0.5rem;
+}
+
+.overlay h2 {
+    font-size: 0.9rem;
+}
+
+.carousel-images .carousel-img {
+    width: 100%;
+    height: 480px;
+    padding-top: 84px;
+}
+
+.carousel-images:after {
+    content: '';
+    position: absolute;
+    top: 88%;
+    left: 0;
+    height: 100%;
+    width: 150%;
+    background-color: var(--body-bg);
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    transform: rotate(-7deg);
+}
+
+.slide_direction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-chevron {
+    font-size: 1.5rem;
+    color: var(--body-bg);
+    cursor: pointer;
+}
+
+.left,
+.right {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    margin: auto 20px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.carousel-indicator {
+    margin-top: -75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    background-color: var(--secondary-bg);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+    margin-top: -40px;
+}
+
+.current {
+    background-color: var(--body-bg);
+    cursor: default;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.custom-btn {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--body-bg);
+    transition: transform 0.2s;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+}
+
+.custom-btn:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-images .carousel-img {
+        height: 640px;
+    }
+
+    .overlay {
+        width: 80%;
+        margin: auto;
+        top: 36%;
+        right: 10%;
+        padding: 1rem 0;
+    }
+
+    .overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .overlay h2 {
+        font-size: 1.25rem;
+        margin: auto;
+    }
+
+    .links {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .dot {
+        margin-top: -60px;
+    }
+}
+
+@media screen and (min-width: 1124px) {
+    .overlay {
+        width: 70%;
+        right: 15%;
+        gap: 2rem;
+    }
+
+    .carousel-images {
+        margin: auto;
+        min-height: 100vh;
+    }
+
+    .carousel-images .carousel-img {
+        height: 940px;
+        min-height: 100vh;
+        margin: auto;
+    }
+
+    .fa-chevron {
+        font-size: 2.2rem;
+    }
+
+    .carousel-indicator {
+        gap: 20px;
+    }
+
+    .custom-btn {
+        padding: 0.75rem 1rem;
+        border-radius: 7px;
+        font-size: 1rem;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+    }
+
+    .overlay {
+        top: 25%;
+    }
+
+    .overlay h1 {
+        font-size: 1.75rem;
+        font-weight: 900;
+    }
+
+    .overlay h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .dot {
+        margin-top: -480px;
+    }
+}
