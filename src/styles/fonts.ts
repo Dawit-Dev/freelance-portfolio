@@ -63,8 +63,8 @@ const raleway = Raleway({ subsets: ['cyrillic'] })
 const alegreya = Alegreya({ subsets: ['latin'] })
 
 const playfairDisplay = Playfair_Display({
-	weight: '400',
 	subsets: ['cyrillic'],
+	weight: 'variable',
 })
 
 const oswald = Oswald({ subsets: ['latin'] })
