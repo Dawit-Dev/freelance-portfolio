@@ -90,10 +90,7 @@ export default function Home({
 						scale={1.1}
 						once
 						delay={2}
-						// x={20}
-						// y={20}
 						rotateX={180}
-						// rotateY={-540}
 						opacity={1}
 						duration={1}
 					/>
@@ -175,7 +172,7 @@ export default function Home({
 								>
 									<AnimatedWord
 										text={profile.description[index]}
-										el='h3'
+										el='p'
 										delay={0.5}
 										y={150}
 										x={100}
