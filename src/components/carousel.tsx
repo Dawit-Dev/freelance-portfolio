@@ -27,13 +27,13 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 	const [animate, setAnimate] = useState(false)
 
 	const handleNext = () => {
-		setCurrentIndex(prevIndex =>
+		setCurrentIndex((prevIndex) =>
 			prevIndex + 1 === testimonials.length ? 0 : prevIndex + 1
 		)
 	}
 
 	const handlePrevious = () => {
-		setCurrentIndex(prevIndex =>
+		setCurrentIndex((prevIndex) =>
 			prevIndex - 1 < 0 ? testimonials.length - 1 : prevIndex - 1
 		)
 	}
@@ -80,15 +80,12 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 							<section
 								className={`${styles['personal-info']} ${montserrat.className}`}
 							>
-								<p className={styles.info}>{testimonials[currentIndex].name}</p>
-								<p className={styles.info}>
+								<p className={`${styles.info}`}>{testimonials[currentIndex].name}</p>
+								<p className={`${styles.info} text-muted`}>
 									{testimonials[currentIndex].company}
 								</p>
-								<p className={styles.info}>
+								<p className={`${styles.info} text-muted`}>
 									{testimonials[currentIndex].position}
-								</p>
-								<p className={styles.info}>
-									{testimonials[currentIndex].address}
 								</p>
 							</section>
 						</div>

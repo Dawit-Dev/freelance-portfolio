@@ -120,12 +120,9 @@ export default function Home({
 				<AnimatedCharacter
 					text={profile.greetings}
 					el='h1'
-					// x={200}
 					y={-20}
-					// scale={2}
 					delay={6}
 					duration={1.5}
-					// rotateY={360}
 					rotateX={360}
 					once
 					className={`${styles.greetings} ${oswald.className}`}
