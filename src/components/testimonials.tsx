@@ -23,7 +23,7 @@ export default function Testimonials({
 	testimonials,
 }: {
 	testimonials: TestimonialsProps[]
-	}) {
+}) {
 	const [animate, setAnimate] = useState(false)
 	return (
 		<Reveal el='main' y={200} delay={0.5} duration={1} once amount={0.2}>
@@ -48,9 +48,7 @@ export default function Testimonials({
 						duration={1}
 						once
 					/>
-					<Reveal el='div' y={100} delay={1} duration={1} amount={0.1} once startAnimation={animate}>
-						<Carousel testimonials={testimonials} />
-					</Reveal>
+					<Carousel testimonials={testimonials} />
 				</div>
 			</Reveal>
 		</Reveal>
