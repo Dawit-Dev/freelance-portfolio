@@ -14,6 +14,7 @@ import styles from '../styles/home.module.css'
 type ProfileProps = {
 	id: number
 	title: string
+	greetings: string
 	intro: string | null
 	sub_titles: string[]
 	images: string[]
@@ -116,20 +117,30 @@ export default function Home({
 				</div>
 			</Reveal>
 			<div className={styles.wrapper}>
-				<AnimatedWord
-					text={text}
-					el='p'
-					delay={1}
-					once
-					// y={100}
+				<AnimatedCharacter
+					text={profile.greetings}
+					el='h1'
 					// x={200}
+					y={-20}
+					// scale={2}
+					delay={6}
+					duration={1.5}
 					// rotateY={360}
-					rotateX={180}
-					amount={0.1}
-					scale={1}
-					y={20}
-					className={`${styles.intro} ${montserrat.className}`}
+					rotateX={360}
+					once
+					className={`${styles.greetings} ${oswald.className}`}
 				/>
+				<Reveal el='div' y={40} delay={1} duration={2} amount={0.1} once>
+					<div className={styles['intro-wrapper']}>
+						{text.split('..').map((paragraph, index) => (
+							<div key={index}>
+								<p className={`${styles.intro} ${montserrat.className}`}>
+									{paragraph + '.'}
+								</p>
+							</div>
+						))}
+					</div>
+				</Reveal>
 				<section>
 					{profile.sub_titles.map((title: string, index: number) => (
 						<div key={index}>

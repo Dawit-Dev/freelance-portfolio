@@ -41,3 +41,5 @@ next-env.d.ts
 # environment variable
 .env
 .env.local
+
+draft.txt

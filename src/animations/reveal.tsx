@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useAnimation, useInView } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface RevealProps {
 	children: JSX.Element | JSX.Element[]
@@ -40,22 +40,24 @@ export default function Reveal({
 	duration = 0.3,
 	type,
 	stiffness,
-	startAnimation,
+	startAnimation = false,
 }: RevealProps) {
 	const controls = useAnimation()
 	const ref = useRef(null)
 	const isInView = useInView(ref, { amount, once })
+	const [animate, setAnimate] = useState(false)
 
 	useEffect(() => {
 		let timeout: NodeJS.Timeout
+		setAnimate(startAnimation)
 
 		const start = () => {
 			controls.start('visible')
-			if (startAnimation) {
+			if (animate) {
 				timeout = setTimeout(async () => {
 					await controls.start('hidden')
 					controls.start('visible')
-				}, 1000)
+				}, 4000)
 			}
 		}
 
@@ -66,7 +68,7 @@ export default function Reveal({
 		return () => {
 			clearTimeout(timeout)
 		}
-	}, [isInView, controls, startAnimation])
+	}, [isInView, controls, startAnimation, animate])
 
 	return (
 		<Wrapper className={className}>

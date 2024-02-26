@@ -29,7 +29,7 @@ export default async function RootLayout({
 	const contact = await getContactInfo()
 	return (
 		<html lang='en'>
-			<head>
+			{/* <head>
 				<link
 					rel='stylesheet'
 					href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css'
@@ -40,7 +40,7 @@ export default async function RootLayout({
 					href='https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/sandstone/bootstrap.min.css'
 					rel='stylesheet'
 				/>
-			</head>
+			</head> */}
 			<body className={inter.className}>
 				<Navbar />
 				{children}
