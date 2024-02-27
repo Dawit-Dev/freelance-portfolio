@@ -84,6 +84,12 @@
 	margin: 0 5%;
 }
 
+.highlight {
+	color: var(--bluish-text);
+	font-style: italic;
+	font-weight: 700;
+}
+
 .sub-title {
 	font-size: 1.5rem;
 	font-weight: 700;
