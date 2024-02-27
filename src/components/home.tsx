@@ -50,6 +50,23 @@ export default function Home({
 		hidden: { opacity: 0, x: 100 },
 	}
 
+	const wrapSpanInParagraph = (text: string, regex: RegExp) => {
+		const textArray = text.split(regex)
+		if (regex.test(text)) {
+			return (
+				<p>
+					{textArray[0]}
+					<span key={'key'} className={styles.highlight}>
+						{regex.toString().replaceAll('/', '')}
+					</span>
+					{textArray[1] + '.'}
+				</p>
+			)
+		}
+
+		return text + '.'
+	}
+
 	return (
 		<main className={styles.main}>
 			<Reveal
@@ -129,11 +146,15 @@ export default function Home({
 				/>
 				<Reveal el='div' y={40} delay={1} duration={2} amount={0.1} once>
 					<div className={styles['intro-wrapper']}>
-						{text.split('..').map((paragraph, index) => (
-							<div key={index}>
-								<p className={`${styles.intro} ${montserrat.className}`}>
-									{paragraph + '.'}
-								</p>
+						{text.split(':').map((paragraph, index) => (
+							<div
+								key={index}
+								className={`${styles.intro} ${montserrat.className}`}
+							>
+								{wrapSpanInParagraph(
+									paragraph,
+									/you and I can make a great team!/
+								)}
 							</div>
 						))}
 					</div>

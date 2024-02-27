@@ -106,7 +106,7 @@ export default function About({
 						el='div'
 						scale={0}
 						delay={index / 2}
-						duration={3}
+						duration={1.25}
 						once
 						amount={0.1}
 						key={about.id}

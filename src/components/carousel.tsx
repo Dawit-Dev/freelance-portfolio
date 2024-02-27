@@ -27,13 +27,13 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 	const [animate, setAnimate] = useState(false)
 
 	const handleNext = () => {
-		setCurrentIndex((prevIndex) =>
+		setCurrentIndex(prevIndex =>
 			prevIndex + 1 === testimonials.length ? 0 : prevIndex + 1
 		)
 	}
 
 	const handlePrevious = () => {
-		setCurrentIndex((prevIndex) =>
+		setCurrentIndex(prevIndex =>
 			prevIndex - 1 < 0 ? testimonials.length - 1 : prevIndex - 1
 		)
 	}
@@ -44,52 +44,57 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 
 	return (
 		<div className={styles.carousel}>
-			<Reveal
-				el='div'
-				y={100}
-				delay={1}
-				duration={1}
-				amount={0.1}
-				once
-				startAnimation={animate}
-			>
+			<div>
 				<div className={styles['carousel-container']}>
-					<div key={testimonials[currentIndex].id} className={styles.wrapper}>
-						<div className={styles['image-container']}>
-							<Image
-								src={avatarImage}
-								alt={testimonials[currentIndex].name}
-								className={styles['testimonial-image']}
-							/>
-						</div>
-						<div className={styles['testimonial-container']}>
-							<p className={styles.testimonial}>
-								<FontAwesomeIcon
-									icon={faQuoteLeft}
-									className={styles['fa-quote-left']}
-									onClick={() => setAnimate(!animate)}
-								/>{' '}
-								&nbsp;
-								{testimonials[currentIndex].testimony} &nbsp;
-								<FontAwesomeIcon
-									icon={faQuoteRight}
-									className={styles['fa-quote-right']}
-									onClick={() => setAnimate(!animate)}
+					<Reveal
+						el='div'
+						y={100}
+						delay={0.5}
+						duration={1.5}
+						amount={0.1}
+						once
+						startAnimation={animate}
+						key={testimonials[currentIndex].id}
+					>
+						<div className={styles.wrapper}>
+							<div className={styles['image-container']}>
+								<Image
+									src={avatarImage}
+									alt={testimonials[currentIndex].name}
+									className={styles['testimonial-image']}
 								/>
-							</p>
-							<section
-								className={`${styles['personal-info']} ${montserrat.className}`}
-							>
-								<p className={`${styles.info}`}>{testimonials[currentIndex].name}</p>
-								<p className={`${styles.info} text-muted`}>
-									{testimonials[currentIndex].company}
+							</div>
+							<div className={styles['testimonial-container']}>
+								<p className={styles.testimonial}>
+									<FontAwesomeIcon
+										icon={faQuoteLeft}
+										className={styles['fa-quote-left']}
+										onClick={() => setAnimate(!animate)}
+									/>{' '}
+									&nbsp;
+									{testimonials[currentIndex].testimony} &nbsp;
+									<FontAwesomeIcon
+										icon={faQuoteRight}
+										className={styles['fa-quote-right']}
+										onClick={() => setAnimate(!animate)}
+									/>
 								</p>
-								<p className={`${styles.info} text-muted`}>
-									{testimonials[currentIndex].position}
-								</p>
-							</section>
+								<section
+									className={`${styles['personal-info']} ${montserrat.className}`}
+								>
+									<p className={`${styles.info}`}>
+										{testimonials[currentIndex].name}
+									</p>
+									<p className={`${styles.info} text-muted`}>
+										{testimonials[currentIndex].company}
+									</p>
+									<p className={`${styles.info} text-muted`}>
+										{testimonials[currentIndex].position}
+									</p>
+								</section>
+							</div>
 						</div>
-					</div>
+					</Reveal>
 					<div className={styles['slide_direction']}>
 						<div className={styles.left} onClick={handlePrevious}>
 							<FontAwesomeIcon
@@ -105,7 +110,7 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 						</div>
 					</div>
 				</div>
-			</Reveal>
+			</div>
 			<div className={styles['carousel-indicator']}>
 				{testimonials.map((testimonial, index) => (
 					<div

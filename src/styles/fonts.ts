@@ -54,6 +54,7 @@ const montserrat = Montserrat({
 const merriweather = Merriweather({
 	weight: '900',
 	subsets: ['latin'],
+	style: 'italic',
 })
 
 const crimsonText = Crimson_Text({ weight: '700', subsets: ['latin'] })
@@ -69,7 +70,7 @@ const playfairDisplay = Playfair_Display({
 
 const oswald = Oswald({ subsets: ['latin'] })
 
-const lato = Lato({ subsets: ['latin'], weight: '400' })
+const lato = Lato({ subsets: ['latin'], weight: '400', style: 'italic' })
 
 const robotoSlab = Roboto_Slab({ subsets: ['latin'] })
 
