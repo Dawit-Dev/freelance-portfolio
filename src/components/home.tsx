@@ -14,7 +14,7 @@ import styles from '../styles/home.module.css'
 type ProfileProps = {
 	id: number
 	title: string
-	greetings: string
+	greetings: string | null
 	intro: string | null
 	sub_titles: string[]
 	images: string[]
@@ -40,6 +40,7 @@ export default function Home({
 }) {
 	const rightScrollRef = useRef(null)
 	const text: string = profile.intro!
+	const greetings: string = profile.greetings!
 
 	const rightVariant = {
 		visible: {
@@ -135,7 +136,7 @@ export default function Home({
 			</Reveal>
 			<div className={styles.wrapper}>
 				<AnimatedCharacter
-					text={profile.greetings}
+					text={greetings}
 					el='h1'
 					y={-20}
 					delay={6}
