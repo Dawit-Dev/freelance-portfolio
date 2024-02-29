@@ -48,9 +48,15 @@ h1 {
 	--secondary-bg: #C97878;
 	--secondary-bg: #EBB7B7;
 	--frontend-bg: #EBB7B7;
+	--frontend-bg: #E2B99B;
 	--frontend-bg: #E2BFB3;
+	--frontend-img-bg: #B3D6E2;
+	--frontend-img-bg: #E2B99B;
+	--frontend-img-bg: #E2BFB3;
 	--backend-bg: #2E9CCA;
 	--backend-bg: #9BC4E2;
+	--backend-img-bg: #E2B99B;
+	--backend-img-bg: #9BC4E2;
 	--full-stack-bg: #A09A9D;
 	--full-stack-bg: #A1A1E2;
 	
@@ -66,6 +72,8 @@ h1 {
 	--full-stack-bg: #cec8c0;
 	--full-stack-bg: #E5E1DA;
 	--full-stack-bg: #D0BFFF;
+	--full-stack-img-bg: #EEFFBF;
+	--full-stack-img-bg: #D0BFFF;
 	--tertiary-bg: #7e2a39;
 	--tertiary-bg: #0047AB;
 	--complementary-bg: #379683;

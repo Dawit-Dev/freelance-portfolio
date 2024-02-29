@@ -56,7 +56,6 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 				<AnimatedCharacter
 					el='h4'
 					text={'Turning Your Dreams into Reality'}
-					// repeatInterval={7000}
 					y={20}
 					delay={2}
 					once
@@ -96,11 +95,16 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 									placeholder='blur'
 									blurDataURL={`/images/${service.image}`}
 								/>
-								<p
-									className={`${styles['service-description']} ${montserrat.className}`}
-								>
-									{service.description}
-								</p>
+								<div className={styles['description-wrapper']}>
+									{service.description.split(':').map((desc, idx) => (
+										<p
+											key={idx}
+											className={`${styles['service-description']} ${montserrat.className}`}
+										>
+											{desc}
+										</p>
+									))}
+								</div>
 							</div>
 						</Reveal>
 					</div>
