@@ -3,9 +3,11 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import frontendImage from '../../public/images/frontend.png'
+import backendImage from '../../public/images/backend.jpg'
+import fullstackImage from '../../public/images/full-stack.png'
 import Reveal from '@/animations/reveal'
 import AnimatedCharacter from '../animations/char-animation'
-import AnimatedWord from '../animations/word-animation'
 import Link from 'next/link'
 import Testimonials from './testimonials'
 import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
@@ -46,7 +48,7 @@ export default function Home({
 		visible: {
 			opacity: 1,
 			x: 0,
-			transition: { type: 'spring', stiffness: 30, delay: 0.5, duration: 3 },
+			transition: { type: 'spring', stiffness: 20, delay: 0.5, duration: 3 },
 		},
 		hidden: { opacity: 0, x: 100 },
 	}
@@ -75,8 +77,9 @@ export default function Home({
 				className={styles.hero}
 				scale={0}
 				type='spring'
-				stiffness={30}
-				delay={0.5}
+				stiffness={20}
+				delay={0.2}
+				duration={2}
 				once
 			>
 				<Image
@@ -120,7 +123,6 @@ export default function Home({
 						duration={2}
 						type='spring'
 						stiffness={30}
-						// y={50}
 						once
 					>
 						<div className={`${styles['links-wrapper']} ${raleway.className}`}>
@@ -175,24 +177,38 @@ export default function Home({
 							<div className={styles.development}>
 								<Reveal
 									el='div'
+									className={styles['tech-img-reveal']}
 									x={-100}
 									type='spring'
-									stiffness={30}
+									stiffness={20}
 									delay={0.5}
 									duration={3}
 									once
 								>
-									<Image
-										src={`/images/${profile.images[index]}`}
-										alt={title}
-										loading='eager'
-										className={styles['tech-img']}
-										width={340}
-										height={240}
-										sizes='(min-width: 300px) 100vw'
-										placeholder='blur'
-										blurDataURL={`/images/${profile.images[index]}`}
-									/>
+									<div
+										className={`${styles['tech-img-container']} ${
+											title === 'Frontend'
+												? styles['frontend-img-bg']
+												: title === 'Backend'
+												? styles['backend-img-bg']
+												: styles['full-stack-img-bg']
+										}`}
+									>
+										<Image
+											src={
+												profile.images[index] === 'frontend.png'
+													? frontendImage
+													: profile.images[index] === 'backend.jpg'
+													? backendImage
+													: profile.images[index] === 'full-stack.png'
+													? fullstackImage
+													: ''
+											}
+											alt={title}
+											loading='eager'
+											className={styles['tech-img']}
+										/>
+									</div>
 								</Reveal>
 								<motion.div
 									variants={rightVariant}
@@ -200,22 +216,34 @@ export default function Home({
 									whileInView='visible'
 									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
 								>
-									<AnimatedWord
-										text={profile.description[index]}
-										el='p'
-										delay={0.5}
-										y={150}
-										x={100}
-										rotateY={360}
-										once
-										className={`${styles.description} ${montserrat.className} ${
+									<div
+										className={`${styles['description-wrapper']} ${
 											title === 'Frontend'
 												? styles.frontend
 												: title === 'Backend'
 												? styles.backend
 												: styles['full-stack']
 										}`}
-									/>
+									>
+										{profile.description[index]
+											.split(':')
+											.map((description, index) => (
+												<Reveal
+													key={index}
+													el='div'
+													delay={2 + index}
+													y={50}
+													duration={3}
+													once
+												>
+													<p
+														className={`${styles.description} ${montserrat.className} `}
+													>
+														{description}
+													</p>
+												</Reveal>
+											))}
+									</div>
 								</motion.div>
 							</div>
 						</div>
