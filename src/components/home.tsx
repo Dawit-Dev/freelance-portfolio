@@ -231,9 +231,9 @@ export default function Home({
 												<Reveal
 													key={index}
 													el='div'
-													delay={2 + index}
-													y={50}
-													duration={3}
+													delay={1.5 + index}
+													x={40}
+													duration={1}
 													once
 												>
 													<p

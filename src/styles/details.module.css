@@ -6,6 +6,7 @@
 .project-name {
 	margin: 1rem auto;
 	text-align: center;
+	color: var(--bluish-text);
 }
 
 .details-img {
@@ -14,9 +15,18 @@
 	margin: auto;
 }
 
+.project-name-span {
+	font-weight: 700;
+	color: var(--bluish-text);
+}
+
 .details-summary {
 	margin: 1rem;
 	font-size: 1.25rem;
+}
+
+.details-summary:first-child {
+	margin-top: 2rem;
 }
 
 .link-container {
@@ -46,7 +56,7 @@
 
 @media screen and (min-width: 768px) {
 	.project-name {
-		font-size: 4rem;
+		font-size: 3rem;
 		font-weight: 900;
 	}
 
