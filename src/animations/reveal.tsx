@@ -79,7 +79,6 @@ export default function Reveal({
 				}}
 				ref={ref}
 				initial='hidden'
-				// whileInView='visible'
 				animate={controls}
 				viewport={{ amount, once }}
 				exit={{ opacity: 0, x: 0, y: 0 }}
