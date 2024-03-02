@@ -44,6 +44,15 @@ export default function Home({
 	const text: string = profile.intro!
 	const greetings: string = profile.greetings!
 
+	const leftVariant = {
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: { type: 'spring', stiffness: 20, delay: 0.5, duration: 3 },
+		},
+		hidden: { opacity: 0, x: -100 },
+	}
+
 	const rightVariant = {
 		visible: {
 			opacity: 1,
@@ -147,9 +156,17 @@ export default function Home({
 					once
 					className={`${styles.greetings} ${oswald.className}`}
 				/>
-				<Reveal el='div' y={40} delay={1} duration={2} amount={0.1} once>
-					<div className={styles['intro-wrapper']}>
-						{text.split(':').map((paragraph, index) => (
+				<div className={styles['intro-wrapper']}>
+					{text.split(':').map((paragraph, index) => (
+						<Reveal
+							key={index}
+							el='div'
+							y={40}
+							delay={1 + index}
+							duration={2}
+							amount={0.1}
+							once
+						>
 							<div
 								key={index}
 								className={`${styles.intro} ${montserrat.className}`}
@@ -159,9 +176,9 @@ export default function Home({
 									/you and I can make a great team!/
 								)}
 							</div>
-						))}
-					</div>
-				</Reveal>
+						</Reveal>
+					))}
+				</div>
 				<section>
 					{profile.sub_titles.map((title: string, index: number) => (
 						<div key={index}>
@@ -175,75 +192,65 @@ export default function Home({
 								className={`${styles['sub-title']} ${playfairDisplay.className}`}
 							/>
 							<div className={styles.development}>
-								<Reveal
-									el='div'
-									className={styles['tech-img-reveal']}
-									x={-100}
-									type='spring'
-									stiffness={20}
-									delay={0.5}
-									duration={3}
-									once
-								>
-									<div
-										className={`${styles['tech-img-container']} ${
-											title === 'Frontend'
-												? styles['frontend-img-bg']
-												: title === 'Backend'
-												? styles['backend-img-bg']
-												: styles['full-stack-img-bg']
-										}`}
-									>
-										<Image
-											src={
-												profile.images[index] === 'frontend.png'
-													? frontendImage
-													: profile.images[index] === 'backend.jpg'
-													? backendImage
-													: profile.images[index] === 'full-stack.png'
-													? fullstackImage
-													: ''
-											}
-											alt={title}
-											loading='eager'
-											className={styles['tech-img']}
-										/>
-									</div>
-								</Reveal>
 								<motion.div
+									className={`${styles['tech-img-container']} ${
+										title === 'Frontend'
+											? styles['frontend-img-bg']
+											: title === 'Backend'
+											? styles['backend-img-bg']
+											: styles['full-stack-img-bg']
+									}`}
+									variants={leftVariant}
+									initial='hidden'
+									whileInView='visible'
+									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
+								>
+									<Image
+										src={
+											profile.images[index] === 'frontend.png'
+												? frontendImage
+												: profile.images[index] === 'backend.jpg'
+												? backendImage
+												: profile.images[index] === 'full-stack.png'
+												? fullstackImage
+												: ''
+										}
+										alt={title}
+										loading='eager'
+										className={styles['tech-img']}
+									/>
+								</motion.div>
+								<motion.div
+									className={`${styles['description-wrapper']} ${
+										title === 'Frontend'
+											? styles.frontend
+											: title === 'Backend'
+											? styles.backend
+											: styles['full-stack']
+									}`}
 									variants={rightVariant}
 									initial='hidden'
 									whileInView='visible'
 									viewport={{ root: rightScrollRef, amount: 0.5, once: true }}
 								>
-									<div
-										className={`${styles['description-wrapper']} ${
-											title === 'Frontend'
-												? styles.frontend
-												: title === 'Backend'
-												? styles.backend
-												: styles['full-stack']
-										}`}
-									>
-										{profile.description[index]
-											.split(':')
-											.map((description, index) => (
-												<Reveal
-													key={index}
-													el='div'
-													delay={1.5 + index}
-													x={40}
-													duration={1}
-													once
+									{profile.description[index]
+										.split(':')
+										.map((description, index) => (
+											<Reveal
+												key={index}
+												el='div'
+												delay={1.5 + index}
+												x={40}
+												duration={1}
+												once
+											>
+												<p
+													className={`${styles.description} ${montserrat.className} `}
 												>
-													<p
-														className={`${styles.description} ${montserrat.className} `}
-													>
-														{description}
-													</p>
-												</Reveal>
-											))}
-									</div>
+													{description}
+												</p>
+											</Reveal>
+										))}
 								</motion.div>
 							</div>
 						</div>
