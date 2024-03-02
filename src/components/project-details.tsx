@@ -19,6 +19,23 @@ type ProjectProps = {
 function ProjectDetails({ project }: { project: ProjectProps }) {
 	const summary: string = project.summary!
 
+	const wrapSpanInParagraph = (text: string, regex: RegExp) => {
+		const textArray = text.split('www.timeout.com/film/best-movies-of-all-time')
+		if (regex.test(text)) {
+			return (
+				<p>
+					{textArray[0]}
+					<span key={'key'} className={styles['external-link']}>
+						{'www.timeout.com/film/best-movies-of-all-time'}
+					</span>
+					{textArray[1] + '.'}
+				</p>
+			)
+		}
+
+		return text + '.'
+	}
+
 	return (
 		<div className={styles['details-main']}>
 			<AnimatedCharacter
@@ -62,7 +79,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 											{project.title}
 										</span>
 									)}{' '}
-									{paragraph}
+									{wrapSpanInParagraph(paragraph, /www.timeout.com/)}
 								</p>
 							</Reveal>
 						))}

@@ -25,6 +25,12 @@
 	font-size: 1.25rem;
 }
 
+.external-link {
+	font-style: italic;
+	font-weight: 700;
+	color: var(--bluish-text);
+}
+
 .details-summary:first-child {
 	margin-top: 2rem;
 }
