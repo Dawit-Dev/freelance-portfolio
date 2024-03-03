@@ -35,6 +35,38 @@ export default function About({
 }) {
 	const sortedTech: any = technologies.sort((a, b) => a.id - b.id)
 
+	const wrapSpanInParagraph = (
+		text: string,
+		regex: RegExp,
+		languages: RegExp
+	) => {
+		if (regex.test(text)) {
+			const textArray = text.split(regex)
+			return (
+				<p>
+					{textArray[0]}
+					<span className={`${styles['my-name']} ${oswald.className}`}>
+						{regex.toString().replaceAll('/', '')}
+					</span>
+					{textArray[1] + '.'}
+				</p>
+			)
+		} else if (languages.test(text)) {
+			const textArray = text.split(languages)
+			return (
+				<p>
+					{textArray[0]}
+					<span className={styles.languages}>
+						{languages.toString().replaceAll('/', '')}
+					</span>
+					{textArray[1] + '.'}
+				</p>
+			)
+		}
+
+		return <p>{text + '.'}</p>
+	}
+
 	return (
 		<main className={styles['about-main']}>
 			<div className={styles['about-hero']}>
@@ -61,15 +93,13 @@ export default function About({
 					{about.title.split('.').map((title, index) => (
 						<div key={index}>
 							<AnimatedWord
-								el={index === 0 ? 'h4' : 'p'}
+								el={index === 0 ? 'h3' : 'p'}
 								text={index === 0 ? title + '.' : title}
 								once
 								y={50}
-								rotateY={360}
+								rotateY={180}
 								rotateX={540}
-								// x={50}
 								delay={2 + index}
-								// opacity={1}
 								duration={2.5}
 								className={
 									index === 0
@@ -81,16 +111,26 @@ export default function About({
 					))}
 				</div>
 			</div>
-			<Reveal
-				el='div'
-				y={100}
-				amount={0.2}
-				duration={3}
-				once
-				className={`${styles.bio} ${montserrat.className}`}
-			>
-				<p>{about.bio}</p>
-			</Reveal>
+			<section className={styles['bio-wrapper']}>
+				{about.bio.split(':').map((paragraph, index) => (
+					<Reveal
+						key={index}
+						el='div'
+						y={40}
+						amount={0.2}
+						duration={1.5}
+						delay={index + 1}
+						once
+						className={`${styles.bio} ${montserrat.className}`}
+					>
+						{wrapSpanInParagraph(
+							paragraph,
+							/Dawit Abraha/,
+							/HTML, CSS, JavaScript, Node.js, React, Next, PostgreSQL, Python, Flask and Django/
+						)}
+					</Reveal>
+				))}
+			</section>
 			<AnimatedWord
 				el='h3'
 				text='Click the Questions to Reveal their Answers'
@@ -110,6 +150,7 @@ export default function About({
 						once
 						amount={0.1}
 						key={about.id}
+						className={raleway.className}
 					>
 						<FlipCard
 							question={question}

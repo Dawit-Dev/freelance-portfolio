@@ -1,12 +1,12 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 import AnimatedCharacter from '../animations/char-animation'
 import { motion } from 'framer-motion'
 import { oswald, montserrat } from '@/styles/fonts'
 import styles from '../styles/details.module.css'
 import Reveal from '@/animations/reveal'
+import ProjectImage from './project-image'
 
 type ProjectProps = {
 	id: number
@@ -19,21 +19,21 @@ type ProjectProps = {
 function ProjectDetails({ project }: { project: ProjectProps }) {
 	const summary: string = project.summary!
 
-	const wrapSpanInParagraph = (text: string, regex: RegExp) => {
-		const textArray = text.split('www.timeout.com/film/best-movies-of-all-time')
-		if (regex.test(text)) {
+	const wrapSpanInParagraph = (text: string, span: string) => {
+		const textArray = text.split(span)
+		if (text.includes(span)) {
 			return (
 				<p>
 					{textArray[0]}
 					<span key={'key'} className={styles['external-link']}>
-						{'www.timeout.com/film/best-movies-of-all-time'}
+						{`https://${span}`}
 					</span>
-					{textArray[1] + '.'}
+					{textArray[1]}
 				</p>
 			)
 		}
 
-		return text + '.'
+		return text
 	}
 
 	return (
@@ -49,17 +49,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 			{project && (
 				<div className={styles['details-container']}>
 					<Reveal el='div' delay={1} duration={2} scale={0} once>
-						<Image
-							src={`/images/${project.image}`}
-							alt={project.title}
-							loading='eager'
-							className={styles['details-img']}
-							width={340}
-							height={240}
-							sizes='(min-width: 300px) 100vw'
-							placeholder='blur'
-							blurDataURL={`/images/${project.image}`}
-						/>
+						<ProjectImage src={project.image} alt={project.title} />
 					</Reveal>
 					<div
 						className={`${styles['details-summary-wrapper']} ${montserrat.className}`}
@@ -79,7 +69,10 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 											{project.title}
 										</span>
 									)}{' '}
-									{wrapSpanInParagraph(paragraph, /www.timeout.com/)}
+									{wrapSpanInParagraph(
+										paragraph,
+										'www.timeout.com/film/best-movies-of-all-time'
+									)}
 								</p>
 							</Reveal>
 						))}

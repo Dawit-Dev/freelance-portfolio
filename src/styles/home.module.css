@@ -68,7 +68,6 @@
 .greetings {
 	margin: 1rem 5%;
 	font-weight: 700;
-	color: var(--tertiary-bg);
 	color: var(--active-nav-bg);
 	color: var(--bluish-text);
 	text-align: center;
