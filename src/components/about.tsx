@@ -48,7 +48,7 @@ export default function About({
 					<span className={`${styles['my-name']} ${oswald.className}`}>
 						{regex.toString().replaceAll('/', '')}
 					</span>
-					{textArray[1] + '.'}
+					{textArray[1]}
 				</p>
 			)
 		} else if (languages.test(text)) {
@@ -59,12 +59,12 @@ export default function About({
 					<span className={styles.languages}>
 						{languages.toString().replaceAll('/', '')}
 					</span>
-					{textArray[1] + '.'}
+					{textArray[1]}
 				</p>
 			)
 		}
 
-		return <p>{text + '.'}</p>
+		return <p>{text}</p>
 	}
 
 	return (

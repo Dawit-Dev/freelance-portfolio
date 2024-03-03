@@ -62,7 +62,7 @@
 	position: absolute;
 	width: 100%;
 	height: 3px;
-	background-color: var(--active-nav-bg);
+	background-color: var(--hamburger-menu);
 	transition-duration: 0.25s;
 }
 

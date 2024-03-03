@@ -27,11 +27,11 @@ h1 {
 	--body-bg: #988B75;
 	--light-bg: #EAECCC;
 	--primary-bg: #1e2037;
-	--active-nav-bg: #A52A2A;
-	--active-nav-bg: #990f02;
 	--active-nav-bg: #3A053A;
 	--active-nav-bg: #4f0147;
 	--active-nav-bg: #35012c;
+	--active-nav-bg: #990f02;
+	--active-nav-bg: #A52A2A;
 	--active-nav-bg: #2d3033;
 	--secondary-bg: #a881af;
 	--secondary-bg: #9a87b4;
@@ -223,4 +223,6 @@ h1 {
 	--footer-border-line: #C9B397;
 	--footer-border-line: #9d8d8f;
 	--footer-border-line: #BBBBBB;
+
+	--hamburger-menu: #990f02;
 }
