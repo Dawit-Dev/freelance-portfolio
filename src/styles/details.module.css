@@ -9,12 +9,6 @@
 	color: var(--bluish-text);
 }
 
-.details-img {
-	width: 100%;
-	height: auto;
-	margin: auto;
-}
-
 .project-name-span {
 	font-weight: 700;
 	color: var(--bluish-text);
@@ -22,7 +16,6 @@
 
 .details-summary {
 	margin: 1rem;
-	font-size: 1.25rem;
 }
 
 .external-link {
@@ -61,18 +54,19 @@
 }
 
 @media screen and (min-width: 768px) {
+	.details-main {
+		width: 85%;
+		margin: auto;
+	}
+
 	.project-name {
 		font-size: 3rem;
 		font-weight: 900;
 	}
 
-	.details-img {
-		width: 85%;
-		margin: auto 7.5%;
-	}
 	.details-summary {
-		margin: 1rem 7.5%;
-		font-size: 1.5rem;
+		margin: 1rem 0;
+		font-size: 1.25rem;
 	}
 	.live-demo {
 		font-size: 1.75rem;

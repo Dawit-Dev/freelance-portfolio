@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
+import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/about.module.css'
 
 type FlipCardProps = {
@@ -34,7 +35,7 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 						document.addEventListener('click', onClickOutsideListener)
 					}}
 				>
-					<h4>{question}</h4>
+					<h4 className={raleway.className}>{question}</h4>
 				</div>
 				<div
 					className={styles.answer}
@@ -43,7 +44,7 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 						document.addEventListener('click', onClickOutsideListener)
 					}}
 				>
-					<h4>{answer}</h4>
+					<h4 className={raleway.className}>{answer}</h4>
 				</div>
 			</ReactCardFlip>
 		</div>

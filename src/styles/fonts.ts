@@ -47,8 +47,7 @@ const titanOne = Titan_One({
 })
 
 const montserrat = Montserrat({
-	weight: '500',
-	subsets: ['latin'],
+	subsets: ['cyrillic'],
 })
 
 const merriweather = Merriweather({
@@ -68,7 +67,7 @@ const playfairDisplay = Playfair_Display({
 	weight: 'variable',
 })
 
-const oswald = Oswald({ subsets: ['latin'] })
+const oswald = Oswald({ subsets: ['latin'], weight: 'variable' })
 
 const lato = Lato({ subsets: ['latin'], weight: '400', style: 'italic' })
 
