@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Reveal from '@/animations/reveal'
 import AnimatedWord from '../animations/word-animation'
 import AnimatedCharacter from '../animations/char-animation'
-import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import { raleway, playfairDisplay, montserrat } from '@/styles/fonts'
 import styles from '../styles/services.module.css'
 
 type ServiceProps = {
@@ -50,7 +50,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 				once
 				className={styles.headings}
 			>
-				<h1 className={`${styles['primary-heading']} ${oswald.className}`}>
+				<h1 className={`${styles['primary-heading']} ${raleway.className}`}>
 					Areas of My Services
 				</h1>
 				<AnimatedCharacter
@@ -67,7 +67,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 					<div key={service.id} className={styles['service-container']}>
 						<AnimatedCharacter
 							text={service.name}
-							el='h3'
+							el='h2'
 							y={-20}
 							once
 							className={`${styles['service-name']} ${playfairDisplay.className}`}
@@ -117,7 +117,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 						el='h3'
 						once
 						y={-20}
-						className={`${styles.invite} ${montserrat.className}`}
+						className={`${styles.invite} ${raleway.className}`}
 					/>
 					<motion.div
 						whileHover={{ scale: 1.1, color: 'var(--secondary-text)' }}

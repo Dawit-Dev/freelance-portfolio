@@ -3,7 +3,7 @@
 import React from 'react'
 import AnimatedCharacter from '../animations/char-animation'
 import { motion } from 'framer-motion'
-import { oswald, montserrat } from '@/styles/fonts'
+import { raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/details.module.css'
 import Reveal from '@/animations/reveal'
 import ProjectImage from './project-image'
@@ -44,7 +44,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 				delay={0.5}
 				scale={0}
 				once
-				className={`${styles['project-name']} ${oswald.className}`}
+				className={`${styles['project-name']} ${raleway.className}`}
 			/>
 			{project && (
 				<div className={styles['details-container']}>
@@ -89,7 +89,7 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 						href={project.demo}
 						target='_blank'
 						rel='noreferrer'
-						className={styles['live-demo']}
+						className={`${styles['live-demo']} ${raleway.className}`}
 					>
 						Visit {project.title}
 					</a>

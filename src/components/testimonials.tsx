@@ -3,7 +3,7 @@
 import AnimatedWord from '@/animations/word-animation'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Reveal from '@/animations/reveal'
-import { playfairDisplay } from '@/styles/fonts'
+import { raleway, playfairDisplay } from '@/styles/fonts'
 import styles from '@/styles/testimonials.module.css'
 import Carousel from './carousel'
 
@@ -35,7 +35,7 @@ export default function Testimonials({
 			>
 				<div>
 					<AnimatedWord
-						className={`${styles.title} ${playfairDisplay.className}`}
+						className={`${styles.title} ${raleway.className}`}
 						el='h3'
 						text='Testimonials about my services and software products'
 						y={-20}

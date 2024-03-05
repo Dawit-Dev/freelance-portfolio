@@ -7,7 +7,7 @@ import AnimatedCharacter from '../animations/char-animation'
 import AnimatedWord from '../animations/word-animation'
 import Reveal from '@/animations/reveal'
 import FlipCard from './flip-card'
-import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import { raleway, playfairDisplay, montserrat } from '@/styles/fonts'
 import styles from '../styles/about.module.css'
 
 type AboutProps = {
@@ -45,7 +45,7 @@ export default function About({
 			return (
 				<p>
 					{textArray[0]}
-					<span className={`${styles['my-name']} ${oswald.className}`}>
+					<span className={`${styles['my-name']} ${raleway.className}`}>
 						{regex.toString().replaceAll('/', '')}
 					</span>
 					{textArray[1]}
@@ -103,7 +103,7 @@ export default function About({
 								duration={2.5}
 								className={
 									index === 0
-										? `${styles['sub-title']} ${oswald.className}`
+										? `${styles['sub-title']} ${raleway.className}`
 										: `${styles.remark} ${raleway.className}`
 								}
 							/>
@@ -178,7 +178,7 @@ export default function About({
 						}
 					>
 						<AnimatedCharacter
-							className={`${styles['tech-stack']} ${raleway.className}`}
+							className={`${styles['tech-stack']} ${playfairDisplay.className}`}
 							el='h3'
 							text={technology.tech_stack}
 							delay={index + 1}
@@ -221,7 +221,7 @@ export default function About({
 				<AnimatedWord
 					text='Get to know me better? Please do not hesitate to contact me'
 					el='h3'
-					className={montserrat.className}
+					className={raleway.className}
 					delay={1}
 					y={-20}
 					once
