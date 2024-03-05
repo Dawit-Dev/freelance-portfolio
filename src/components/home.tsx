@@ -10,7 +10,7 @@ import Reveal from '@/animations/reveal'
 import AnimatedCharacter from '../animations/char-animation'
 import Link from 'next/link'
 import Testimonials from './testimonials'
-import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import { raleway, playfairDisplay, montserrat } from '@/styles/fonts'
 import styles from '../styles/home.module.css'
 
 type ProfileProps = {
@@ -113,7 +113,7 @@ export default function Home({
 					placeholder='blur'
 					blurDataURL={'hero-bg.jpg'}
 				/>
-				<div className={`${styles['overlay-text']} ${oswald.className}`}>
+				<div className={`${styles['overlay-text']} ${raleway.className}`}>
 					<AnimatedCharacter
 						text={profile.title}
 						className={`${styles.title}`}
@@ -154,7 +154,7 @@ export default function Home({
 					duration={1.5}
 					rotateX={360}
 					once
-					className={`${styles.greetings} ${oswald.className}`}
+					className={`${styles.greetings} ${raleway.className}`}
 				/>
 				<div className={styles['intro-wrapper']}>
 					{text.split(':').map((paragraph, index) => (
@@ -239,7 +239,7 @@ export default function Home({
 											<Reveal
 												key={index}
 												el='div'
-												delay={1.5 + index}
+												delay={index === 0 ? 2 : index + 2}
 												x={40}
 												duration={1}
 												once

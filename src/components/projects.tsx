@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import AnimatedCharacter from '../animations/char-animation'
 import { useRouter, usePathname } from 'next/navigation'
 import ProjectImage from './project-image'
-import { oswald, playfairDisplay, raleway } from '@/styles/fonts'
+import { raleway, playfairDisplay } from '@/styles/fonts'
 import styles from '../styles/projects.module.css'
 
 type ProjectProps = {
@@ -43,7 +43,7 @@ export default function Projects({ projects }: { projects: ProjectProps[] }) {
 				duration={1.5}
 				rotateY={360}
 				once
-				className={`${styles['page-title']} ${oswald.className}`}
+				className={`${styles['page-title']} ${raleway.className}`}
 			/>
 			<div className={styles['projects-wrapper']}>
 				{projects &&

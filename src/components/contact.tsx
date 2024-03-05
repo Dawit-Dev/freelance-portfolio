@@ -29,7 +29,7 @@ export const theme = createTheme({
 	},
 })
 
-import { oswald, raleway } from '@/styles/fonts'
+import { raleway, playfairDisplay, montserrat } from '@/styles/fonts'
 import styles from '../styles/contact.module.css'
 
 type InputProps = {
@@ -148,7 +148,7 @@ export default function Contact() {
 	}
 
 	return (
-		<main className={styles['contact-main']}>
+		<main className={`${styles['contact-main']} ${montserrat.className}`}>
 			<AnimatedCharacter
 				text={
 					formInputs.name ||
@@ -160,7 +160,7 @@ export default function Contact() {
 						: 'Contact me'
 				}
 				el='h3'
-				className={`${oswald.className}`}
+				className={`${raleway.className}`}
 				y={20}
 				delay={1}
 				scale={0}

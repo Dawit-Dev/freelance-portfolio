@@ -101,6 +101,7 @@
 	align-items: center;
 	text-decoration: none;
 	background-color: var(--active-nav-bg);
+	background-color: var(--accent-color);
 	color: var(--secondary-text);
 	box-shadow: inset 0 0 0 0 var(--buttons-hover-bg);
 	transition: color 0.7s ease-in-out, box-shadow 0.7s ease-in-out;

@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import avatarImage from '../../public/images/avatar.jpg'
-import { montserrat } from '@/styles/fonts'
+import { raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/testimonials.module.css'
 import Reveal from '@/animations/reveal'
 
@@ -64,7 +64,9 @@ const Carousel = ({ testimonials }: { testimonials: TestimonialsProps[] }) => {
 									className={styles['testimonial-image']}
 								/>
 							</div>
-							<div className={styles['testimonial-container']}>
+							<div
+								className={`${styles['testimonial-container']} ${raleway.className}`}
+							>
 								<p className={styles.testimonial}>
 									<FontAwesomeIcon
 										icon={faQuoteLeft}
