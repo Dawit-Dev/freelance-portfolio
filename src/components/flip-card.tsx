@@ -8,10 +8,9 @@ import styles from '../styles/about.module.css'
 type FlipCardProps = {
 	question: string
 	answer: string
-	id: number
 }
 
-function FlipCard({ question, answer, id }: FlipCardProps) {
+function FlipCard({ question, answer }: FlipCardProps) {
 	const [flip, setFlip] = useState(false)
 
 	const onClickOutsideListener = () => {
@@ -22,7 +21,6 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 	return (
 		<div className={styles['flip-card-container']}>
 			<ReactCardFlip
-				key={id}
 				isFlipped={flip}
 				flipDirection='vertical'
 				flipSpeedFrontToBack={1.5}

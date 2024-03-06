@@ -152,11 +152,7 @@ export default function About({
 						key={about.id}
 						className={raleway.className}
 					>
-						<FlipCard
-							question={question}
-							answer={about.answers[index]}
-							id={about.id}
-						/>
+						<FlipCard question={question} answer={about.answers[index]} />
 					</Reveal>
 				))}
 			</section>
