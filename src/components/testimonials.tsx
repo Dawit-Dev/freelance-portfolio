@@ -3,7 +3,7 @@
 import AnimatedWord from '@/animations/word-animation'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Reveal from '@/animations/reveal'
-import { raleway, playfairDisplay } from '@/styles/fonts'
+import { raleway } from '@/styles/fonts'
 import styles from '@/styles/testimonials.module.css'
 import Carousel from './carousel'
 

@@ -29,7 +29,7 @@ export const theme = createTheme({
 	},
 })
 
-import { raleway, playfairDisplay, montserrat } from '@/styles/fonts'
+import { raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/contact.module.css'
 
 type InputProps = {

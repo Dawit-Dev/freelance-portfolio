@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import ReactCardFlip from 'react-card-flip'
-import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import { raleway } from '@/styles/fonts'
 import styles from '../styles/about.module.css'
 
 type FlipCardProps = {
@@ -22,6 +22,7 @@ function FlipCard({ question, answer, id }: FlipCardProps) {
 	return (
 		<div className={styles['flip-card-container']}>
 			<ReactCardFlip
+				key={id}
 				isFlipped={flip}
 				flipDirection='vertical'
 				flipSpeedFrontToBack={1.5}

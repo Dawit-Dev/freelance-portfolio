@@ -9,15 +9,13 @@ import {
 	faCopyright,
 } from '@fortawesome/free-solid-svg-icons'
 import {
-	faGithub,
-	faSquareGithub,
-	faLinkedin,
+	faGithub, 
 	faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
-import { oswald, playfairDisplay, raleway, montserrat } from '@/styles/fonts'
+import { raleway, montserrat } from '@/styles/fonts'
 import styles from '../styles/footer.module.css'
 
 type ContactProps = {
