@@ -1,4 +1,4 @@
-import prisma from '@/lib/db'
+import prisma from '@/lib/client'
 import ProjectDetails from '@/components/project-details'
 
 export async function generateStaticParams() {

@@ -140,6 +140,8 @@
 	.custom-nav-item .active,
 	.menu__item:hover {
 		background-color: var(--accent-color) !important;
+		background-color: var(--hamburger-menu) !important;
+		background-color: var(--footer-bg) !important;
 	}
 
 	.menu__btn {

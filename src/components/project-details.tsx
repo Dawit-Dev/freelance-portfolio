@@ -91,7 +91,9 @@ function ProjectDetails({ project }: { project: ProjectProps }) {
 						rel='noreferrer'
 						className={`${styles['live-demo']} ${raleway.className}`}
 					>
-						Visit {project.title}
+						Visit{' '}
+						{project.title.length > 22 ? 'Live Demo'
+							: project.title}
 					</a>
 				</motion.div>
 			</Reveal>

@@ -20,6 +20,7 @@ type AnimatedCharacterProps = {
 	delayTimeout?: number
 	rotateX?: number
 	rotateY?: number
+	stagger?: number
 }
 
 const AnimatedCharacter = ({
@@ -38,6 +39,7 @@ const AnimatedCharacter = ({
 	delayTimeout,
 	rotateX,
 	rotateY,
+	stagger = 0.035,
 }: AnimatedCharacterProps) => {
 	const textArray = Array.isArray(text) ? text : [text]
 	const controls = useAnimation()
@@ -88,7 +90,7 @@ const AnimatedCharacter = ({
 				variants={{
 					hidden: {},
 					visible: {
-						transition: { staggerChildren: 0.035, delayChildren: delay },
+						transition: { staggerChildren: stagger, delayChildren: delay },
 					},
 				}}
 			>

@@ -217,16 +217,16 @@
 	}
 
 	.frontend-img-bg {
-		background-color: var(--frontend-img-bg);
+		background-color: var(--frontend-bg);
 	}
 
 	.backend-img-bg {
 		padding: 0;
-		background-color: var(--backend-img-bg);
+		background-color: var(--backend-bg);
 	}
 
 	.full-stack-img-bg {
-		background-color: var(--full-stack-img-bg);
+		background-color: var(--full-stack-bg);
 	}
 
 	.description-wrapper {

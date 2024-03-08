@@ -81,14 +81,6 @@ export default function About({
 					placeholder='blur'
 					blurDataURL={`/images/${about.image}`}
 				/>
-				<AnimatedCharacter
-					text='About Me'
-					className={`${styles.title} ${raleway.className}`}
-					el={'h1'}
-					y={-20}
-					once
-					delay={1}
-				/>
 				<div className={styles['overlay-text']}>
 					{about.title.split('.').map((title, index) => (
 						<div key={index}>
@@ -98,9 +90,9 @@ export default function About({
 								once
 								y={50}
 								rotateY={180}
-								rotateX={540}
-								delay={2 + index}
-								duration={2.5}
+								rotateX={180}
+								delay={0.5 + index}
+								duration={1}
 								className={
 									index === 0
 										? `${styles['sub-title']} ${raleway.className}`
@@ -111,6 +103,15 @@ export default function About({
 					))}
 				</div>
 			</div>
+			<AnimatedCharacter
+				text='About Me'
+				className={`${styles.title} ${raleway.className}`}
+				el={'h1'}
+				y={-20}
+				stagger={0.075}
+				once
+				delay={1}
+			/>
 			<section className={styles['bio-wrapper']}>
 				{about.bio.split(':').map((paragraph, index) => (
 					<Reveal
@@ -179,6 +180,7 @@ export default function About({
 							text={technology.tech_stack}
 							delay={index + 1}
 							x={200}
+							stagger={0.078}
 							once
 						/>
 						<div className={styles['tech-stack-images']}>

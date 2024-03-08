@@ -1,5 +1,5 @@
-import prisma from "../../lib/db"
-import Projects from "@/components/projects"
+import prisma from '../../lib/client'
+import Projects from '@/components/projects'
 
 const getProjects = async () => {
 	const projects = await prisma.project.findMany()

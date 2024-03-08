@@ -58,6 +58,7 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 					text={'Turning Your Dreams into Reality'}
 					y={20}
 					delay={2}
+					stagger={0.05}
 					once
 					className={`${styles['secondary-heading']} ${raleway.className}`}
 				/>
@@ -69,13 +70,15 @@ export default function Services({ services }: { services: ServiceProps[] }) {
 							text={service.name}
 							el='h2'
 							y={-20}
+							delay={index === 0 ? 3 : index / 2}
+							stagger={0.14}
 							once
 							className={`${styles['service-name']} ${playfairDisplay.className}`}
 						/>
 						<Reveal
 							el='div'
 							y={100}
-							delay={2}
+							delay={index === 0 ? 5 : (index + 2) / 2}
 							amount={0.1}
 							duration={1.5}
 							once
