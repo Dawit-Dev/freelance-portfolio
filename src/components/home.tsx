@@ -124,6 +124,7 @@ export default function Home({
 						rotateX={180}
 						opacity={1}
 						duration={1}
+						stagger={0.035}
 					/>
 					<Reveal
 						el='div'
@@ -153,6 +154,7 @@ export default function Home({
 					delay={6}
 					duration={1.5}
 					rotateX={360}
+					stagger={0.05}
 					once
 					className={`${styles.greetings} ${raleway.className}`}
 				/>
@@ -187,6 +189,7 @@ export default function Home({
 								el={'h3'}
 								y={20}
 								once
+								stagger={0.14}
 								delay={index / 2 + 0.5}
 								amount={1}
 								className={`${styles['sub-title']} ${playfairDisplay.className}`}

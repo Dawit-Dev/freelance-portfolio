@@ -34,7 +34,7 @@ function FlipCard({ question, answer }: FlipCardProps) {
 						document.addEventListener('click', onClickOutsideListener)
 					}}
 				>
-					<h4 className={raleway.className}>{question}</h4>
+					<p className={raleway.className}>{question}</p>
 				</div>
 				<div
 					className={styles.answer}
@@ -43,7 +43,7 @@ function FlipCard({ question, answer }: FlipCardProps) {
 						document.addEventListener('click', onClickOutsideListener)
 					}}
 				>
-					<h4 className={raleway.className}>{answer}</h4>
+					<p className={raleway.className}>{answer}</p>
 				</div>
 			</ReactCardFlip>
 		</div>

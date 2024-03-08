@@ -1,4 +1,4 @@
-import prisma from '@/lib/db'
+import prisma from '@/lib/client'
 import Home from '../components/home'
 
 const getProfile = async () => {

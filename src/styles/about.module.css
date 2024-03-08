@@ -4,7 +4,6 @@
 }
 
 .about-hero {
-	background-color: blue;
 	position: relative;
 	display: inline-block;
 	width: 100%;
@@ -36,11 +35,9 @@
 
 .title {
 	font-size: 1.5rem;
-	position: absolute;
-	color: white;
-	top: 0;
-	left: 2rem;
-	/* margin-top: 1rem; */
+	font-weight: 700;
+	color: var(--accent-color);
+	margin-top: 1rem;
 }
 
 
@@ -57,46 +54,46 @@
 	color: var(--footer-primary-text);
 }
 
-.bio-wrapper {
+.bio-wrapper,
+.title {
 	padding: 0 1rem;
 }
 
 .my-name {
 	font-size: 1.5rem;
 	font-weight: 600;
-	color: var(--bluish-text);
+	color: var(--brownish-text);
 }
 
 .languages {
 	font-weight: 600;
-	color: var(--bluish-text);
+	color: var(--brownish-text);
 	font-style: italic;
 }
 
 .click {
 	padding: 0 1rem;
-	margin-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 	text-align: center;
 	color: var(--brownish-text);
 	font-weight: 500;
 }
 
 .flip-card-container {
-	width: 90%;
-	margin: auto;
+	width: 80%;
 	border-radius: 10px;
+	margin: 2rem auto;
 	box-shadow: #3b012a 0px 0px 0px 3px, #421034 0px 0px 0px 6px,
 		#0f162e 0px 0px 0px 9px, #1d355d 0px 0px 0px 12px, #091849 0px 0px 0px 15px;
 }
 
-.questions-container {
-	padding: 1rem;
-}
+/* .questions-container {
+	margin: 2rem auto;
+} */
 
 .question,
 .answer {
-	height: 10rem;
-	background-color: var(--complementary-bg);
+	height: 120px;
 	background-image: linear-gradient(to right,
 			var(--complementary-bg),
 			var(--secondary-bg));
@@ -104,22 +101,18 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0 1rem;
-	margin-bottom: 2rem;
+	padding: 1rem;
 	cursor: pointer;
 	border-radius: 10px;
-	box-shadow: #3b012a 0px 0px 0px 3px, #421034 0px 0px 0px 6px,
-		#0f162e 0px 0px 0px 9px, #1d355d 0px 0px 0px 12px, #091849 0px 0px 0px 15px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 		rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
 		rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .answer {
-	background-color: var(--active-nav-bg);
 	background-image: linear-gradient(to right,
 			var(--helper-text),
-			var(--active-nav-bg));
+			var(--accent-color));
 	color: var(--secondary-text);
 }
 
@@ -130,7 +123,7 @@
 .tech-stacks>h3 {
 	padding: 0 1rem;
 	text-align: center;
-	color: var(--bluish-text);
+	color: var(--brownish-text);
 	font-weight: 500;
 }
 
@@ -154,22 +147,16 @@
 }
 
 .frontend-technologies {
-	background-color: var(--secondary-bg);
 	background-color: var(--tertiary-bg);
 	color: var(--secondary-text);
 }
 
 .backend-technologies {
-	background-color: var(--tertiary-bg);
 	background-color: var(--helper-text);
 	color: var(--secondary-text);
 }
 
 .databases-and-orms {
-	background-color: var(--secondary-bg);
-	background-color: var(--tertiary-bg);
-	background-color: var(--accent-color);
-	background-color: var(--primary-bg);
 	background-color: var(--helper-text);
 	color: var(--secondary-text);
 }
@@ -195,7 +182,6 @@
 	text-transform: uppercase;
 	width: fit-content;
 	padding: 1rem 2rem;
-	background-color: var(--active-nav-bg);
 	background-color: var(--btn-bg);
 	color: var(--secondary-text);
 	font-size: 1.25rem;
@@ -219,7 +205,11 @@
 
 	.title {
 		font-size: 2rem;
-		padding-bottom: 2rem;
+	}
+
+	.title,
+	.bio-wrapper {
+		padding: 0 5%;
 	}
 
 	.sub-title {
@@ -244,19 +234,22 @@
 	.questions-container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		width: 90%;
+		width: 80%;
 		margin: auto;
 		gap: 2rem;
 	}
 
 	.flip-card-container {
 		width: 100%;
+		margin: auto;
 	}
 
 	.question,
 	.answer {
+		height: 10rem;
 		width: 100%;
 		margin-bottom: auto;
+		font-size: 1.35rem;
 	}
 
 	.tech-stacks {
@@ -287,8 +280,8 @@
 	}
 
 	.title {
-		font-size: 3rem;
-		font-weight: 300;
+		font-size: 2.5rem;
+		font-weight: 400;
 	}
 
 	.sub-title,
@@ -306,12 +299,9 @@
 		font-weight: 900;
 	}
 
+	.title,
 	.bio-wrapper {
-		padding: 1rem 10% 0 10%;
-	}
-
-	.my-name {
-		font-size: 2rem;
+		padding: 0 10%;
 	}
 
 	.bio {
@@ -324,7 +314,7 @@
 	}
 
 	.questions-container {
-		width: 80%;
+		width: 75%;
 		gap: 2rem;
 	}
 

@@ -1,3 +1,4 @@
+import prisma from '@/lib/client'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
 import Navbar from '@/components/navbar'
@@ -5,8 +6,6 @@ import Footer from '@/components/footer'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootswatch/dist/sandstone/bootstrap.min.css'
 import '../styles/globals.css'
-
-import prisma from '@/lib/db'
 
 const raleway = Raleway({ subsets: ['cyrillic'] })
 

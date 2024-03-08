@@ -1,4 +1,4 @@
-import prisma from '@/lib/db'
+import prisma from '@/lib/client'
 import About from '@/components/about'
 
 async function getData() {
