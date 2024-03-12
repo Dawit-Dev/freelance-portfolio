@@ -18,6 +18,10 @@
 	height: fit-content;
 }
 
+.sm-bg-img {
+	height: 220px;
+}
+
 .lg-bg-img {
 	display: none;
 }
